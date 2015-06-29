@@ -9,4 +9,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        presentTutorialViewControllerIfNeeded()
+    }
+
+    func presentTutorialViewControllerIfNeeded() {
+        if !SettingsPersistanceManager.sharedPersistanceManager.hasOAuthToken {
+            performSegueWithIdentifier("TutorialViewController", sender: nil)
+        }
+    }
+
 }
+

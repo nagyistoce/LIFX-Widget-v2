@@ -15,6 +15,9 @@
 		9C0A2DF5197F9BA200D94B5F /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF4197F9BA200D94B5F /* ExtensionViewController.swift */; };
 		9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */; };
 		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
+		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
+		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
+		9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */; };
 		9C77A4CE19D16FEC000ADD99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C77A4CD19D16FEC000ADD99 /* Images.xcassets */; };
 		9C7D1F4E1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F4D1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app */; };
 		9C7D1F561A7BCB230091CDE5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F541A7BCB230091CDE5 /* Interface.storyboard */; };
@@ -22,6 +25,7 @@
 		9C7D1F5B1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9CA68EBD1B401EBE00606089 /* LightsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA68EBC1B401EBE00606089 /* LightsInterfaceController.swift */; };
 		9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB1521B400CEE008EE854 /* HomeViewController.swift */; };
+		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
 		B28A294A2806C04773021A56 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
 		CD749ACCC455CC5B14E52085 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -87,6 +91,9 @@
 		9C1309921ABA049F0022E23B /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
 		9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements"; sourceTree = "<group>"; };
+		9C43D9831B4130D000AA7719 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewControllers/Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
+		9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialAnimatedTransitioning.swift; path = ViewControllers/Tutorial/TutorialAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPersistanceManager.swift; sourceTree = "<group>"; };
 		9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9C77A4CD19D16FEC000ADD99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LiFX Widget Companion WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +105,7 @@
 		9C7E72AF197FBB5F00BFC0E7 /* LiFXWidget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiFXWidget-Bridging-Header.h"; sourceTree = "<group>"; };
 		9CA68EBC1B401EBE00606089 /* LightsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightsInterfaceController.swift; path = "../../../Documents/Projets persos/iOS/Projets/LIFX Widget/repo/project/LiFX Widget Companion WatchKit Extension/LightsInterfaceController.swift"; sourceTree = "<group>"; };
 		9CADB1521B400CEE008EE854 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9CEB138C1B402E1D003D5A9B /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = ViewControllers/Tutorial/TutorialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +238,7 @@
 		9C780E0E198ECC8F00FA4826 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9CEB138E1B402E21003D5A9B /* Tutorial */,
 				9CADB1521B400CEE008EE854 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -247,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */,
+				9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */,
 			);
 			path = "Other sources";
 			sourceTree = "<group>";
@@ -293,6 +303,17 @@
 				9C7D1F531A7BCB230091CDE5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9CEB138E1B402E21003D5A9B /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB138C1B402E1D003D5A9B /* TutorialView.swift */,
+				9C43D9831B4130D000AA7719 /* TutorialViewController.swift */,
+				9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */,
+			);
+			name = Tutorial;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9D3BEE1C30B92E2453F38B13 /* Pods */ = {
@@ -615,8 +636,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
 				9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */,
+				9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */,
+				9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */,
+				9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
