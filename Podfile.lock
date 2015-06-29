@@ -22,12 +22,15 @@ PODS:
     - AFNetworking/NSURLSession
   - LIFXAPIWrapper (0.0.1):
     - AFNetworking (~> 2.3)
+  - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
   - LIFXAPIWrapper
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   LIFXAPIWrapper: ecde8a449bc859f3865312fb6f015c972e40f689
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.37.2

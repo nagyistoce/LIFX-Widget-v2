@@ -8,3 +8,5 @@
 #import <LIFXLight.h>
 #import <LIFXGroup.h>
 #import <LIFXColor.h>
+
+#import <SVProgressHUD.h>

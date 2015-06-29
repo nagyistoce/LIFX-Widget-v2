@@ -17,6 +17,7 @@ class SettingsPersistanceManager: NSObject {
         }
         set(newToken) {
             saveValue(newToken, forKey: "OAuthToken")
+            LIFXAPIWrapper.sharedAPIWrapper().setOAuthToken(newToken)
         }
     }
     var hasOAuthToken: Bool {

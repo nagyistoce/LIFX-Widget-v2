@@ -6,6 +6,11 @@ inhibit_all_warnings!
 link_with 'LiFX Widget', 'LiFX Widget Companion', 'LiFX Widget Companion WatchKit Extension', 'LiFX Widget Companion WatchKit App'
 pod 'LIFXAPIWrapper'
 
+target :companion do
+       link_with 'LiFX Widget Companion'
+       pod 'SVProgressHUD'
+end
+
 post_install do |add_app_extension_macro|
     add_app_extension_macro.project.targets.each do |target|
         if target.name == "Pods-AFNetworking"

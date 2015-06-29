@@ -13,8 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    themeApplication()
     return true
   }
+
+    private func themeApplication() {
+        let mainColor = UIColor(red: 35/255, green: 178/255, blue: 184/255, alpha: 1)
+
+        UIView.appearance().tintColor = mainColor
+
+        SVProgressHUD.setForegroundColor(mainColor)
+        SVProgressHUD.setDefaultMaskType(.Black)
+        SVProgressHUD.setFont(UIFont.systemFontOfSize(14))
+    }
 
 }
 
