@@ -114,7 +114,7 @@ extension TutorialViewController {
 extension TutorialViewController: UIGestureRecognizerDelegate {
 
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        return pageViews.filter { $0 == touch.view }.isEmpty
+        return pageViews.filter { touch.view.isDescendantOfView($0) }.isEmpty
     }
 
 }
