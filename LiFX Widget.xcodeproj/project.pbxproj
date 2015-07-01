@@ -25,10 +25,9 @@
 		9C7D1F5B1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8813261B417F2F0062DD86 /* OAuthTokenPickerViewController.swift */; };
 		9C8813291B41AC270062DD86 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8813281B41AC270062DD86 /* Icons.xcassets */; };
-		9CA4CF021B41B96B0098DA60 /* Pods-companion.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4CF001B41B96B0098DA60 /* Pods-companion.debug.xcconfig */; };
-		9CA4CF031B41B96B0098DA60 /* Pods-companion.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CA4CF011B41B96B0098DA60 /* Pods-companion.release.xcconfig */; };
 		9CA68EBD1B401EBE00606089 /* LightsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA68EBC1B401EBE00606089 /* LightsInterfaceController.swift */; };
 		9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB1521B400CEE008EE854 /* HomeViewController.swift */; };
+		9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
 		B28A294A2806C04773021A56 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
 		C6DC03D98999DBB3DEA72B72 /* libPods-companion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1855C7613C98F9358436270 /* libPods-companion.a */; };
@@ -114,6 +113,7 @@
 		9CA4CF011B41B96B0098DA60 /* Pods-companion.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.release.xcconfig"; sourceTree = "<group>"; };
 		9CA68EBC1B401EBE00606089 /* LightsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightsInterfaceController.swift; path = "../../../Documents/Projets persos/iOS/Projets/LIFX Widget/repo/project/LiFX Widget Companion WatchKit Extension/LightsInterfaceController.swift"; sourceTree = "<group>"; };
 		9CADB1521B400CEE008EE854 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetModelWrapper.swift; sourceTree = "<group>"; };
 		9CEB138C1B402E1D003D5A9B /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = ViewControllers/Tutorial/TutorialView.swift; sourceTree = "<group>"; };
 		F1855C7613C98F9358436270 /* libPods-companion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-companion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -268,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */,
+				9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */,
 				9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */,
 			);
 			path = "Other sources";
@@ -438,7 +439,7 @@
 		9C0A2DBF197F9ADE00D94B5F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Maxime de Chalendar";
 				TargetAttributes = {
 					9C0A2DC6197F9ADE00D94B5F = {
@@ -500,8 +501,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA4CF031B41B96B0098DA60 /* Pods-companion.release.xcconfig in Resources */,
-				9CA4CF021B41B96B0098DA60 /* Pods-companion.debug.xcconfig in Resources */,
 				9C0A2DD2197F9ADE00D94B5F /* Main.storyboard in Resources */,
 				9C8813291B41AC270062DD86 /* Icons.xcassets in Resources */,
 				9C77A4CE19D16FEC000ADD99 /* Images.xcassets in Resources */,
@@ -667,6 +666,7 @@
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
 				9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */,
 				9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */,
+				9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */,
 				9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */,
 				9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */,
 				9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */,

@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
 // TutorialViewController
 extension HomeViewController {
 
-    func presentTutorialViewControllerIfNeeded() -> Bool {
+    private func presentTutorialViewControllerIfNeeded() -> Bool {
         if !SettingsPersistanceManager.sharedPersistanceManager.hasOAuthToken {
             performSegueWithIdentifier("TutorialViewController", sender: nil)
             return true
@@ -40,9 +40,45 @@ extension HomeViewController {
     }
 
     private func configureTutorialViewController(tutorialViewController: TutorialViewController) {
-        tutorialViewController.onValidation = { lights in
-            self.lights = lights
+        tutorialViewController.onValidation = { self.updateSettingsWithLights($0) }
+    }
+}
+
+// Setup default values
+extension HomeViewController {
+    
+    private func updateSettingsWithLights(lights: [LIFXLight]) {
+        self.lights = lights
+        
+        let persistanceManager = SettingsPersistanceManager.sharedPersistanceManager
+        // We want to have at leat 1 color or 1 intensity.
+        if persistanceManager.colors.isEmpty && persistanceManager.intensities.isEmpty {
+            persistanceManager.setDefaultColors()
+            persistanceManager.setDefaultIntensities()
         }
+
+        let targets = persistanceManager.targets
+        if targets.isEmpty {
+            persistanceManager.setDefaultTargetsWithLights(lights)
+        } else {
+            persistanceManager.targets = filterTargets(targets, withAvailableLights: lights)
+        }
+    }
+    
+    private func filterTargets(targets: [TargetModelWrapper], withAvailableLights lights: [LIFXLight]) -> [TargetModelWrapper] {
+        var availableIdentifiers: [String] = []
+        for light in lights {
+            if !contains(availableIdentifiers, light.identifier) {
+                availableIdentifiers.append(light.identifier)
+            }
+            if !contains(availableIdentifiers, light.location.identifier) {
+                availableIdentifiers.append(light.location.identifier)
+            }
+            if !contains(availableIdentifiers, light.group.identifier) {
+                availableIdentifiers.append(light.group.identifier)
+            }
+        }
+        return targets.filter { contains(availableIdentifiers, $0.identifier) }
     }
 }
 
@@ -53,10 +89,7 @@ extension HomeViewController {
         let APIWrapper = LIFXAPIWrapper.sharedAPIWrapper()
         APIWrapper.setOAuthToken(SettingsPersistanceManager.sharedPersistanceManager.OAuthToken)
 
-        APIWrapper.getAllLightsWithCompletion(
-            { lights in
-                self.lights = lights as! [LIFXLight]
-            },
+        APIWrapper.getAllLightsWithCompletion({ self.updateSettingsWithLights($0 as! [LIFXLight]) },
             onFailure: { error in
                 self.displayAPIError(error)
             }
