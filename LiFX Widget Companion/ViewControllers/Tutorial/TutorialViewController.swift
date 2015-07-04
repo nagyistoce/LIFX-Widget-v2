@@ -35,14 +35,6 @@ class TutorialViewController: UIViewController {
         modalPresentationCapturesStatusBarAppearance = true
     }
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 }
 
 // Navigation
