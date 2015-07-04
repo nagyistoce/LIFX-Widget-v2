@@ -262,7 +262,7 @@
                                                                     <segue destination="AIL-9d-hHl" kind="presentation" identifier="OAuthTokenPickerViewController" id="rlZ-r5-UJu"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_valid_token" translatesAutoresizingMaskIntoConstraints="NO" id="DWl-bm-doC">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial_image_valid_token" translatesAutoresizingMaskIntoConstraints="NO" id="DWl-bm-doC">
                                                                 <rect key="frame" x="130" y="300" width="40" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="C9I-I4-c4f"/>
@@ -486,6 +486,6 @@ You can customize which lights, colours and intensites are displayed by pressing
     </scenes>
     <resources>
         <image name="Icon" width="57" height="57"/>
-        <image name="ic_valid_token" width="85" height="85"/>
+        <image name="tutorial_image_valid_token" width="85" height="85"/>
     </resources>
 </document>
