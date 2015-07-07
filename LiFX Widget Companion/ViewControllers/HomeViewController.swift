@@ -11,6 +11,12 @@ import UIKit
 class HomeViewController: UIViewController {
 
     var lights: [LIFXLight] = []
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -20,9 +26,19 @@ class HomeViewController: UIViewController {
         }
     }
 
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == "TargetPickerViewController" {
+            return !lights.isEmpty
+        }
+        return true
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TutorialViewController" {
             configureTutorialViewController(segue.destinationViewController as! TutorialViewController)
+        }
+        else if segue.identifier == "TargetPickerViewController" {
+            configureTargetPickerViewController(segue.destinationViewController as! TargetPickerViewController)
         }
     }
 
@@ -42,6 +58,15 @@ extension HomeViewController {
     private func configureTutorialViewController(tutorialViewController: TutorialViewController) {
         tutorialViewController.onValidation = { self.updateSettingsWithLights($0) }
     }
+}
+
+// TargetPickerViewController
+extension HomeViewController {
+    
+    private func configureTargetPickerViewController(targetPickerViewController: TargetPickerViewController) {
+        targetPickerViewController.configureWithLights(lights)
+    }
+    
 }
 
 // Setup default values
