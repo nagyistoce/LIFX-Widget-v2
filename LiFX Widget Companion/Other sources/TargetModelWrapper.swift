@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TargetModelWrapper: NSObject, LIFXTargetable {
+class TargetModelWrapper: NSObject, Equatable, LIFXTargetable {
     
     let identifier: String
     let name: String
@@ -50,4 +50,8 @@ class TargetModelWrapper: NSObject, LIFXTargetable {
         ]
     }
     
+}
+
+func == (lhs: TargetModelWrapper, rhs: TargetModelWrapper) -> Bool {
+    return lhs.identifier == rhs.identifier
 }

@@ -11,8 +11,13 @@ import UIKit
 class TargetTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var selectedView: UIView!
     @IBOutlet private weak var indentationConstraint: NSLayoutConstraint!
     
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        selectedView.hidden = !selected
+    }
 }
 
 

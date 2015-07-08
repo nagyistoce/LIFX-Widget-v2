@@ -145,7 +145,7 @@
         <scene sceneID="9X8-bP-1gt">
             <objects>
                 <tableViewController id="pNW-G3-DKC" customClass="TargetPickerViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="jIP-d1-0zD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="jIP-d1-0zD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -181,6 +181,7 @@
                                 <connections>
                                     <outlet property="indentationConstraint" destination="hfv-Z4-GiV" id="CU7-BB-lrE"/>
                                     <outlet property="nameLabel" destination="75w-bH-cvb" id="6fi-kN-pS2"/>
+                                    <outlet property="selectedView" destination="7jo-hw-FMz" id="rUn-k1-pad"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

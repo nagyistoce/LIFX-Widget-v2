@@ -41,16 +41,31 @@ extension TargetPickerViewController {
                 orderedTargets.append(light)
             }
         }
+        
+        selectIndexPathForSavedTargets()
     }
     
     private func selectIndexPathForSavedTargets() {
-        /*
-        ** 1. Get the saved targets
-        ** 2. Loop over orderedLights
-        ** 3. If the model identifier is in the saved targets, get its indexPath
-        ** 4. Select all indexPaths
-        */
+        let savedTargets = SettingsPersistanceManager.sharedPersistanceManager.targets
+        for (index, target) in enumerate(orderedTargets) {
+            if let matchingTarget = modelWrapperForTarget(target) {
+                tableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: false, scrollPosition: .None)
+            }
+        }
     }
+    
+    private func modelWrapperForTarget(model: LIFXModel) -> TargetModelWrapper? {
+        return SettingsPersistanceManager.sharedPersistanceManager.targets.filter {
+            if let light = model as? LIFXLight {
+                return light.identifier == $0.identifier
+            }
+            if let group = model as? LIFXBaseGroup {
+                return group.identifier == $0.identifier
+            }
+            return false
+        }.first
+    }
+
 }
 
 // UITableViewDataSource, UITableViewDelegate
@@ -66,18 +81,36 @@ extension TargetPickerViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        if cell?.selected == true {
+            tableView.delegate?.tableView?(tableView, willDeselectRowAtIndexPath: indexPath)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            tableView.delegate?.tableView?(tableView, didDeselectRowAtIndexPath: indexPath)
+            return nil
+        }
+        return indexPath
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        /*
-        ** 1. Add the light to the settings target
-        ** 2. Tick the cell
-        */
+        var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
+        let target = orderedTargets[indexPath.row]
+        if target is LIFXLight {
+            targets.append(TargetModelWrapper(light: target as! LIFXLight))
+        }
+        else if target is LIFXBaseGroup {
+            targets.append(TargetModelWrapper(group: target as! LIFXBaseGroup))
+        }
+        SettingsPersistanceManager.sharedPersistanceManager.targets = targets
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        /*
-        ** 1. Remove the light to the settings target
-        ** 2. Untick the cell
-        */
+        let target = orderedTargets[indexPath.row]
+        if let matchingTarget = modelWrapperForTarget(target) {
+            var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
+            targets.removeAtIndex(find(targets, matchingTarget)!)
+            SettingsPersistanceManager.sharedPersistanceManager.targets = targets
+        }
     }
     
 }
