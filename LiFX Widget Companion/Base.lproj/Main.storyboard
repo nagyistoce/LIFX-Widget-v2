@@ -579,6 +579,7 @@ You can customize which lights, colours and intensites are displayed by pressing
                             </webView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwU-9i-yB8">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="0.94999999999999996" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="LIFX Cloud" id="d2R-Hd-eqE">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="8E3-1d-zh0">

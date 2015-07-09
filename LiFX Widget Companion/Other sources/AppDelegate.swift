@@ -18,14 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func themeApplication(application: UIApplication) {
-        application.statusBarStyle = .LightContent
-
         let mainColor = UIColor(red: 35/255, green: 178/255, blue: 184/255, alpha: 1)
-        UIView.appearance().tintColor = mainColor
 
         SVProgressHUD.setForegroundColor(mainColor)
         SVProgressHUD.setDefaultMaskType(.Black)
         SVProgressHUD.setFont(UIFont.systemFontOfSize(14))
+
+        UIButton.appearance().tintColor = mainColor
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        
+        application.statusBarStyle = .LightContent
     }
 
 }
