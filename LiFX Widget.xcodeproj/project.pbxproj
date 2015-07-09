@@ -19,6 +19,7 @@
 		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
 		9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */; };
 		9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */; };
+		9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */; };
 		9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */; };
 		9C77A4CE19D16FEC000ADD99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C77A4CD19D16FEC000ADD99 /* Images.xcassets */; };
 		9C7D1F4E1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F4D1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app */; };
@@ -101,6 +102,7 @@
 		9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialAnimatedTransitioning.swift; path = ViewControllers/Tutorial/TutorialAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPersistanceManager.swift; sourceTree = "<group>"; };
 		9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetTableViewCell.swift; path = "Target picker/TargetTableViewCell.swift"; sourceTree = "<group>"; };
+		9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetSelectedView.swift; path = "Target picker/TargetSelectedView.swift"; sourceTree = "<group>"; };
 		9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetPickerViewController.swift; path = "Target picker/TargetPickerViewController.swift"; sourceTree = "<group>"; };
 		9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9C77A4CD19D16FEC000ADD99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */,
 				9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */,
+				9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */,
 			);
 			name = "Target picker";
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */,
+				9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
 				9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */,
 				9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */,

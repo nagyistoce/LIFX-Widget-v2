@@ -16,7 +16,11 @@ class TargetPickerViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        view.tintColor = UIColor(red: 255/255, green: 137/255, blue: 255/255, alpha: 1)
+        if let navigationController = navigationController {
+            navigationController.setNavigationBarHidden(false, animated: animated)
+            navigationController.navigationBar.barTintColor = view.tintColor
+        }
     }
 }
 
@@ -79,6 +83,12 @@ extension TargetPickerViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TargetTableViewCell", forIndexPath: indexPath) as! TargetTableViewCell
         cell.configureWithModel(orderedTargets[indexPath.row])
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = cell as? TargetTableViewCell {
+            cell.layoutImageView()
+        }
     }
     
     override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {

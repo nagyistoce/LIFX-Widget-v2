@@ -10,13 +10,14 @@ import UIKit
 
 class TargetTableViewCell: UITableViewCell {
     
+    @IBOutlet private weak var typeImageBorderView: UIView!
+    @IBOutlet private weak var typeImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var selectedView: UIView!
-    @IBOutlet private weak var indentationConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var selectedView: TargetSelectedView!
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        selectedView.hidden = !selected
+        selectedView.setVisibleAnimated(visible: selected)
     }
 }
 
@@ -34,24 +35,30 @@ extension TargetTableViewCell {
         else if model is LIFXLight {
             configureWithLight(model as! LIFXLight)
         }
-        
-        indentationConstraint.constant = CGFloat(indentationLevel + 1) * indentationWidth
-        layoutIfNeeded()
+    }
+    
+    func layoutImageView() {
+        typeImageBorderView.layer.cornerRadius = CGRectGetWidth(typeImageBorderView.bounds) / 2
+        typeImageBorderView.layer.borderColor = tintColor.CGColor
+        typeImageBorderView.layer.borderWidth = 1
     }
     
     private func configureWithLocation(location: LIFXLocation) {
         nameLabel.text = location.name
-        indentationLevel = 0
+        typeImageView.image = UIImage(named: "targets_type_home")?.imageWithRenderingMode(.AlwaysTemplate)
+        backgroundColor = UIColor(white: 0.95, alpha: 1)
     }
     
     private func configureWithGroup(group: LIFXGroup) {
         nameLabel.text = group.name
-        indentationLevel = 1
+        typeImageView.image = UIImage(named: "targets_type_group")?.imageWithRenderingMode(.AlwaysTemplate)
+        backgroundColor = UIColor(white: 0.98, alpha: 1)
     }
 
     private func configureWithLight(light: LIFXLight) {
         nameLabel.text = light.label
-        indentationLevel = 2
+        typeImageView.image = UIImage(named: "targets_type_light")?.imageWithRenderingMode(.AlwaysTemplate)
+        backgroundColor = UIColor.whiteColor()
     }
     
 }
