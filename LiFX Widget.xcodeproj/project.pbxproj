@@ -15,6 +15,7 @@
 		9C0A2DF5197F9BA200D94B5F /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF4197F9BA200D94B5F /* ExtensionViewController.swift */; };
 		9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */; };
 		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
+		9C295F761B56C4CA00115F6D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F751B56C4CA00115F6D /* InterfaceController.swift */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
 		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
 		9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */; };
@@ -28,7 +29,6 @@
 		9C7D1F5B1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8813261B417F2F0062DD86 /* OAuthTokenPickerViewController.swift */; };
 		9C8813291B41AC270062DD86 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8813281B41AC270062DD86 /* Icons.xcassets */; };
-		9CA68EBD1B401EBE00606089 /* LightsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA68EBC1B401EBE00606089 /* LightsInterfaceController.swift */; };
 		9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB1521B400CEE008EE854 /* HomeViewController.swift */; };
 		9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
@@ -96,6 +96,7 @@
 		9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		9C1309911ABA049F0022E23B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C1309921ABA049F0022E23B /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9C295F751B56C4CA00115F6D /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
 		9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements"; sourceTree = "<group>"; };
 		9C43D9831B4130D000AA7719 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewControllers/Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		9C8813281B41AC270062DD86 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		9CA4CF001B41B96B0098DA60 /* Pods-companion.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA4CF011B41B96B0098DA60 /* Pods-companion.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.release.xcconfig"; sourceTree = "<group>"; };
-		9CA68EBC1B401EBE00606089 /* LightsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightsInterfaceController.swift; path = "../../../Documents/Projets persos/iOS/Projets/LIFX Widget/repo/project/LiFX Widget Companion WatchKit Extension/LightsInterfaceController.swift"; sourceTree = "<group>"; };
 		9CADB1521B400CEE008EE854 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetModelWrapper.swift; sourceTree = "<group>"; };
 		9CEB138C1B402E1D003D5A9B /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = ViewControllers/Tutorial/TutorialView.swift; sourceTree = "<group>"; };
@@ -303,8 +303,8 @@
 		9C7D1F441A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9CA68EBC1B401EBE00606089 /* LightsInterfaceController.swift */,
 				9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */,
+				9C295F751B56C4CA00115F6D /* InterfaceController.swift */,
 				9C7D1F451A7BCB230091CDE5 /* Supporting Files */,
 			);
 			path = "LiFX Widget Companion WatchKit Extension";
@@ -705,7 +705,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA68EBD1B401EBE00606089 /* LightsInterfaceController.swift in Sources */,
+				9C295F761B56C4CA00115F6D /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,6 +927,7 @@
 			baseConfigurationReference = 9C1309911ABA049F0022E23B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "LiFX Widget Companion WatchKit Extension/LiFX Widget Companion WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -942,6 +943,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -950,6 +952,7 @@
 			baseConfigurationReference = 9C1309921ABA049F0022E23B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "LiFX Widget Companion WatchKit Extension/LiFX Widget Companion WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
