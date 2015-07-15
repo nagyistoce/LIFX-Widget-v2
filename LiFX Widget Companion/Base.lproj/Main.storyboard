@@ -124,8 +124,8 @@
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="At7-TS-9wm"/>
                             <constraint firstAttribute="bottom" secondItem="hhD-TW-B9e" secondAttribute="bottom" id="Duz-gS-CKw"/>
                             <constraint firstAttribute="bottom" secondItem="efE-CK-ZxE" secondAttribute="bottom" constant="20" id="FsA-xI-U2D"/>
-                            <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="Go9-I1-h1m" secondAttribute="bottom" constant="20" id="G1A-iY-uCT"/>
                             <constraint firstItem="hhD-TW-B9e" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="HpL-PA-Ief"/>
+                            <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="Go9-I1-h1m" secondAttribute="bottom" constant="20" id="JVQ-fS-pza"/>
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="height" secondItem="FTO-BU-uPC" secondAttribute="height" id="JcT-WP-W2E"/>
                             <constraint firstItem="hhD-TW-B9e" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="top" id="Kf5-cB-Ruu"/>
                             <constraint firstAttribute="trailing" secondItem="hhD-TW-B9e" secondAttribute="trailing" id="LSb-BM-WgL"/>
@@ -135,8 +135,8 @@
                             <constraint firstItem="ODe-wb-1TK" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="X01-pB-hbn"/>
                             <constraint firstAttribute="trailing" secondItem="Go9-I1-h1m" secondAttribute="trailing" constant="20" id="b5V-9S-MJa"/>
                             <constraint firstItem="ODe-wb-1TK" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="topMargin" id="cPh-EJ-HcN"/>
+                            <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="ODe-wb-1TK" secondAttribute="bottom" id="frz-Zp-8md"/>
                             <constraint firstAttribute="trailing" secondItem="ODe-wb-1TK" secondAttribute="trailing" id="gmO-s6-dEe"/>
-                            <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="ODe-wb-1TK" secondAttribute="bottom" id="jBU-77-440"/>
                             <constraint firstAttribute="trailing" secondItem="e8H-Mf-vLV" secondAttribute="trailing" id="nfV-p0-Cax"/>
                             <constraint firstItem="e8H-Mf-vLV" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="wR5-gc-x7o"/>
                             <constraint firstItem="FTO-BU-uPC" firstAttribute="top" secondItem="e8H-Mf-vLV" secondAttribute="bottom" id="wjc-5Z-dvX"/>
@@ -170,7 +170,7 @@ Simply tap a light to add - or remove - it.</string>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fim-6l-yOk" customClass="SeparatorView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fim-6l-yOk">
                                     <rect key="frame" x="0.0" y="122" width="600" height="1"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>

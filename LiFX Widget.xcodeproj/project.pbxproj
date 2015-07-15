@@ -17,6 +17,7 @@
 		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
 		9C295F761B56C4CA00115F6D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F751B56C4CA00115F6D /* InterfaceController.swift */; };
 		9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F771B56C7CF00115F6D /* SeparatorView.swift */; };
+		9C295F7C1B56CE4D00115F6D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
 		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
 		9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */; };
@@ -99,6 +100,7 @@
 		9C1309921ABA049F0022E23B /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9C295F751B56C4CA00115F6D /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		9C295F771B56C7CF00115F6D /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = "Reusable Views/SeparatorView.swift"; sourceTree = "<group>"; };
+		9C295F7B1B56CE4D00115F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
 		9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements"; sourceTree = "<group>"; };
 		9C43D9831B4130D000AA7719 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewControllers/Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */,
 				9C0A2DD0197F9ADE00D94B5F /* Main.storyboard */,
+				9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */,
 				9C780E0E198ECC8F00FA4826 /* ViewControllers */,
 				9C295F791B56C7D300115F6D /* Reusable Views */,
 				9C780E12198ECCCB00FA4826 /* Other sources */,
@@ -530,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0A2DD2197F9ADE00D94B5F /* Main.storyboard in Resources */,
+				9C295F7C1B56CE4D00115F6D /* Launch Screen.xib in Resources */,
 				9C8813291B41AC270062DD86 /* Icons.xcassets in Resources */,
 				9C77A4CE19D16FEC000ADD99 /* Images.xcassets in Resources */,
 			);
@@ -755,6 +759,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C295F7B1B56CE4D00115F6D /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		9C7D1F541A7BCB230091CDE5 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -851,7 +863,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "LiFX Widget Companion/LiFX Widget Companion.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -873,7 +884,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "LiFX Widget Companion/LiFX Widget Companion.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
