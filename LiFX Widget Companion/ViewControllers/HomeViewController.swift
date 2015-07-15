@@ -56,7 +56,14 @@ extension HomeViewController {
     }
 
     private func configureTutorialViewController(tutorialViewController: TutorialViewController) {
-        tutorialViewController.onValidation = { self.updateSettingsWithLights($0) }
+        tutorialViewController.onValidation = { lights in
+            if lights.isEmpty {
+                self.fetchLights { self.updateSettingsWithLights($0) }
+            }
+            else {
+                self.updateSettingsWithLights(lights)
+            }
+        }
     }
 }
 
@@ -110,7 +117,7 @@ extension HomeViewController {
 // LIFX API Handling
 extension HomeViewController {
 
-    private func fetchLights() {
+    private func fetchLights(completion: (([LIFXLight])->())?=nil) {
         let APIWrapper = LIFXAPIWrapper.sharedAPIWrapper()
         APIWrapper.setOAuthToken(SettingsPersistanceManager.sharedPersistanceManager.OAuthToken)
 
