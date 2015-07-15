@@ -16,11 +16,7 @@ class TargetPickerViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        view.tintColor = UIColor(red: 255/255, green: 137/255, blue: 255/255, alpha: 1)
-        if let navigationController = navigationController {
-            navigationController.setNavigationBarHidden(false, animated: animated)
-            navigationController.navigationBar.barTintColor = view.tintColor
-        }
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
 
@@ -84,13 +80,7 @@ extension TargetPickerViewController {
         cell.configureWithModel(orderedTargets[indexPath.row])
         return cell
     }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = cell as? TargetTableViewCell {
-            cell.layoutImageView()
-        }
-    }
-    
+
     override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if cell?.selected == true {
@@ -123,4 +113,48 @@ extension TargetPickerViewController {
         }
     }
     
+}
+
+// UIScrollViewDelegate
+extension TargetPickerViewController {
+
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView === tableView && decelerate == false {
+            pinTableViewToHeader()
+        }
+    }
+
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        if scrollView === tableView {
+            pinTableViewToHeader()
+        }
+    }
+
+    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView === tableView {
+            let currentYPosition = tableView.contentOffset.y + tableView.contentInset.top
+            let targetYPosition = targetContentOffset.memory.y + tableView.contentInset.top
+            let headerHeight = CGRectGetHeight(tableView.tableHeaderView!.bounds)
+            if currentYPosition > headerHeight && targetYPosition < headerHeight {
+                targetContentOffset.memory.y = headerHeight - tableView.contentInset.top
+            }
+        }
+    }
+
+    private func pinTableViewToHeader() {
+        var contentOffset = tableView.contentOffset
+        let scrollPosition = contentOffset.y + tableView.contentInset.top
+        let headerHeight = CGRectGetHeight(tableView.tableHeaderView!.bounds)
+        if scrollPosition < headerHeight / 2 {
+            contentOffset.y = 0
+        }
+        else if scrollPosition < headerHeight {
+            contentOffset.y = headerHeight
+        }
+        else {
+            return ;
+        }
+        contentOffset.y -= tableView.contentInset.top
+        tableView.setContentOffset(contentOffset, animated: true)
+    }
 }

@@ -38,6 +38,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_image_background" translatesAutoresizingMaskIntoConstraints="NO" id="ODe-wb-1TK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-TW-B9e">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8H-Mf-vLV" userLabel="Top view">
                                 <rect key="frame" x="0.0" y="20" width="600" height="187"/>
                                 <subviews>
@@ -118,9 +122,13 @@
                             <constraint firstAttribute="trailing" secondItem="FTO-BU-uPC" secondAttribute="trailing" id="80A-ob-F4U"/>
                             <constraint firstAttribute="trailing" secondItem="efE-CK-ZxE" secondAttribute="trailing" id="9VP-MN-QTs"/>
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="At7-TS-9wm"/>
+                            <constraint firstAttribute="bottom" secondItem="hhD-TW-B9e" secondAttribute="bottom" id="Duz-gS-CKw"/>
                             <constraint firstAttribute="bottom" secondItem="efE-CK-ZxE" secondAttribute="bottom" constant="20" id="FsA-xI-U2D"/>
                             <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="Go9-I1-h1m" secondAttribute="bottom" constant="20" id="G1A-iY-uCT"/>
+                            <constraint firstItem="hhD-TW-B9e" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="HpL-PA-Ief"/>
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="height" secondItem="FTO-BU-uPC" secondAttribute="height" id="JcT-WP-W2E"/>
+                            <constraint firstItem="hhD-TW-B9e" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="top" id="Kf5-cB-Ruu"/>
+                            <constraint firstAttribute="trailing" secondItem="hhD-TW-B9e" secondAttribute="trailing" id="LSb-BM-WgL"/>
                             <constraint firstItem="FTO-BU-uPC" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="Ooj-Fc-TfQ"/>
                             <constraint firstItem="e8H-Mf-vLV" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="top" constant="20" id="PLX-w7-Bhf"/>
                             <constraint firstItem="e8H-Mf-vLV" firstAttribute="height" secondItem="FTO-BU-uPC" secondAttribute="height" id="QLb-uO-zGo"/>
@@ -149,18 +157,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="wpq-A4-Fqw">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="123"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxC-fF-8SG">
+                                    <rect key="frame" x="20" y="20" width="560" height="83"/>
+                                    <string key="text">This screen will let you pick wich targets should be displayed in the widget.
+
+Simply tap a light to add - or remove - it.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fim-6l-yOk" customClass="SeparatorView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="122" width="600" height="1"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="GvB-Gc-Jb1"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="bxC-fF-8SG" firstAttribute="top" secondItem="wpq-A4-Fqw" secondAttribute="top" constant="20" id="7Pu-fz-vOC"/>
+                                <constraint firstAttribute="trailing" secondItem="fim-6l-yOk" secondAttribute="trailing" id="HiW-6r-Tzo"/>
+                                <constraint firstAttribute="trailing" secondItem="bxC-fF-8SG" secondAttribute="trailing" constant="20" id="IkC-kE-bv4"/>
+                                <constraint firstItem="fim-6l-yOk" firstAttribute="leading" secondItem="wpq-A4-Fqw" secondAttribute="leading" id="Lnb-Ta-7Q0"/>
+                                <constraint firstItem="bxC-fF-8SG" firstAttribute="leading" secondItem="wpq-A4-Fqw" secondAttribute="leading" constant="20" id="Sfn-Mt-D8O"/>
+                                <constraint firstAttribute="bottom" secondItem="fim-6l-yOk" secondAttribute="bottom" id="Vy3-Ks-Aiz"/>
+                                <constraint firstAttribute="bottom" secondItem="bxC-fF-8SG" secondAttribute="bottom" constant="20" id="iHU-7w-Yk2"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="20" reuseIdentifier="TargetTableViewCell" rowHeight="63" id="9Sc-Tt-FEh" customClass="TargetTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Sc-Tt-FEh" id="yuR-aV-OZl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75w-bH-cvb">
-                                            <rect key="frame" x="71" y="21" width="458" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-hw-FMz" customClass="TargetSelectedView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                             <rect key="frame" x="549" y="16" width="31" height="31"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -168,40 +202,47 @@
                                                 <constraint firstAttribute="width" secondItem="7jo-hw-FMz" secondAttribute="height" id="aTX-0n-Q3m"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y22-rc-jIv">
-                                            <rect key="frame" x="20" y="16" width="31" height="31"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSX-ES-LcH">
+                                            <rect key="frame" x="20" y="12" width="509" height="39"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k00-wY-3ng">
-                                                    <rect key="frame" x="2" y="2" width="27" height="27"/>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-68-dws">
+                                                    <rect key="frame" x="0.0" y="0.0" width="509" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVm-kV-8bX">
+                                                    <rect key="frame" x="0.0" y="23" width="509" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="Y22-rc-jIv" secondAttribute="height" id="4sr-k3-jYz"/>
-                                                <constraint firstItem="k00-wY-3ng" firstAttribute="leading" secondItem="Y22-rc-jIv" secondAttribute="leading" constant="2" id="E2Z-k5-EUt"/>
-                                                <constraint firstAttribute="bottom" secondItem="k00-wY-3ng" secondAttribute="bottom" constant="2" id="E4J-Je-Oh8"/>
-                                                <constraint firstItem="k00-wY-3ng" firstAttribute="top" secondItem="Y22-rc-jIv" secondAttribute="top" constant="2" id="Tlw-AA-BZE"/>
-                                                <constraint firstAttribute="trailing" secondItem="k00-wY-3ng" secondAttribute="trailing" constant="2" id="ctu-tb-494"/>
+                                                <constraint firstItem="sVm-kV-8bX" firstAttribute="top" secondItem="HkQ-68-dws" secondAttribute="bottom" constant="2" id="5eA-RT-Gqz"/>
+                                                <constraint firstItem="HkQ-68-dws" firstAttribute="leading" secondItem="XSX-ES-LcH" secondAttribute="leading" id="6z4-EI-wyc"/>
+                                                <constraint firstItem="HkQ-68-dws" firstAttribute="top" secondItem="XSX-ES-LcH" secondAttribute="top" id="T2f-Vx-VNb"/>
+                                                <constraint firstAttribute="trailing" secondItem="HkQ-68-dws" secondAttribute="trailing" id="hZL-zf-Jkv"/>
+                                                <constraint firstAttribute="bottom" secondItem="sVm-kV-8bX" secondAttribute="bottom" id="hvZ-e0-7gd"/>
+                                                <constraint firstItem="sVm-kV-8bX" firstAttribute="leading" secondItem="XSX-ES-LcH" secondAttribute="leading" id="rC6-ZO-VHl"/>
+                                                <constraint firstAttribute="trailing" secondItem="sVm-kV-8bX" secondAttribute="trailing" id="zHV-AE-tSo"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Y22-rc-jIv" secondAttribute="bottom" constant="16" id="7EN-TB-ldh"/>
+                                        <constraint firstItem="XSX-ES-LcH" firstAttribute="leading" secondItem="yuR-aV-OZl" secondAttribute="leading" constant="20" id="F3L-EB-mzQ"/>
                                         <constraint firstItem="7jo-hw-FMz" firstAttribute="top" secondItem="yuR-aV-OZl" secondAttribute="top" constant="16" id="J1b-7k-Yn2"/>
-                                        <constraint firstItem="7jo-hw-FMz" firstAttribute="leading" secondItem="75w-bH-cvb" secondAttribute="trailing" constant="20" id="Mel-R1-qvx"/>
-                                        <constraint firstItem="75w-bH-cvb" firstAttribute="leading" secondItem="Y22-rc-jIv" secondAttribute="trailing" constant="20" id="Q4O-ot-26M"/>
                                         <constraint firstItem="7jo-hw-FMz" firstAttribute="trailing" secondItem="yuR-aV-OZl" secondAttribute="trailing" constant="-20" id="TpB-VH-Sjd"/>
-                                        <constraint firstItem="Y22-rc-jIv" firstAttribute="top" secondItem="yuR-aV-OZl" secondAttribute="top" constant="16" id="WLD-5u-ahe"/>
                                         <constraint firstAttribute="bottom" secondItem="7jo-hw-FMz" secondAttribute="bottom" constant="16" id="ZMH-80-hZZ"/>
-                                        <constraint firstAttribute="centerY" secondItem="75w-bH-cvb" secondAttribute="centerY" id="hBV-fU-IMu"/>
-                                        <constraint firstItem="Y22-rc-jIv" firstAttribute="leading" secondItem="yuR-aV-OZl" secondAttribute="leading" constant="20" id="qJX-at-yi4"/>
+                                        <constraint firstAttribute="centerY" secondItem="XSX-ES-LcH" secondAttribute="centerY" id="isY-fd-ntu"/>
+                                        <constraint firstItem="7jo-hw-FMz" firstAttribute="leading" secondItem="XSX-ES-LcH" secondAttribute="trailing" constant="20" id="uEI-4A-HAx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="75w-bH-cvb" id="6fi-kN-pS2"/>
+                                    <outlet property="nameLabel" destination="HkQ-68-dws" id="y9h-VB-nPE"/>
                                     <outlet property="selectedView" destination="7jo-hw-FMz" id="rUn-k1-pad"/>
-                                    <outlet property="typeImageBorderView" destination="Y22-rc-jIv" id="oGa-ux-yld"/>
-                                    <outlet property="typeImageView" destination="k00-wY-3ng" id="TaU-wO-KrQ"/>
+                                    <outlet property="typeLabel" destination="sVm-kV-8bX" id="o1q-Pw-c7I"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -599,7 +640,6 @@ You can customize which lights, colours and intensites are displayed by pressing
                             </webView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwU-9i-yB8">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" white="0.0" alpha="0.94999999999999996" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="LIFX Cloud" id="d2R-Hd-eqE">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="8E3-1d-zh0">

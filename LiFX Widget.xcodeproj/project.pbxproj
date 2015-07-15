@@ -16,6 +16,7 @@
 		9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */; };
 		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
 		9C295F761B56C4CA00115F6D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F751B56C4CA00115F6D /* InterfaceController.swift */; };
+		9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F771B56C7CF00115F6D /* SeparatorView.swift */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
 		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
 		9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */; };
@@ -97,6 +98,7 @@
 		9C1309911ABA049F0022E23B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C1309921ABA049F0022E23B /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9C295F751B56C4CA00115F6D /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9C295F771B56C7CF00115F6D /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = "Reusable Views/SeparatorView.swift"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
 		9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements"; sourceTree = "<group>"; };
 		9C43D9831B4130D000AA7719 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewControllers/Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */,
 				9C0A2DD0197F9ADE00D94B5F /* Main.storyboard */,
 				9C780E0E198ECC8F00FA4826 /* ViewControllers */,
+				9C295F791B56C7D300115F6D /* Reusable Views */,
 				9C780E12198ECCCB00FA4826 /* Other sources */,
 				9C780E13198ECCDA00FA4826 /* Resources */,
 				9C0A2DCA197F9ADE00D94B5F /* Supporting Files */,
@@ -236,6 +239,14 @@
 				9C0A2DF3197F9BA200D94B5F /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C295F791B56C7D300115F6D /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C295F771B56C7CF00115F6D /* SeparatorView.swift */,
+			);
+			name = "Reusable Views";
 			sourceTree = "<group>";
 		};
 		9C4E2F33198EBFD8009175BE /* ViewControllers */ = {
@@ -685,6 +696,7 @@
 				9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */,
 				9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */,
 				9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */,
+				9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */,
 				9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */,
 				9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */,
 				9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */,

@@ -24,9 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultMaskType(.Black)
         SVProgressHUD.setFont(UIFont.systemFontOfSize(14))
 
+        let navbarAppearance = UINavigationBar.appearance()
+        navbarAppearance.barTintColor = UIColor.blackColor()
+        navbarAppearance.tintColor = UIColor.whiteColor()
+        navbarAppearance.titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        
         UIButton.appearance().tintColor = mainColor
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
+        TargetSelectedView.appearance().tintColor = mainColor
         
         application.statusBarStyle = .LightContent
     }

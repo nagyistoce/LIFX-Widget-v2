@@ -10,9 +10,8 @@ import UIKit
 
 class TargetTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var typeImageBorderView: UIView!
-    @IBOutlet private weak var typeImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var typeLabel: UILabel!
     @IBOutlet private weak var selectedView: TargetSelectedView!
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -37,27 +36,21 @@ extension TargetTableViewCell {
         }
     }
     
-    func layoutImageView() {
-        typeImageBorderView.layer.cornerRadius = CGRectGetWidth(typeImageBorderView.bounds) / 2
-        typeImageBorderView.layer.borderColor = tintColor.CGColor
-        typeImageBorderView.layer.borderWidth = 1
-    }
-    
     private func configureWithLocation(location: LIFXLocation) {
         nameLabel.text = location.name
-        typeImageView.image = UIImage(named: "targets_type_home")?.imageWithRenderingMode(.AlwaysTemplate)
+        typeLabel.text = "Location"
         backgroundColor = UIColor(white: 0.95, alpha: 1)
     }
     
     private func configureWithGroup(group: LIFXGroup) {
         nameLabel.text = group.name
-        typeImageView.image = UIImage(named: "targets_type_group")?.imageWithRenderingMode(.AlwaysTemplate)
+        typeLabel.text = "Group"
         backgroundColor = UIColor(white: 0.98, alpha: 1)
     }
 
     private func configureWithLight(light: LIFXLight) {
         nameLabel.text = light.label
-        typeImageView.image = UIImage(named: "targets_type_light")?.imageWithRenderingMode(.AlwaysTemplate)
+        typeLabel.text = "Bulb"
         backgroundColor = UIColor.whiteColor()
     }
     
