@@ -25,6 +25,9 @@ class ColorsListViewController: UITableViewController {
         if segue.identifier == "ColorPickerViewController_New" {
             configureColorPickerViewController(segue.destinationViewController as! ColorPickerViewController)
         }
+        else if (segue.identifier == "ColorPickerViewController_Update") {
+            configureColorPickerViewControllerWithSelectedColor(segue.destinationViewController as! ColorPickerViewController)
+        }
     }
 
 }
@@ -61,6 +64,28 @@ extension ColorsListViewController {
         colorPickerViewController.configureWithBaseColor(nil) { self.saveColor($0) }
     }
     
+    private func configureColorPickerViewControllerWithSelectedColor(colorPickerViewController: ColorPickerViewController) {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow() {
+            let selectedColor = colors[selectedIndexPath.row]
+            colorPickerViewController.configureWithBaseColor(selectedColor) {self.replaceColorAtIndexPath(selectedIndexPath, withColor: $0) }
+        }
+
+    }
+    
+    private func replaceColorAtIndexPath(indexPath: NSIndexPath, withColor newColor: UIColor) {
+        if let targetOperation = targetOperationFromColor(newColor) {
+            
+            var savedColors = SettingsPersistanceManager.sharedPersistanceManager.colors
+            savedColors.removeAtIndex(indexPath.row)
+            savedColors.insert(targetOperation, atIndex: indexPath.row)
+            SettingsPersistanceManager.sharedPersistanceManager.colors = savedColors
+
+            colors.removeAtIndex(indexPath.row)
+            colors.insert(newColor, atIndex: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     private func saveColor(color: UIColor) {
         if let targetOperation = targetOperationFromColor(color) {
             
@@ -76,7 +101,7 @@ extension ColorsListViewController {
     private func targetOperationFromColor(color: UIColor) -> LIFXTargetOperationUpdate? {
         if let (hue, saturation, brightness, _) = color.HSBAComponents() {
             let lifxColor = LIFXColor()
-            lifxColor.hue = UInt(hue)
+            lifxColor.hue = UInt(hue * 360)
             lifxColor.saturation = saturation
             lifxColor.kelvin = 2500
 
