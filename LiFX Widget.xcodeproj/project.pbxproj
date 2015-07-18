@@ -35,6 +35,7 @@
 		9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC7E1B5A40310066C50C /* ColorTableViewCell.swift */; };
 		9C96FC811B5A4DA10066C50C /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC801B5A4DA10066C50C /* ColorPickerViewController.swift */; };
 		9C96FC871B5A5AB30066C50C /* UIColor+Simplify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */; };
+		9C96FC891B5A8A790066C50C /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC881B5A8A790066C50C /* Delay.swift */; };
 		9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB1521B400CEE008EE854 /* HomeViewController.swift */; };
 		9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
@@ -128,6 +129,7 @@
 		9C96FC7E1B5A40310066C50C /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorTableViewCell.swift; path = Colors/ColorTableViewCell.swift; sourceTree = "<group>"; };
 		9C96FC801B5A4DA10066C50C /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerViewController.swift; path = Colors/ColorPickerViewController.swift; sourceTree = "<group>"; };
 		9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Simplify.swift"; sourceTree = "<group>"; };
+		9C96FC881B5A8A790066C50C /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		9CA4CF001B41B96B0098DA60 /* Pods-companion.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA4CF011B41B96B0098DA60 /* Pods-companion.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.release.xcconfig"; sourceTree = "<group>"; };
 		9CADB1521B400CEE008EE854 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -317,10 +319,11 @@
 		9C780E12198ECCCB00FA4826 /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
-				9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */,
 				9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */,
 				9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */,
 				9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */,
+				9C96FC881B5A8A790066C50C /* Delay.swift */,
+				9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */,
 			);
 			path = "Other sources";
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */,
 				9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */,
 				9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */,
+				9C96FC891B5A8A790066C50C /* Delay.swift in Sources */,
 				9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */,
 				9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */,
 				9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */,

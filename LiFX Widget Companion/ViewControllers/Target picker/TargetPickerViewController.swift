@@ -12,6 +12,10 @@ class TargetPickerViewController: UITableViewController {
     
     // Of LIFXLocation, LIFXGroup and LIFXLight
     var orderedTargets: [LIFXModel] = []
+    var onSingleLightSelection: ((LIFXTargetable, String) -> ())?
+    var isSingleLightSelectionMode: Bool {
+        return onSingleLightSelection != nil
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,7 +27,9 @@ class TargetPickerViewController: UITableViewController {
 // Configuration methods
 extension TargetPickerViewController {
     
-    func configureWithLights(lights: [LIFXLight]) {
+    func configureWithLights(lights: [LIFXLight], onSingleLightSelection: ((LIFXTargetable, String) -> ())?=nil) {
+        self.onSingleLightSelection = onSingleLightSelection
+        
         for light in lights {
             if let locationIndex = find(orderedTargets, light.location) {
                 // We already have the target and the group. Insert the light after the group.
@@ -42,7 +48,9 @@ extension TargetPickerViewController {
             }
         }
         
-        selectIndexPathForSavedTargets()
+        if !isSingleLightSelectionMode {
+            selectIndexPathForSavedTargets()
+        }
     }
     
     private func selectIndexPathForSavedTargets() {
@@ -93,19 +101,32 @@ extension TargetPickerViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
         let target = orderedTargets[indexPath.row]
-        if target is LIFXLight {
-            targets.append(TargetModelWrapper(light: target as! LIFXLight))
+
+        if isSingleLightSelectionMode {
+            if let light = target as? LIFXLight {
+                onSingleLightSelection?(light, light.label)
+            }
+            else if let group = target as? LIFXBaseGroup {
+                onSingleLightSelection?(group, group.name)
+            }
+            navigationController?.popViewControllerAnimated(true)
         }
-        else if target is LIFXBaseGroup {
-            targets.append(TargetModelWrapper(group: target as! LIFXBaseGroup))
+        else {
+            var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
+            if target is LIFXLight {
+                targets.append(TargetModelWrapper(light: target as! LIFXLight))
+            }
+            else if target is LIFXBaseGroup {
+                targets.append(TargetModelWrapper(group: target as! LIFXBaseGroup))
+            }
+            SettingsPersistanceManager.sharedPersistanceManager.targets = targets
         }
-        SettingsPersistanceManager.sharedPersistanceManager.targets = targets
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let target = orderedTargets[indexPath.row]
+        
         if let matchingTarget = modelWrapperForTarget(target) {
             var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
             targets.removeAtIndex(find(targets, matchingTarget)!)

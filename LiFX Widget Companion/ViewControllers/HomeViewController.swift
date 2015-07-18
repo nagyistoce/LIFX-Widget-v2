@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if identifier == "TargetPickerViewController" {
+        if identifier == "TargetPickerViewController" || identifier == "ColorsListViewController" {
             return !lights.isEmpty
         }
         return true
@@ -39,6 +39,9 @@ class HomeViewController: UIViewController {
         }
         else if segue.identifier == "TargetPickerViewController" {
             configureTargetPickerViewController(segue.destinationViewController as! TargetPickerViewController)
+        }
+        else if segue.identifier == "ColorsListViewController" {
+            configureColorsListViewController(segue.destinationViewController as! ColorsListViewController)
         }
     }
 
@@ -74,6 +77,14 @@ extension HomeViewController {
         targetPickerViewController.configureWithLights(lights)
     }
     
+}
+
+// ColorsListViewController
+extension HomeViewController {
+    
+    private func configureColorsListViewController(colorsListViewController: ColorsListViewController) {
+        colorsListViewController.configureWithFeedbackLights(lights)
+    }
 }
 
 // Setup default values

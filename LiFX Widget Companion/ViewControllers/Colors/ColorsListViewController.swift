@@ -9,7 +9,8 @@ import UIKit
 
 class ColorsListViewController: UITableViewController {
     
-    lazy var colors: [UIColor] = {
+    private var feedbackLights: [LIFXLight] = []
+    private lazy var colors: [UIColor] = {
         return SettingsPersistanceManager.sharedPersistanceManager.colors.map {
             return UIColor(hue: CGFloat($0.hue) / 360, saturation: $0.saturation, brightness: $0.brightness, alpha: 1)
         }
@@ -28,12 +29,24 @@ class ColorsListViewController: UITableViewController {
         else if (segue.identifier == "ColorPickerViewController_Update") {
             configureColorPickerViewControllerWithSelectedColor(segue.destinationViewController as! ColorPickerViewController)
         }
+        else if (segue.identifier == "TargetPickerViewController") {
+            configureTargetPickerViewController(segue.destinationViewController as! TargetPickerViewController)
+        }
     }
 
 }
 
+// Configuration methods
+extension ColorsListViewController {
+
+    func configureWithFeedbackLights(lights: [LIFXLight]) {
+        feedbackLights = lights
+    }
+    
+}
+
 // UITableViewDataSource, UITableViewDelegate
-extension ColorsListViewController{
+extension ColorsListViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colors.count
@@ -105,13 +118,13 @@ extension ColorsListViewController {
 extension ColorsListViewController {
 
     private func configureColorPickerViewController(colorPickerViewController: ColorPickerViewController) {
-        colorPickerViewController.configureWithBaseColor(nil) { self.saveColor($0) }
+        colorPickerViewController.configureWithBaseColor(nil, feedbackLights: feedbackLights) { self.saveColor($0) }
     }
     
     private func configureColorPickerViewControllerWithSelectedColor(colorPickerViewController: ColorPickerViewController) {
         if let selectedIndexPath = tableView.indexPathForSelectedRow() {
             let selectedColor = colors[selectedIndexPath.row]
-            colorPickerViewController.configureWithBaseColor(selectedColor) {self.replaceColorAtIndexPath(selectedIndexPath, withColor: $0) }
+            colorPickerViewController.configureWithBaseColor(selectedColor, feedbackLights: feedbackLights) {self.replaceColorAtIndexPath(selectedIndexPath, withColor: $0) }
         }
 
     }
@@ -144,15 +157,21 @@ extension ColorsListViewController {
     
     private func targetOperationFromColor(color: UIColor) -> LIFXTargetOperationUpdate? {
         if let (hue, saturation, brightness, _) = color.HSBAComponents() {
-            let lifxColor = LIFXColor()
-            lifxColor.hue = UInt(hue * 360)
-            lifxColor.saturation = saturation
-            lifxColor.kelvin = 2500
-
-            return LIFXTargetOperationUpdate(color: lifxColor, brightness: brightness)
+            let update = LIFXTargetOperationUpdate(brightness: brightness)
+            update.hue = UInt(hue * 360)
+            update.saturation = saturation
+            return update
         }
         return nil
     }
     
+}
+
+// TargetPickerViewController
+extension ColorsListViewController {
+    private func configureTargetPickerViewController(targetPickerViewController: TargetPickerViewController) {
+        targetPickerViewController.configureWithLights(feedbackLights)
+        
+    }
 }
 
