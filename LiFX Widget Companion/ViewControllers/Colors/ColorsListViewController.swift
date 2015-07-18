@@ -124,7 +124,7 @@ extension ColorsListViewController {
     private func configureColorPickerViewControllerWithSelectedColor(colorPickerViewController: ColorPickerViewController) {
         if let selectedIndexPath = tableView.indexPathForSelectedRow() {
             let selectedColor = colors[selectedIndexPath.row]
-            colorPickerViewController.configureWithBaseColor(selectedColor, feedbackLights: feedbackLights) {self.replaceColorAtIndexPath(selectedIndexPath, withColor: $0) }
+            colorPickerViewController.configureWithBaseColor(selectedColor, feedbackLights: feedbackLights) { self.replaceColorAtIndexPath(selectedIndexPath, withColor: $0) }
         }
 
     }
@@ -152,6 +152,10 @@ extension ColorsListViewController {
             
             colors.append(color)
             tableView.reloadData()
+            delay(0.01) {
+                let lastIndexPath = NSIndexPath(forRow: self.tableView(self.tableView, numberOfRowsInSection: 0) - 1, inSection: 0)
+                self.tableView.scrollToRowAtIndexPath(lastIndexPath, atScrollPosition: .Bottom, animated: true)
+            }
         }
     }
     
