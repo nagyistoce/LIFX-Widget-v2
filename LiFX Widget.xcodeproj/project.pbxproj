@@ -24,6 +24,7 @@
 		9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */; };
 		9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */; };
 		9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */; };
+		9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */; };
 		9C77A4CE19D16FEC000ADD99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C77A4CD19D16FEC000ADD99 /* Images.xcassets */; };
 		9C7D1F4E1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F4D1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app */; };
 		9C7D1F561A7BCB230091CDE5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F541A7BCB230091CDE5 /* Interface.storyboard */; };
@@ -31,6 +32,9 @@
 		9C7D1F5B1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8813261B417F2F0062DD86 /* OAuthTokenPickerViewController.swift */; };
 		9C8813291B41AC270062DD86 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8813281B41AC270062DD86 /* Icons.xcassets */; };
+		9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC7E1B5A40310066C50C /* ColorTableViewCell.swift */; };
+		9C96FC811B5A4DA10066C50C /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC801B5A4DA10066C50C /* ColorPickerViewController.swift */; };
+		9C96FC871B5A5AB30066C50C /* UIColor+Simplify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */; };
 		9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB1521B400CEE008EE854 /* HomeViewController.swift */; };
 		9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
@@ -110,6 +114,7 @@
 		9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetSelectedView.swift; path = "Target picker/TargetSelectedView.swift"; sourceTree = "<group>"; };
 		9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetPickerViewController.swift; path = "Target picker/TargetPickerViewController.swift"; sourceTree = "<group>"; };
 		9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsListViewController.swift; path = Colors/ColorsListViewController.swift; sourceTree = "<group>"; };
 		9C77A4CD19D16FEC000ADD99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LiFX Widget Companion WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7D1F461A7BCB230091CDE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +125,9 @@
 		9C7E72AF197FBB5F00BFC0E7 /* LiFXWidget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiFXWidget-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C8813261B417F2F0062DD86 /* OAuthTokenPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OAuthTokenPickerViewController.swift; path = ViewControllers/Tutorial/OAuthTokenPicker/OAuthTokenPickerViewController.swift; sourceTree = "<group>"; };
 		9C8813281B41AC270062DD86 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		9C96FC7E1B5A40310066C50C /* ColorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorTableViewCell.swift; path = Colors/ColorTableViewCell.swift; sourceTree = "<group>"; };
+		9C96FC801B5A4DA10066C50C /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPickerViewController.swift; path = Colors/ColorPickerViewController.swift; sourceTree = "<group>"; };
+		9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Simplify.swift"; sourceTree = "<group>"; };
 		9CA4CF001B41B96B0098DA60 /* Pods-companion.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA4CF011B41B96B0098DA60 /* Pods-companion.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.release.xcconfig"; sourceTree = "<group>"; };
 		9CADB1521B400CEE008EE854 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -277,11 +285,22 @@
 			name = "Target picker";
 			sourceTree = "<group>";
 		};
+		9C69BE7D1B5A346400EEFAE2 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */,
+				9C96FC7E1B5A40310066C50C /* ColorTableViewCell.swift */,
+				9C96FC801B5A4DA10066C50C /* ColorPickerViewController.swift */,
+			);
+			name = Colors;
+			sourceTree = "<group>";
+		};
 		9C780E0E198ECC8F00FA4826 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				9CEB138E1B402E21003D5A9B /* Tutorial */,
 				9C5BEA581B47B9C400F71519 /* Target picker */,
+				9C69BE7D1B5A346400EEFAE2 /* Colors */,
 				9CADB1521B400CEE008EE854 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -298,6 +317,7 @@
 		9C780E12198ECCCB00FA4826 /* Other sources */ = {
 			isa = PBXGroup;
 			children = (
+				9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */,
 				9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */,
 				9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */,
 				9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */,
@@ -695,8 +715,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */,
+				9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */,
 				9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */,
+				9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
+				9C96FC811B5A4DA10066C50C /* ColorPickerViewController.swift in Sources */,
+				9C96FC871B5A5AB30066C50C /* UIColor+Simplify.swift in Sources */,
 				9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */,
 				9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */,
 				9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */,

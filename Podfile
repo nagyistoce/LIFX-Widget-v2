@@ -9,6 +9,7 @@ pod 'LIFXAPIWrapper'
 target :companion do
        link_with 'LiFX Widget Companion'
        pod 'SVProgressHUD'
+       pod 'MSColorPicker'
 end
 
 post_install do |add_app_extension_macro|

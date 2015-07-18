@@ -10,3 +10,5 @@
 #import <LIFXColor.h>
 
 #import <SVProgressHUD.h>
+
+#import <MSHSBView.h>
