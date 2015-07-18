@@ -29,6 +29,9 @@ extension TargetPickerViewController {
     
     func configureWithLights(lights: [LIFXLight], onSingleLightSelection: ((LIFXTargetable, String) -> ())?=nil) {
         self.onSingleLightSelection = onSingleLightSelection
+        if self.isSingleLightSelectionMode {
+            tableView.tableHeaderView = nil
+        }
         
         for light in lights {
             if let locationIndex = find(orderedTargets, light.location) {
@@ -140,19 +143,19 @@ extension TargetPickerViewController {
 extension TargetPickerViewController {
 
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView === tableView && decelerate == false {
+        if scrollView === tableView  && tableView.tableHeaderView != nil && decelerate == false {
             pinTableViewToHeader()
         }
     }
 
     override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        if scrollView === tableView {
+        if scrollView === tableView && tableView.tableHeaderView != nil {
             pinTableViewToHeader()
         }
     }
 
     override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView === tableView {
+        if scrollView === tableView && tableView.tableHeaderView != nil {
             let currentYPosition = tableView.contentOffset.y + tableView.contentInset.top
             let targetYPosition = targetContentOffset.memory.y + tableView.contentInset.top
             let headerHeight = CGRectGetHeight(tableView.tableHeaderView!.bounds)
