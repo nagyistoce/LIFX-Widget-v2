@@ -682,7 +682,7 @@ You can customize which lights, colours and intensites are displayed by pressing
         <scene sceneID="akD-VZ-SM4">
             <objects>
                 <tableViewController title="Colours" id="Emi-Ne-vAf" customClass="ColorsListViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="YNS-lW-O43">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="YNS-lW-O43">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -719,7 +719,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ColorTableViewCell" rowHeight="54" id="QaQ-rI-Gfy" customClass="ColorTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ColorTableViewCell" rowHeight="100" id="QaQ-rI-Gfy" customClass="ColorTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QaQ-rI-Gfy" id="gQn-eO-f03">
                                     <autoresizingMask key="autoresizingMask"/>
