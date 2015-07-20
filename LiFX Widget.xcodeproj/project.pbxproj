@@ -37,6 +37,8 @@
 		9C96FC871B5A5AB30066C50C /* UIColor+Simplify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */; };
 		9C96FC891B5A8A790066C50C /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC881B5A8A790066C50C /* Delay.swift */; };
 		9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB1521B400CEE008EE854 /* HomeViewController.swift */; };
+		9CC0AC351B5C2E5B002D12A0 /* WhiteGradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0AC341B5C2E5B002D12A0 /* WhiteGradientViewController.swift */; };
+		9CC0AC371B5D27D5002D12A0 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0AC361B5D27D5002D12A0 /* ColorViewController.swift */; };
 		9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
 		B28A294A2806C04773021A56 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
@@ -133,6 +135,8 @@
 		9CA4CF001B41B96B0098DA60 /* Pods-companion.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA4CF011B41B96B0098DA60 /* Pods-companion.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.release.xcconfig"; sourceTree = "<group>"; };
 		9CADB1521B400CEE008EE854 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9CC0AC341B5C2E5B002D12A0 /* WhiteGradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteGradientViewController.swift; path = Colors/WhiteGradientViewController.swift; sourceTree = "<group>"; };
+		9CC0AC361B5D27D5002D12A0 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorViewController.swift; path = Colors/ColorViewController.swift; sourceTree = "<group>"; };
 		9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetModelWrapper.swift; sourceTree = "<group>"; };
 		9CEB138C1B402E1D003D5A9B /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = ViewControllers/Tutorial/TutorialView.swift; sourceTree = "<group>"; };
 		F1855C7613C98F9358436270 /* libPods-companion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-companion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +297,8 @@
 				9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */,
 				9C96FC7E1B5A40310066C50C /* ColorTableViewCell.swift */,
 				9C96FC801B5A4DA10066C50C /* ColorPickerViewController.swift */,
+				9CC0AC361B5D27D5002D12A0 /* ColorViewController.swift */,
+				9CC0AC341B5C2E5B002D12A0 /* WhiteGradientViewController.swift */,
 			);
 			name = Colors;
 			sourceTree = "<group>";
@@ -725,6 +731,8 @@
 				9C96FC811B5A4DA10066C50C /* ColorPickerViewController.swift in Sources */,
 				9C96FC871B5A5AB30066C50C /* UIColor+Simplify.swift in Sources */,
 				9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */,
+				9CC0AC351B5C2E5B002D12A0 /* WhiteGradientViewController.swift in Sources */,
+				9CC0AC371B5D27D5002D12A0 /* ColorViewController.swift in Sources */,
 				9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */,
 				9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */,
 				9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */,

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9DV-dr-2OO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -14,6 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dJ3-Yc-Wk4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="OpQ-BZ-K34" kind="relationship" relationship="rootViewController" id="Rjj-04-9JW"/>
@@ -37,9 +39,11 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_image_background" translatesAutoresizingMaskIntoConstraints="NO" id="ODe-wb-1TK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-TW-B9e">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8H-Mf-vLV" userLabel="Top view">
@@ -47,6 +51,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV4-f3-PXH" userLabel="LIFX Button">
                                         <rect key="frame" x="241" y="34" width="119" height="119"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oV4-f3-PXH" secondAttribute="height" multiplier="1:1" id="DCo-cf-Gfm"/>
                                         </constraints>
@@ -58,6 +63,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="oV4-f3-PXH" secondAttribute="centerY" id="TY7-GB-14S"/>
@@ -70,6 +76,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apq-4J-bTR" userLabel="Colours button">
                                         <rect key="frame" x="240" y="34" width="119" height="119"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Apq-4J-bTR" secondAttribute="height" multiplier="1:1" id="dvT-j0-9UD"/>
                                         </constraints>
@@ -81,6 +88,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="Apq-4J-bTR" secondAttribute="centerY" id="R7e-ai-f23"/>
@@ -93,6 +101,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUp-V9-kzM" userLabel="Intensities button">
                                         <rect key="frame" x="241" y="34" width="119" height="119"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xUp-V9-kzM" secondAttribute="height" multiplier="1:1" id="BOK-4f-H2k"/>
                                         </constraints>
@@ -101,6 +110,7 @@
                                         </state>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="xUp-V9-kzM" secondAttribute="centerX" id="GDI-xR-obP"/>
@@ -110,6 +120,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-I1-h1m">
                                 <rect key="frame" x="530" y="530" width="50" height="50"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="3Ky-zC-g8q"/>
                                     <constraint firstAttribute="height" constant="50" id="MIy-48-UnF"/>
@@ -119,6 +130,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="top" secondItem="FTO-BU-uPC" secondAttribute="bottom" id="2C6-Bo-Yqg"/>
@@ -159,6 +171,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="jIP-d1-0zD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="wpq-A4-Fqw">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="123"/>
@@ -166,6 +179,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxC-fF-8SG">
                                     <rect key="frame" x="20" y="20" width="560" height="83"/>
+                                    <animations/>
                                     <string key="text">This screen will let you pick wich targets should be displayed in the widget.
 
 Simply tap a light to add - or remove - it.</string>
@@ -175,12 +189,14 @@ Simply tap a light to add - or remove - it.</string>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fim-6l-yOk">
                                     <rect key="frame" x="0.0" y="122" width="600" height="1"/>
+                                    <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="GvB-Gc-Jb1"/>
                                     </constraints>
                                 </view>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="bxC-fF-8SG" firstAttribute="top" secondItem="wpq-A4-Fqw" secondAttribute="top" constant="20" id="7Pu-fz-vOC"/>
@@ -200,6 +216,7 @@ Simply tap a light to add - or remove - it.</string>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-hw-FMz" customClass="TargetSelectedView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                             <rect key="frame" x="549" y="16" width="31" height="31"/>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="7jo-hw-FMz" secondAttribute="height" id="aTX-0n-Q3m"/>
@@ -210,17 +227,20 @@ Simply tap a light to add - or remove - it.</string>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkQ-68-dws">
                                                     <rect key="frame" x="0.0" y="0.0" width="509" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVm-kV-8bX">
                                                     <rect key="frame" x="0.0" y="23" width="509" height="16"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="sVm-kV-8bX" firstAttribute="top" secondItem="HkQ-68-dws" secondAttribute="bottom" constant="2" id="5eA-RT-Gqz"/>
@@ -233,6 +253,7 @@ Simply tap a light to add - or remove - it.</string>
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="XSX-ES-LcH" firstAttribute="leading" secondItem="yuR-aV-OZl" secondAttribute="leading" constant="20" id="F3L-EB-mzQ"/>
                                         <constraint firstItem="7jo-hw-FMz" firstAttribute="top" secondItem="yuR-aV-OZl" secondAttribute="top" constant="16" id="J1b-7k-Yn2"/>
@@ -242,6 +263,7 @@ Simply tap a light to add - or remove - it.</string>
                                         <constraint firstItem="7jo-hw-FMz" firstAttribute="leading" secondItem="XSX-ES-LcH" secondAttribute="trailing" constant="20" id="uEI-4A-HAx"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="nameLabel" destination="HkQ-68-dws" id="y9h-VB-nPE"/>
                                     <outlet property="selectedView" destination="7jo-hw-FMz" id="rUn-k1-pad"/>
@@ -281,13 +303,17 @@ Simply tap a light to add - or remove - it.</string>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n58-uF-tAF">
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kmG-vc-5iP">
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <animations/>
                                             </view>
+                                            <animations/>
                                             <vibrancyEffect>
                                                 <blurEffect style="light"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
                                     </subviews>
+                                    <animations/>
                                 </view>
+                                <animations/>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMj-JU-zrw">
@@ -304,11 +330,13 @@ Simply tap a light to add - or remove - it.</string>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THANKS FOR BUYING LIFX WIDGET !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-pN-Lfb">
                                                                 <rect key="frame" x="20" y="30" width="260" height="17"/>
+                                                                <animations/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXR-Ev-atL">
                                                                 <rect key="frame" x="20" y="118" width="260" height="65"/>
+                                                                <animations/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="In order to grant LIFX Widget access to your bulbs, we'll perform a few setup steps">
                                                                         <attributes>
@@ -321,6 +349,7 @@ Simply tap a light to add - or remove - it.</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <animations/>
                                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="h2I-pN-Lfb" firstAttribute="top" secondItem="g8Z-hh-V35" secondAttribute="top" constant="30" id="3Wy-8j-6XM"/>
@@ -335,6 +364,7 @@ Simply tap a light to add - or remove - it.</string>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="g8Z-hh-V35" firstAttribute="top" secondItem="fqF-UU-Ddz" secondAttribute="bottom" priority="250" id="PCI-DH-rJr"/>
@@ -350,6 +380,7 @@ Simply tap a light to add - or remove - it.</string>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIFX CLOUD SETUP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dT-r4-sur">
                                                                 <rect key="frame" x="20" y="30" width="260" height="17"/>
+                                                                <animations/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -358,6 +389,7 @@ Simply tap a light to add - or remove - it.</string>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrP-FN-GEb">
                                                                         <rect key="frame" x="0.0" y="0.0" width="229" height="45"/>
+                                                                        <animations/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="1. ">
                                                                                 <attributes>
@@ -385,6 +417,7 @@ Simply tap a light to add - or remove - it.</string>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTA-8C-mHl">
                                                                         <rect key="frame" x="0.0" y="45" width="229" height="44"/>
+                                                                        <animations/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="2. Tap &quot;">
                                                                                 <attributes>
@@ -412,6 +445,7 @@ Simply tap a light to add - or remove - it.</string>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McM-Ob-6js">
                                                                         <rect key="frame" x="0.0" y="89" width="229" height="45"/>
+                                                                        <animations/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="3. Name it as you wish, then ">
                                                                                 <attributes>
@@ -431,6 +465,7 @@ Simply tap a light to add - or remove - it.</string>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
+                                                                <animations/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstItem="McM-Ob-6js" firstAttribute="top" secondItem="sTA-8C-mHl" secondAttribute="bottom" id="1mk-IF-msD"/>
@@ -449,6 +484,7 @@ Simply tap a light to add - or remove - it.</string>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAa-jg-D1u">
                                                                 <rect key="frame" x="37" y="241" width="226" height="29"/>
+                                                                <animations/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <state key="normal" title="OPEN THE LIFX CLOUD WEBSITE">
                                                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -459,12 +495,14 @@ Simply tap a light to add - or remove - it.</string>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial_image_valid_token" translatesAutoresizingMaskIntoConstraints="NO" id="DWl-bm-doC">
                                                                 <rect key="frame" x="130" y="300" width="40" height="40"/>
+                                                                <animations/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="C9I-I4-c4f"/>
                                                                     <constraint firstAttribute="width" secondItem="DWl-bm-doC" secondAttribute="height" id="nKa-qg-904"/>
                                                                 </constraints>
                                                             </imageView>
                                                         </subviews>
+                                                        <animations/>
                                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="0sA-4B-KgH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="efo-dT-TS3" secondAttribute="leading" constant="20" id="1SX-ca-Kdo"/>
@@ -483,6 +521,7 @@ Simply tap a light to add - or remove - it.</string>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="centerX" secondItem="efo-dT-TS3" secondAttribute="centerX" id="A4S-wD-qao"/>
@@ -496,11 +535,13 @@ Simply tap a light to add - or remove - it.</string>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THAT'S IT !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74U-6u-dHT">
                                                                 <rect key="frame" x="20" y="30" width="260" height="17"/>
+                                                                <animations/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXv-zJ-HBt">
                                                                 <rect key="frame" x="20" y="67" width="260" height="164"/>
+                                                                <animations/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment>
                                                                         <string key="content">You're now running the default setup.
@@ -517,6 +558,7 @@ You can customize which lights, colours and intensites are displayed by pressing
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adf-Fb-nBc">
                                                                 <rect key="frame" x="20" y="251" width="260" height="29"/>
+                                                                <animations/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                 <state key="normal" title="I'M DONE">
                                                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -526,6 +568,7 @@ You can customize which lights, colours and intensites are displayed by pressing
                                                                 </connections>
                                                             </button>
                                                         </subviews>
+                                                        <animations/>
                                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="eXv-zJ-HBt" secondAttribute="trailing" constant="20" id="707-7k-2tE"/>
@@ -541,12 +584,14 @@ You can customize which lights, colours and intensites are displayed by pressing
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="centerX" secondItem="LNz-80-Rue" secondAttribute="centerX" id="rPw-vt-cwb"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -574,6 +619,7 @@ You can customize which lights, colours and intensites are displayed by pressing
                                         </connections>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="233-LP-6qe" secondAttribute="bottom" id="0Hh-xU-0bp"/>
                                     <constraint firstAttribute="height" secondItem="233-LP-6qe" secondAttribute="height" id="5ME-Vu-7Zv"/>
@@ -588,8 +634,10 @@ You can customize which lights, colours and intensites are displayed by pressing
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Pfl-uf-j0L">
                                 <rect key="frame" x="280" y="533" width="39" height="37"/>
+                                <animations/>
                             </pageControl>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iMj-JU-zrw" firstAttribute="leading" secondItem="M3Y-RM-aAZ" secondAttribute="leading" id="1Ft-PY-VZx"/>
@@ -640,10 +688,12 @@ You can customize which lights, colours and intensites are displayed by pressing
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvT-Dm-2lx">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwU-9i-yB8">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
                                 <items>
                                     <navigationItem title="LIFX Cloud" id="d2R-Hd-eqE">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="8E3-1d-zh0">
@@ -658,6 +708,7 @@ You can customize which lights, colours and intensites are displayed by pressing
                                 </connections>
                             </navigationBar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lvT-Dm-2lx" firstAttribute="leading" secondItem="k8P-Uy-OGn" secondAttribute="leading" id="5jd-uY-DyA"/>
@@ -685,6 +736,7 @@ You can customize which lights, colours and intensites are displayed by pressing
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="YNS-lW-O43">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="A7h-3D-4HD">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="178"/>
@@ -692,6 +744,7 @@ You can customize which lights, colours and intensites are displayed by pressing
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YW-GK-Lf7">
                                     <rect key="frame" x="20" y="20" width="560" height="138"/>
+                                    <animations/>
                                     <string key="text">This screen will let you pick wich colors should be displayed in the widget.
 
 Press the '+' on the top right to add a color, swipe left a color in the list to remove it.</string>
@@ -701,12 +754,14 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uY7-kt-N7O">
                                     <rect key="frame" x="0.0" y="177" width="600" height="1"/>
+                                    <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="EPD-96-nLX"/>
                                     </constraints>
                                 </view>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="8YW-GK-Lf7" firstAttribute="top" secondItem="A7h-3D-4HD" secondAttribute="top" constant="20" id="HY2-U7-e5v"/>
@@ -723,7 +778,9 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QaQ-rI-Gfy" id="gQn-eO-f03">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <segue destination="QmP-6F-5go" kind="show" identifier="ColorPickerViewController_Update" id="g8L-ro-x9O"/>
                                 </connections>
@@ -751,42 +808,132 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
         <!--Colour picker-->
         <scene sceneID="Y9K-Vz-JqC">
             <objects>
-                <viewController title="Colour picker" id="QmP-6F-5go" customClass="ColorPickerViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Colour picker" automaticallyAdjustsScrollViewInsets="NO" id="QmP-6F-5go" customClass="ColorPickerViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VoB-m7-EdQ"/>
                         <viewControllerLayoutGuide type="bottom" id="cUf-X1-hRV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FMm-8u-cfO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKG-K2-ios" customClass="MSHSBView">
-                                <rect key="frame" x="16" y="135" width="568" height="455"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI5-7n-OpY">
-                                <rect key="frame" x="16" y="72" width="568" height="55"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuf-9i-iix" userLabel="Top toolbar">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fxb-NM-eM5"/>
+                                    <barButtonItem title="COLORS" id="NNT-zU-e5D">
+                                        <connections>
+                                            <action selector="tappedHeaderButton:" destination="QmP-6F-5go" id="yjl-MI-g3c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="6rj-x4-fBb"/>
+                                    <barButtonItem title="WHITES" id="lC7-3X-dsM">
+                                        <connections>
+                                            <action selector="tappedHeaderButton:" destination="QmP-6F-5go" id="Cun-AY-oaB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TaB-L5-XDV"/>
+                                </items>
+                            </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWn-r5-kxH">
+                                <rect key="frame" x="0.0" y="108" width="600" height="448"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRm-t3-bYm" userLabel="Size view">
+                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="448"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKG-K2-ios" userLabel="Colors">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="448"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l52-Bo-j99">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="448"/>
+                                                        <animations/>
+                                                        <connections>
+                                                            <segue destination="0Kf-4N-Qrw" kind="embed" identifier="ColorViewController" id="8IP-14-oZv"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="l52-Bo-j99" secondAttribute="trailing" id="1iw-lE-lol"/>
+                                                    <constraint firstAttribute="bottom" secondItem="l52-Bo-j99" secondAttribute="bottom" id="NQl-u5-HyA"/>
+                                                    <constraint firstItem="l52-Bo-j99" firstAttribute="top" secondItem="ZKG-K2-ios" secondAttribute="top" id="PBC-Ww-tfL"/>
+                                                    <constraint firstItem="l52-Bo-j99" firstAttribute="leading" secondItem="ZKG-K2-ios" secondAttribute="leading" id="d0E-o0-lUS"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdo-uP-Emb" userLabel="Whites">
+                                                <rect key="frame" x="600" y="0.0" width="600" height="448"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ce-au-yTT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="448"/>
+                                                        <animations/>
+                                                        <connections>
+                                                            <segue destination="E2R-Vo-5zb" kind="embed" identifier="WhiteGradientViewController" id="je2-dK-14U"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="8Ce-au-yTT" secondAttribute="trailing" id="6KR-AC-QYq"/>
+                                                    <constraint firstItem="8Ce-au-yTT" firstAttribute="leading" secondItem="cdo-uP-Emb" secondAttribute="leading" id="9F2-DT-jcm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="8Ce-au-yTT" secondAttribute="bottom" id="Fdz-Ae-NGV"/>
+                                                    <constraint firstItem="8Ce-au-yTT" firstAttribute="top" secondItem="cdo-uP-Emb" secondAttribute="top" id="xT3-tj-gb6"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cdo-uP-Emb" secondAttribute="trailing" id="6iH-tO-htd"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZKG-K2-ios" secondAttribute="bottom" id="7Qc-YR-ZH3"/>
+                                            <constraint firstAttribute="bottom" secondItem="cdo-uP-Emb" secondAttribute="bottom" id="CyS-wy-qkS"/>
+                                            <constraint firstItem="ZKG-K2-ios" firstAttribute="leading" secondItem="XRm-t3-bYm" secondAttribute="leading" id="OdT-Hr-Xix"/>
+                                            <constraint firstItem="cdo-uP-Emb" firstAttribute="leading" secondItem="ZKG-K2-ios" secondAttribute="trailing" id="PbT-nF-sXO"/>
+                                            <constraint firstItem="cdo-uP-Emb" firstAttribute="top" secondItem="XRm-t3-bYm" secondAttribute="top" id="Y8o-cK-h0k"/>
+                                            <constraint firstItem="cdo-uP-Emb" firstAttribute="width" secondItem="ZKG-K2-ios" secondAttribute="width" id="enm-ii-qCd"/>
+                                            <constraint firstItem="ZKG-K2-ios" firstAttribute="top" secondItem="XRm-t3-bYm" secondAttribute="top" id="nWM-Eo-HvP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="oyl-lX-2df"/>
+                                    <constraint firstAttribute="trailing" secondItem="XRm-t3-bYm" secondAttribute="trailing" id="DLK-8e-uEL"/>
+                                    <constraint firstItem="XRm-t3-bYm" firstAttribute="leading" secondItem="IWn-r5-kxH" secondAttribute="leading" id="Hvx-1a-xAQ"/>
+                                    <constraint firstItem="ZKG-K2-ios" firstAttribute="width" secondItem="IWn-r5-kxH" secondAttribute="width" id="cSi-J0-0NR"/>
+                                    <constraint firstAttribute="height" secondItem="XRm-t3-bYm" secondAttribute="height" id="e7y-76-bmJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="XRm-t3-bYm" secondAttribute="bottom" id="gfI-0L-wpz"/>
+                                    <constraint firstItem="XRm-t3-bYm" firstAttribute="top" secondItem="IWn-r5-kxH" secondAttribute="top" id="rkJ-WM-GDL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <state key="normal" title="PICK A LIVE FEEDBACK LIGHT">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
-                                    <segue destination="pNW-G3-DKC" kind="show" identifier="TargetPickerViewController" id="L7P-Sj-Aad"/>
+                                    <outlet property="delegate" destination="QmP-6F-5go" id="DOs-Ox-x0i"/>
                                 </connections>
-                            </button>
+                            </scrollView>
+                            <toolbar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-JT-sb1" userLabel="Bottom toolbar">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="X7l-MC-xXE"/>
+                                    <barButtonItem title="PICK A LIVE FEEDBACK LIGHT" id="lcW-Ri-vby">
+                                        <connections>
+                                            <segue destination="pNW-G3-DKC" kind="show" identifier="TargetPickerViewController" id="vhl-KV-ydu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7cj-ss-mGx"/>
+                                </items>
+                            </toolbar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZKG-K2-ios" firstAttribute="top" secondItem="TI5-7n-OpY" secondAttribute="bottom" constant="8" symbolic="YES" id="5Xi-GM-ldl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TI5-7n-OpY" secondAttribute="trailing" id="NyW-Vs-SCu"/>
-                            <constraint firstItem="TI5-7n-OpY" firstAttribute="top" secondItem="VoB-m7-EdQ" secondAttribute="bottom" constant="8" symbolic="YES" id="R5n-37-X7J"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZKG-K2-ios" secondAttribute="trailing" id="XJR-dx-2Kt"/>
-                            <constraint firstItem="ZKG-K2-ios" firstAttribute="leading" secondItem="FMm-8u-cfO" secondAttribute="leadingMargin" id="azQ-63-v3h"/>
-                            <constraint firstItem="TI5-7n-OpY" firstAttribute="leading" secondItem="FMm-8u-cfO" secondAttribute="leadingMargin" id="aze-an-jjt"/>
-                            <constraint firstItem="cUf-X1-hRV" firstAttribute="top" secondItem="ZKG-K2-ios" secondAttribute="bottom" constant="10" id="yoL-ml-taE"/>
+                            <constraint firstItem="WVF-JT-sb1" firstAttribute="leading" secondItem="FMm-8u-cfO" secondAttribute="leading" id="DqF-Uh-szh"/>
+                            <constraint firstItem="WVF-JT-sb1" firstAttribute="top" secondItem="IWn-r5-kxH" secondAttribute="bottom" id="EKu-oV-5nt"/>
+                            <constraint firstAttribute="trailing" secondItem="IWn-r5-kxH" secondAttribute="trailing" id="Igf-Op-eUq"/>
+                            <constraint firstItem="IWn-r5-kxH" firstAttribute="top" secondItem="iuf-9i-iix" secondAttribute="bottom" id="JKK-fQ-IBS"/>
+                            <constraint firstItem="iuf-9i-iix" firstAttribute="leading" secondItem="FMm-8u-cfO" secondAttribute="leading" id="Kzb-sm-DNs"/>
+                            <constraint firstAttribute="trailing" secondItem="iuf-9i-iix" secondAttribute="trailing" id="Vgx-Ns-dCv"/>
+                            <constraint firstItem="iuf-9i-iix" firstAttribute="top" secondItem="VoB-m7-EdQ" secondAttribute="bottom" id="ghP-FS-3RD"/>
+                            <constraint firstItem="cUf-X1-hRV" firstAttribute="top" secondItem="WVF-JT-sb1" secondAttribute="bottom" id="lEI-g1-C89"/>
+                            <constraint firstItem="IWn-r5-kxH" firstAttribute="leading" secondItem="FMm-8u-cfO" secondAttribute="leading" id="pCU-eF-Hgj"/>
+                            <constraint firstAttribute="trailing" secondItem="WVF-JT-sb1" secondAttribute="trailing" id="tSU-cn-Ccd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colour picker" id="OqZ-e6-fz5">
@@ -798,12 +945,135 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                     </navigationItem>
                     <connections>
                         <outlet property="colorPickerView" destination="ZKG-K2-ios" id="FHu-Cd-6pf"/>
-                        <outlet property="liveFeedbackTargetButton" destination="TI5-7n-OpY" id="oSy-mH-oq0"/>
+                        <outlet property="colorsButton" destination="NNT-zU-e5D" id="GsD-oJ-gwI"/>
+                        <outlet property="contentScrollView" destination="IWn-r5-kxH" id="idg-PP-EU0"/>
+                        <outlet property="liveFeedbackTargetButton" destination="lcW-Ri-vby" id="oKP-iH-a3E"/>
+                        <outlet property="whitesButtons" destination="lC7-3X-dsM" id="jqV-wy-8sD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEG-cm-R6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1489" y="1211"/>
+        </scene>
+        <!--White Gradient View Controller-->
+        <scene sceneID="Bzw-Xw-H4w">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="E2R-Vo-5zb" customClass="WhiteGradientViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="myz-HT-gbw"/>
+                        <viewControllerLayoutGuide type="bottom" id="YSd-Ae-hYr"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ogr-n6-fcz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="448"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elR-B5-BcH">
+                                <rect key="frame" x="20" y="20" width="560" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OvU-Je-mZE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCP-JU-AF1">
+                                <rect key="frame" x="20" y="70" width="560" height="308"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cJh-F4-yFY" appends="YES" id="9cW-KJ-epr"/>
+                                    <outletCollection property="gestureRecognizers" destination="29t-HP-MGn" appends="YES" id="N9o-11-VaI"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irD-sW-f0g">
+                                <rect key="frame" x="4" y="54" width="33" height="33"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="irD-sW-f0g" secondAttribute="height" id="ybo-fG-MAV"/>
+                                    <constraint firstAttribute="width" constant="33" id="ygW-0Q-MPi"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cJh-F4-yFY" appends="YES" id="kgB-0g-Uv6"/>
+                                </connections>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="meS-6j-eGi">
+                                <rect key="frame" x="107" y="398" width="475" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sliderChangedValue:" destination="E2R-Vo-5zb" eventType="valueChanged" id="fo9-kA-21a"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-8A-iFH">
+                                <rect key="frame" x="20" y="404" width="69" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gbC-8A-iFH" firstAttribute="leading" secondItem="Ogr-n6-fcz" secondAttribute="leading" constant="20" id="0kc-Fw-xov"/>
+                            <constraint firstItem="YSd-Ae-hYr" firstAttribute="top" secondItem="meS-6j-eGi" secondAttribute="bottom" constant="20" id="3Ot-Ev-SCS"/>
+                            <constraint firstAttribute="trailing" secondItem="elR-B5-BcH" secondAttribute="trailing" constant="20" id="Gc3-yD-8E5"/>
+                            <constraint firstItem="gbC-8A-iFH" firstAttribute="centerY" secondItem="meS-6j-eGi" secondAttribute="centerY" constant="-0.5" id="HKS-ZR-0cB"/>
+                            <constraint firstItem="elR-B5-BcH" firstAttribute="leading" secondItem="Ogr-n6-fcz" secondAttribute="leading" constant="20" id="Hji-Mx-y6F"/>
+                            <constraint firstAttribute="trailing" secondItem="meS-6j-eGi" secondAttribute="trailing" constant="20" id="MDi-ow-yfk"/>
+                            <constraint firstItem="irD-sW-f0g" firstAttribute="centerY" secondItem="DCP-JU-AF1" secondAttribute="top" id="Mb9-Fj-Y9P"/>
+                            <constraint firstItem="DCP-JU-AF1" firstAttribute="top" secondItem="elR-B5-BcH" secondAttribute="bottom" constant="20" id="TeY-HJ-3vx"/>
+                            <constraint firstAttribute="trailing" secondItem="DCP-JU-AF1" secondAttribute="trailing" constant="20" id="a0K-En-YLh"/>
+                            <constraint firstItem="irD-sW-f0g" firstAttribute="centerX" secondItem="DCP-JU-AF1" secondAttribute="leading" id="dGM-P3-Gyz"/>
+                            <constraint firstItem="elR-B5-BcH" firstAttribute="top" secondItem="myz-HT-gbw" secondAttribute="bottom" constant="20" id="iyA-5u-CQ3"/>
+                            <constraint firstItem="meS-6j-eGi" firstAttribute="leading" secondItem="gbC-8A-iFH" secondAttribute="trailing" constant="20" id="ozf-WV-Rth"/>
+                            <constraint firstItem="meS-6j-eGi" firstAttribute="top" secondItem="DCP-JU-AF1" secondAttribute="bottom" constant="20" id="q5Z-zx-Bcn"/>
+                            <constraint firstItem="DCP-JU-AF1" firstAttribute="leading" secondItem="Ogr-n6-fcz" secondAttribute="leading" constant="20" id="s7G-sd-9Bz"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="brightnessSlider" destination="meS-6j-eGi" id="gvl-69-hSq"/>
+                        <outlet property="colorView" destination="elR-B5-BcH" id="So4-M7-o5v"/>
+                        <outlet property="gradientView" destination="DCP-JU-AF1" id="atK-0A-sZx"/>
+                        <outlet property="indicatorView" destination="irD-sW-f0g" id="tbz-ZU-Z0g"/>
+                        <outlet property="indicatorXPosition" destination="dGM-P3-Gyz" id="pAU-aq-RZ1"/>
+                        <outlet property="indicatorYPosition" destination="Mb9-Fj-Y9P" id="T2E-Qi-Ni1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eyn-hi-y7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cJh-F4-yFY">
+                    <connections>
+                        <action selector="pannedGradientView:" destination="E2R-Vo-5zb" id="BHQ-Wr-9X3"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="29t-HP-MGn">
+                    <connections>
+                        <action selector="tappedGradientView:" destination="E2R-Vo-5zb" id="tTL-Za-5fk"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2185" y="1563"/>
+        </scene>
+        <!--Color View Controller-->
+        <scene sceneID="4cT-Dy-0h1">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0Kf-4N-Qrw" customClass="ColorViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wl3-sU-g6H"/>
+                        <viewControllerLayoutGuide type="bottom" id="2G4-fR-nsq"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eN9-St-JPq" customClass="MSHSBView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="448"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zuW-E5-jSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2185" y="1054"/>
         </scene>
     </scenes>
     <resources>
@@ -815,6 +1085,6 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g8L-ro-x9O"/>
-        <segue reference="L7P-Sj-Aad"/>
+        <segue reference="vhl-KV-ydu"/>
     </inferredMetricsTieBreakers>
 </document>

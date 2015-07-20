@@ -36,4 +36,44 @@ extension UIColor {
         )
         return UIColor(red: r, green: g, blue: b, alpha: alpha)
     }
+    
+    /**
+    * Returns a (red, green, blue, alpha) tuple, each value being in the [0,1] range
+    */
+    func RGBComponents() -> (CGFloat, CGFloat, CGFloat, CGFloat)? {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        if !getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            return nil
+        }
+        return (red, green, blue, alpha)
+    }
+    
+    /**
+    * Returns an interpolation of the two given colors.
+    * Returns `self` on failure.
+    */
+    func colorByInterpolatingWithColor(color: UIColor, ratio: Float) -> UIColor {
+        let rangedRatio = max(min(1, ratio), 0)
+        if rangedRatio == 0 {
+            return self
+        }
+        else if rangedRatio == 1 {
+            return color
+        }
+        else {
+            if let (red, green, blue, alpha) = RGBComponents(), (otherRed, otherGreen, otherBlue, otherAlpha) = color.RGBComponents() {
+                let outputRed = red + (otherRed - red) * CGFloat(rangedRatio)
+                let outputGreen = green + (otherGreen - green) * CGFloat(rangedRatio)
+                let outputBlue = blue + (otherBlue - blue) * CGFloat(rangedRatio)
+                let outputAlpha = alpha + (otherAlpha - alpha) * CGFloat(rangedRatio)
+                return UIColor(red: outputRed, green: outputGreen, blue: outputBlue, alpha: outputAlpha)
+            }
+            return self
+        }
+    }
+    
 }

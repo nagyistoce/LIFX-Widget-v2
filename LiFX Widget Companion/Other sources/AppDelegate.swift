@@ -29,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navbarAppearance.tintColor = UIColor.whiteColor()
         navbarAppearance.titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
         
+        UIToolbar.appearance().barTintColor = UIColor.blackColor()
+        UIBarButtonItem.appearance().setTitleTextAttributes([
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: UIFont.boldSystemFontOfSize(14)], forState: .Normal)
+        
+        UISlider.appearance().tintColor = mainColor
         UIButton.appearance().tintColor = mainColor
         TargetSelectedView.appearance().tintColor = mainColor
         
