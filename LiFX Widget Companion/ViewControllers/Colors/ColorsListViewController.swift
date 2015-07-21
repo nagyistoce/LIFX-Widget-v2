@@ -11,8 +11,23 @@ class ColorsListViewController: UITableViewController {
     
     private var feedbackLights: [LIFXLight] = []
     private lazy var colors: [UIColor] = {
+        return SettingsPersistanceManager.sharedPersistanceManager.colors.map { operation in
+            if operation.kelvin > 0 {
+                return UIColor(kelvionRatio: rawKelvinToRatio(operation.kelvin))
+            }
+            else {
+                return UIColor(hue: CGFloat(operation.hue) / 360, saturation: operation.saturation, brightness: operation.brightness, alpha: 1)
+            }
+        }
+    }()
+    private lazy var whiteRatios: [(Float, Float)?] = {
         return SettingsPersistanceManager.sharedPersistanceManager.colors.map {
-            return UIColor(hue: CGFloat($0.hue) / 360, saturation: $0.saturation, brightness: $0.brightness, alpha: 1)
+            if $0.kelvin == 0 {
+                return nil
+            }
+            else {
+                return (rawKelvinToRatio($0.kelvin), Float($0.brightness))
+            }
         }
     }()
     
@@ -118,19 +133,30 @@ extension ColorsListViewController {
 extension ColorsListViewController {
 
     private func configureColorPickerViewController(colorPickerViewController: ColorPickerViewController) {
-        colorPickerViewController.configureWithBaseColor(nil, feedbackLights: feedbackLights) { self.saveColor($0) }
+        colorPickerViewController.configureWithBaseColor(nil, feedbackLights: feedbackLights) { color, white in
+            self.saveColor(color, white: white)
+        }
     }
     
     private func configureColorPickerViewControllerWithSelectedColor(colorPickerViewController: ColorPickerViewController) {
         if let selectedIndexPath = tableView.indexPathForSelectedRow() {
-            let selectedColor = colors[selectedIndexPath.row]
-            colorPickerViewController.configureWithBaseColor(selectedColor, feedbackLights: feedbackLights) { self.replaceColorAtIndexPath(selectedIndexPath, withColor: $0) }
+            if let selectedWhiteRatio = whiteRatios[selectedIndexPath.row] {
+                colorPickerViewController.configureWithBaseWhiteRatio(selectedWhiteRatio, feedbackLights: feedbackLights) { color, white in
+                    self.replaceColorAtIndexPath(selectedIndexPath, withColor: color, white: white)
+                }
+            }
+            else {
+                let selectedColor = colors[selectedIndexPath.row]
+                colorPickerViewController.configureWithBaseColor(selectedColor, feedbackLights: feedbackLights) { color, white in
+                    self.replaceColorAtIndexPath(selectedIndexPath, withColor: color, white: white)
+                }
+            }
         }
 
     }
     
-    private func replaceColorAtIndexPath(indexPath: NSIndexPath, withColor newColor: UIColor) {
-        if let targetOperation = targetOperationFromColor(newColor) {
+    private func replaceColorAtIndexPath(indexPath: NSIndexPath, withColor newColor: UIColor, white: (Float, Float)?) {
+        if let targetOperation = targetOperationFromColor(newColor, white: white) {
             
             var savedColors = SettingsPersistanceManager.sharedPersistanceManager.colors
             savedColors.removeAtIndex(indexPath.row)
@@ -139,18 +165,21 @@ extension ColorsListViewController {
 
             colors.removeAtIndex(indexPath.row)
             colors.insert(newColor, atIndex: indexPath.row)
+            whiteRatios.removeAtIndex(indexPath.row)
+            whiteRatios.insert(white, atIndex: indexPath.row)
             tableView.reloadData()
         }
     }
     
-    private func saveColor(color: UIColor) {
-        if let targetOperation = targetOperationFromColor(color) {
+    private func saveColor(color: UIColor, white: (Float, Float)?) {
+        if let targetOperation = targetOperationFromColor(color, white: white) {
             
             var savedColors = SettingsPersistanceManager.sharedPersistanceManager.colors
             savedColors.append(targetOperation)
             SettingsPersistanceManager.sharedPersistanceManager.colors = savedColors
             
             colors.append(color)
+            whiteRatios.append(white)
             tableView.reloadData()
             delay(0.01) {
                 let lastIndexPath = NSIndexPath(forRow: self.tableView(self.tableView, numberOfRowsInSection: 0) - 1, inSection: 0)
@@ -159,13 +188,22 @@ extension ColorsListViewController {
         }
     }
     
-    private func targetOperationFromColor(color: UIColor) -> LIFXTargetOperationUpdate? {
+    private func targetOperationFromColor(color: UIColor, white: (Float, Float)?) -> LIFXTargetOperationUpdate? {
+        if let white = white, let (hue, saturation, brightness, _) = color.HSBAComponents() {
+            let update = LIFXTargetOperationUpdate(kelvin: ratioToRawKelvin(white.0))
+            update?.brightness = CGFloat(white.1)
+            update.hue = UInt(hue)
+            update.saturation = saturation
+            return update
+        }
+        
         if let (hue, saturation, brightness, _) = color.HSBAComponents() {
             let update = LIFXTargetOperationUpdate(brightness: brightness)
             update.hue = UInt(hue * 360)
             update.saturation = saturation
             return update
         }
+        
         return nil
     }
     
@@ -175,7 +213,6 @@ extension ColorsListViewController {
 extension ColorsListViewController {
     private func configureTargetPickerViewController(targetPickerViewController: TargetPickerViewController) {
         targetPickerViewController.configureWithLights(feedbackLights)
-        
     }
 }
 

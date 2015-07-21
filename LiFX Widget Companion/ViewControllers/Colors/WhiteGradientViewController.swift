@@ -10,12 +10,8 @@ import UIKit
 
 class WhiteGradientViewController: UIViewController {
 
-    private var whiteRatio: Float?
-    private var brightness: Float?
-    private var onWhiteSelection: ((UIColor, Float, Float)->())?
-
-    private let topWhite = UIColor(red: 251/255, green: 220/255, blue: 175/255, alpha: 1)
-    private let bottomWhite = UIColor.whiteColor()
+    private var currentWhite: (Float, Float)?
+    private var onWhiteSelection: ((UIColor, (Float, Float))->())?
 
     private var currentBrightness: Float {
         return brightnessSlider.value
@@ -24,9 +20,10 @@ class WhiteGradientViewController: UIViewController {
         return Float(indicatorYPosition.constant / CGRectGetHeight(gradientView.bounds))
     }
     private var currentColor: UIColor {
-        return topWhite.colorByInterpolatingWithColor(bottomWhite, ratio: currentRatio)
+        return UIColor(kelvionRatio: currentRatio)
     }
     
+    private var hasPositionedIndicatorView = false
     private var gradientLayer: CAGradientLayer!
     @IBOutlet private weak var colorView: UIView!
     @IBOutlet private weak var gradientView: UIView!
@@ -48,6 +45,15 @@ class WhiteGradientViewController: UIViewController {
         super.viewDidLayoutSubviews()
 
         updateGradientLayerFrame()
+        if !hasPositionedIndicatorView {
+            hasPositionedIndicatorView = true
+
+            var position = CGPoint(x: CGRectGetWidth(gradientView.bounds) / 2, y: CGRectGetHeight(gradientView.bounds) / 2)
+            if let currentWhite = currentWhite {
+                position.y = CGRectGetHeight(gradientView.bounds) * CGFloat(currentWhite.0)
+            }
+            updateColorWithPosition(position, callOnWhiteSelection: false)
+        }
     }
 
     @IBAction func tappedGradientView(sender: UITapGestureRecognizer) {
@@ -63,7 +69,7 @@ class WhiteGradientViewController: UIViewController {
     }
     
     @IBAction func sliderChangedValue(sender: UISlider) {
-        onWhiteSelection?(currentColor, currentBrightness, currentRatio)
+        onWhiteSelection?(currentColor, (currentRatio, currentBrightness))
     }
 }
 
@@ -72,7 +78,7 @@ extension WhiteGradientViewController {
     
     private func setupGradientView() {
         gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [topWhite.CGColor, bottomWhite.CGColor]
+        gradientLayer.colors = [UIColor(kelvionRatio: 0).CGColor, UIColor(kelvionRatio: 1).CGColor]
         gradientLayer.frame = gradientView.bounds
         gradientView.layer.addSublayer(gradientLayer)
         
@@ -89,12 +95,6 @@ extension WhiteGradientViewController {
         indicatorLayer.shadowOffset = CGSize.zeroSize
         indicatorLayer.shadowRadius = 1
         indicatorLayer.shadowOpacity = 0.5
-        
-        var position = CGPoint(x: CGRectGetWidth(gradientView.bounds) / 2, y: CGRectGetHeight(gradientView.bounds) / 2)
-        if let whiteRatio = whiteRatio {
-            position.y = CGRectGetHeight(gradientView.bounds) * CGFloat(whiteRatio)
-        }
-        updateColorWithPosition(position, callOnWhiteSelection: false)
     }
     
     private func setupColorView() {
@@ -103,8 +103,8 @@ extension WhiteGradientViewController {
     }
     
     private func setupBrightnessSlider() {
-        if let brightness = brightness {
-            brightnessSlider.value = brightness
+        if let currentWhite = currentWhite {
+            brightnessSlider.value = currentWhite.1
         }
     }
 
@@ -126,7 +126,7 @@ extension WhiteGradientViewController {
         colorView.backgroundColor = currentColor
         
         if callOnWhiteSelection {
-            onWhiteSelection?(currentColor, currentBrightness, currentRatio)
+            onWhiteSelection?(currentColor, (currentRatio, currentBrightness))
         }
     }
     
@@ -135,9 +135,8 @@ extension WhiteGradientViewController {
 // Configuration
 extension WhiteGradientViewController {
     
-    func configureWithBaseRatio(whiteRatio: Float?, brightness: Float?, onWhiteSelection: (UIColor, Float, Float)->()) {
-        self.whiteRatio = whiteRatio
-        self.brightness = brightness
+    func configureWithWhite(white: (Float, Float)?, onWhiteSelection: (UIColor, (Float, Float))->()) {
+        self.currentWhite = white
         self.onWhiteSelection = onWhiteSelection
     }
     

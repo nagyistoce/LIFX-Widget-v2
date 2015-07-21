@@ -76,4 +76,18 @@ extension UIColor {
         }
     }
     
+    
+    /**
+    * Returns a UIColor which represents a given kelvin ration
+    */
+    convenience init(kelvionRatio: Float) {
+        let maximumKelvinRatioColor = UIColor.whiteColor()
+        let minimumKelvinRatioColor = UIColor(red: 251/255, green: 220/255, blue: 175/255, alpha: 1)
+        if let (r, g, b, a) = minimumKelvinRatioColor.colorByInterpolatingWithColor(maximumKelvinRatioColor, ratio: kelvionRatio).RGBComponents() {
+            self.init(red: r, green: g, blue: b, alpha: a)
+        } else {
+            self.init()
+        }
+    }
+    
 }

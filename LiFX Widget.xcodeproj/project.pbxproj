@@ -18,6 +18,7 @@
 		9C295F761B56C4CA00115F6D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F751B56C4CA00115F6D /* InterfaceController.swift */; };
 		9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F771B56C7CF00115F6D /* SeparatorView.swift */; };
 		9C295F7C1B56CE4D00115F6D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */; };
+		9C31F99E1B5ED23F00445CF7 /* LIFXKelvin+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31F99D1B5ED23F00445CF7 /* LIFXKelvin+Calculations.swift */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
 		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
 		9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */; };
@@ -110,6 +111,7 @@
 		9C295F7B1B56CE4D00115F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
 		9C2F54C01995788E0027A6A1 /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "com.maxime-dechalendar.LiFXWidget.LiFX-Widget.entitlements"; sourceTree = "<group>"; };
+		9C31F99D1B5ED23F00445CF7 /* LIFXKelvin+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LIFXKelvin+Calculations.swift"; sourceTree = "<group>"; };
 		9C43D9831B4130D000AA7719 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewControllers/Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
 		9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialAnimatedTransitioning.swift; path = ViewControllers/Tutorial/TutorialAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPersistanceManager.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */,
 				9C96FC881B5A8A790066C50C /* Delay.swift */,
 				9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */,
+				9C31F99D1B5ED23F00445CF7 /* LIFXKelvin+Calculations.swift */,
 			);
 			path = "Other sources";
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */,
+				9C31F99E1B5ED23F00445CF7 /* LIFXKelvin+Calculations.swift in Sources */,
 				9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */,
 				9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */,
 				9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */,
