@@ -30,9 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navbarAppearance.titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor() ]
         
         UIToolbar.appearance().barTintColor = UIColor.blackColor()
-        UIBarButtonItem.appearance().setTitleTextAttributes([
+        let barButtonItemAppearance =  UIBarButtonItem.appearance()
+        barButtonItemAppearance.setTitleTextAttributes([
             NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: UIFont.boldSystemFontOfSize(14)], forState: .Normal)
+        barButtonItemAppearance.setTitleTextAttributes([
+            NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+            NSFontAttributeName: UIFont.boldSystemFontOfSize(14)], forState: .Disabled)
         
         UISlider.appearance().tintColor = mainColor
         UIButton.appearance().tintColor = mainColor

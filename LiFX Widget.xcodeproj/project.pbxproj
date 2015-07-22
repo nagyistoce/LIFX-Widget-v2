@@ -37,6 +37,7 @@
 		9C96FC811B5A4DA10066C50C /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC801B5A4DA10066C50C /* ColorPickerViewController.swift */; };
 		9C96FC871B5A5AB30066C50C /* UIColor+Simplify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */; };
 		9C96FC891B5A8A790066C50C /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC881B5A8A790066C50C /* Delay.swift */; };
+		9CA6A3EC1B601C990046E1FC /* IntensityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA6A3EB1B601C990046E1FC /* IntensityPickerViewController.swift */; };
 		9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CADB1521B400CEE008EE854 /* HomeViewController.swift */; };
 		9CC0AC351B5C2E5B002D12A0 /* WhiteGradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0AC341B5C2E5B002D12A0 /* WhiteGradientViewController.swift */; };
 		9CC0AC371B5D27D5002D12A0 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0AC361B5D27D5002D12A0 /* ColorViewController.swift */; };
@@ -140,6 +141,7 @@
 		9C96FC881B5A8A790066C50C /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		9CA4CF001B41B96B0098DA60 /* Pods-companion.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.debug.xcconfig"; sourceTree = "<group>"; };
 		9CA4CF011B41B96B0098DA60 /* Pods-companion.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-companion/Pods-companion.release.xcconfig"; sourceTree = "<group>"; };
+		9CA6A3EB1B601C990046E1FC /* IntensityPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntensityPickerViewController.swift; path = Intensities/IntensityPickerViewController.swift; sourceTree = "<group>"; };
 		9CADB1521B400CEE008EE854 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CC0AC341B5C2E5B002D12A0 /* WhiteGradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteGradientViewController.swift; path = Colors/WhiteGradientViewController.swift; sourceTree = "<group>"; };
 		9CC0AC361B5D27D5002D12A0 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorViewController.swift; path = Colors/ColorViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			children = (
 				9CED93721B5FFF6D00F18BFC /* IntensitiesListViewController.swift */,
 				9CED93761B60070800F18BFC /* IntensityTableViewCell.swift */,
+				9CA6A3EB1B601C990046E1FC /* IntensityPickerViewController.swift */,
 			);
 			name = Intensities;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				9CC0AC371B5D27D5002D12A0 /* ColorViewController.swift in Sources */,
 				9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */,
 				9CADB1531B400CEE008EE854 /* HomeViewController.swift in Sources */,
+				9CA6A3EC1B601C990046E1FC /* IntensityPickerViewController.swift in Sources */,
 				9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */,
 				9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */,
 				9C96FC891B5A8A790066C50C /* Delay.swift in Sources */,

@@ -43,6 +43,9 @@ class HomeViewController: UIViewController {
         else if segue.identifier == "ColorsListViewController" {
             configureColorsListViewController(segue.destinationViewController as! ColorsListViewController)
         }
+        else if segue.identifier == "IntensityPickerViewController" {
+            configureIntensitiesListViewController(segue.destinationViewController as! IntensitiesListViewController)
+        }
     }
 
 }
@@ -85,6 +88,15 @@ extension HomeViewController {
     private func configureColorsListViewController(colorsListViewController: ColorsListViewController) {
         colorsListViewController.configureWithFeedbackLights(lights)
     }
+}
+
+// IntensitiesViewController
+extension HomeViewController {
+    
+    private func configureIntensitiesListViewController(intensitiesViewController: IntensitiesListViewController) {
+        intensitiesViewController.configureWithFeedbackLights(lights)
+    }
+    
 }
 
 // Setup default values

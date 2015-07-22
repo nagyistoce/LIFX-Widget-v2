@@ -109,7 +109,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9bU-98-fxe" kind="show" id="x2x-60-B4o"/>
+                                            <segue destination="9bU-98-fxe" kind="show" identifier="IntensityPickerViewController" id="x2x-60-B4o"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -906,6 +906,7 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                                 <connections>
                                     <outlet property="brightnessLabel" destination="PYQ-Fb-xZq" id="2lF-rt-Hco"/>
                                     <outlet property="titleLabel" destination="CV8-tX-6ju" id="eVV-PL-jv1"/>
+                                    <segue destination="4C3-aE-RkA" kind="show" identifier="IntensityPickerViewController_Update" id="nQ5-kM-aZl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -915,7 +916,11 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Intensities" id="ixb-YR-Mqb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aOG-cM-psH"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aOG-cM-psH">
+                            <connections>
+                                <segue destination="4C3-aE-RkA" kind="show" identifier="IntensityPickerViewController_New" id="9vJ-4Q-Puo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
@@ -1193,6 +1198,166 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
             </objects>
             <point key="canvasLocation" x="2099" y="1246"/>
         </scene>
+        <!--Intensity picker-->
+        <scene sceneID="vUP-Ph-tRh">
+            <objects>
+                <viewController id="4C3-aE-RkA" customClass="IntensityPickerViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="erv-Jb-NoA"/>
+                        <viewControllerLayoutGuide type="bottom" id="ar6-tK-GYw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8kB-iT-fsx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTENSITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzJ-kE-RNb">
+                                <rect key="frame" x="264" y="180" width="73" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.01" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="k3t-r2-mEJ">
+                                <rect key="frame" x="14" y="206" width="572" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="4C3-aE-RkA" eventType="valueChanged" id="icH-Vr-JqS"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g5-dv-MrR">
+                                <rect key="frame" x="16" y="189" width="29" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cold" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZA-eR-pA9">
+                                <rect key="frame" x="0.0" y="0.0" width="31" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Warm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byZ-zS-c1x">
+                                <rect key="frame" x="0.0" y="0.0" width="38" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLF-Jh-RsJ" customClass="SeparatorView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="84" width="600" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Ejr-a3-8uF"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Intensity nickname : &quot;Bed time&quot;, &quot;50%&quot;..." minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="YSy-hC-xoe">
+                                <rect key="frame" x="20" y="85" width="560" height="55"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="YUQ-Md-a37"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textfieldValueChanged:" destination="4C3-aE-RkA" eventType="editingChanged" id="0we-HJ-Wb8"/>
+                                    <outlet property="delegate" destination="4C3-aE-RkA" id="oxI-Pb-mfE"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwU-ZU-lcq" customClass="SeparatorView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="139" width="600" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Dkz-hu-Dgm"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bright" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCK-B6-jQR">
+                                <rect key="frame" x="547" y="189" width="37" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1n-ie-A4z" userLabel="Bottom toolbar">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DU8-On-h2X"/>
+                                    <barButtonItem title="PICK A LIVE FEEDBACK LIGHT" id="5tc-sy-ntL">
+                                        <connections>
+                                            <segue destination="pNW-G3-DKC" kind="show" identifier="TargetPickerViewController" id="1aJ-yi-MWm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2KL-Pv-l13"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaS-jB-YtM">
+                                <rect key="frame" x="286" y="237" width="29" height="17"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="iwU-ZU-lcq" firstAttribute="leading" secondItem="8kB-iT-fsx" secondAttribute="leading" id="4t6-er-Cz0"/>
+                            <constraint firstAttribute="trailing" secondItem="iwU-ZU-lcq" secondAttribute="trailing" id="5wZ-U8-yjP"/>
+                            <constraint firstItem="iwU-ZU-lcq" firstAttribute="leading" secondItem="SLF-Jh-RsJ" secondAttribute="leading" id="Dm1-qT-ClR"/>
+                            <constraint firstAttribute="trailing" secondItem="YSy-hC-xoe" secondAttribute="trailing" constant="20" id="Gzo-Fe-83b"/>
+                            <constraint firstItem="YSy-hC-xoe" firstAttribute="leading" secondItem="8kB-iT-fsx" secondAttribute="leading" constant="20" id="HN3-cA-WCW"/>
+                            <constraint firstItem="SLF-Jh-RsJ" firstAttribute="bottom" secondItem="YSy-hC-xoe" secondAttribute="top" id="LVC-hG-kDN"/>
+                            <constraint firstAttribute="centerX" secondItem="pzJ-kE-RNb" secondAttribute="centerX" id="N2Q-N9-uue"/>
+                            <constraint firstItem="pzJ-kE-RNb" firstAttribute="top" secondItem="iwU-ZU-lcq" secondAttribute="bottom" constant="40" id="NNm-Fv-odZ"/>
+                            <constraint firstItem="ar6-tK-GYw" firstAttribute="top" secondItem="Y1n-ie-A4z" secondAttribute="bottom" id="OWg-EG-QME"/>
+                            <constraint firstItem="k3t-r2-mEJ" firstAttribute="top" secondItem="pzJ-kE-RNb" secondAttribute="bottom" constant="9" id="VQg-pu-UgN"/>
+                            <constraint firstItem="k3t-r2-mEJ" firstAttribute="top" secondItem="PCK-B6-jQR" secondAttribute="bottom" id="bdT-Xt-APw"/>
+                            <constraint firstItem="k3t-r2-mEJ" firstAttribute="trailing" secondItem="8kB-iT-fsx" secondAttribute="trailingMargin" id="cES-h0-puI"/>
+                            <constraint firstItem="iwU-ZU-lcq" firstAttribute="trailing" secondItem="SLF-Jh-RsJ" secondAttribute="trailing" id="cR8-vc-1nI"/>
+                            <constraint firstItem="kaS-jB-YtM" firstAttribute="top" secondItem="k3t-r2-mEJ" secondAttribute="bottom" constant="1" id="cyf-3u-Aek"/>
+                            <constraint firstItem="k3t-r2-mEJ" firstAttribute="leading" secondItem="8kB-iT-fsx" secondAttribute="leadingMargin" id="eDO-GQ-CjS"/>
+                            <constraint firstAttribute="trailing" secondItem="Y1n-ie-A4z" secondAttribute="trailing" id="gDa-ee-iIg"/>
+                            <constraint firstItem="k3t-r2-mEJ" firstAttribute="leading" secondItem="3g5-dv-MrR" secondAttribute="leading" id="iaC-4v-ezE"/>
+                            <constraint firstItem="YSy-hC-xoe" firstAttribute="bottom" secondItem="iwU-ZU-lcq" secondAttribute="bottom" id="mJ5-00-Oyf"/>
+                            <constraint firstItem="PCK-B6-jQR" firstAttribute="trailing" secondItem="k3t-r2-mEJ" secondAttribute="trailing" id="niX-HB-qko"/>
+                            <constraint firstItem="k3t-r2-mEJ" firstAttribute="centerX" secondItem="kaS-jB-YtM" secondAttribute="centerX" id="ot1-qe-88J"/>
+                            <constraint firstItem="Y1n-ie-A4z" firstAttribute="leading" secondItem="8kB-iT-fsx" secondAttribute="leading" id="pkP-eT-CDW"/>
+                            <constraint firstItem="SLF-Jh-RsJ" firstAttribute="top" secondItem="erv-Jb-NoA" secondAttribute="bottom" constant="20" id="qvR-sm-MQp"/>
+                            <constraint firstItem="k3t-r2-mEJ" firstAttribute="top" secondItem="3g5-dv-MrR" secondAttribute="bottom" id="xjT-tZ-okv"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Cb4-es-Swr" appends="YES" id="8cP-Ey-Ra5"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Intensity picker" id="7Kz-OP-fAb">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="j7C-Ol-Kai">
+                            <connections>
+                                <action selector="tappedDoneButton:" destination="4C3-aE-RkA" id="Foh-1a-ODs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="brightnessLabel" destination="kaS-jB-YtM" id="XJm-a6-IzU"/>
+                        <outlet property="brightnessSlider" destination="k3t-r2-mEJ" id="iyk-9S-cgY"/>
+                        <outlet property="doneButton" destination="j7C-Ol-Kai" id="eFG-Y3-6vE"/>
+                        <outlet property="liveFeedbackTargetButton" destination="5tc-sy-ntL" id="tzV-hG-1lB"/>
+                        <outlet property="nameTextField" destination="YSy-hC-xoe" id="HzY-hb-3Ij"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nb7-Dv-Wgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Cb4-es-Swr">
+                    <connections>
+                        <action selector="tappedMainView:" destination="4C3-aE-RkA" id="WeW-E9-RFr"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1465" y="1868"/>
+        </scene>
     </scenes>
     <resources>
         <image name="home_button_color" width="119" height="119"/>
@@ -1204,5 +1369,6 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
     <inferredMetricsTieBreakers>
         <segue reference="g8L-ro-x9O"/>
         <segue reference="vhl-KV-ydu"/>
+        <segue reference="nQ5-kM-aZl"/>
     </inferredMetricsTieBreakers>
 </document>
