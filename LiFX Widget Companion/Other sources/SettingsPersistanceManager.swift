@@ -69,15 +69,19 @@ extension SettingsPersistanceManager {
     
     func setDefaultColors() {
         let rawColors = [
-            [0, 0.89, 0.89, 3500], [288, 0.89, 0.89, 3500], [236, 0.64, 0.98, 3500],
-            [177, 0.82, 1.0, 3500], [0, 0.0, 0.9, 9000],
+            [0, 0.89, 0.89], [0, 0.0, 0.9, 9000], [288, 0.89, 0.89],
+            [236, 0.64, 0.98], [177, 0.82, 1.0],
         ]
         var tmpColors: [LIFXTargetOperationUpdate] = []
         for rawColor in rawColors {
             var color = LIFXColor()
-            color.hue = UInt(rawColor[0])
-            color.saturation = CGFloat(rawColor[1])
-            color.kelvin = UInt(rawColor[3])
+            if rawColor.count < 4 {
+                color.hue = UInt(rawColor[0])
+                color.saturation = CGFloat(rawColor[1])
+            }
+            else {
+                color.kelvin = UInt(rawColor[3])
+            }
             let brightness = CGFloat(rawColor[2])
             tmpColors.append(LIFXTargetOperationUpdate(color: color, brightness: brightness))
         }
