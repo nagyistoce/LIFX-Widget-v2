@@ -44,9 +44,6 @@ class ColorsListViewController: HeaderTableViewController {
         else if (segue.identifier == "ColorPickerViewController_Update") {
             configureColorPickerViewControllerWithSelectedColor(segue.destinationViewController as! ColorPickerViewController)
         }
-        else if (segue.identifier == "TargetPickerViewController") {
-            configureTargetPickerViewController(segue.destinationViewController as! TargetPickerViewController)
-        }
     }
 
 }
@@ -163,13 +160,5 @@ extension ColorsListViewController {
         return nil
     }
     
-}
-
-// TargetPickerViewController
-extension ColorsListViewController {
-    
-    private func configureTargetPickerViewController(targetPickerViewController: TargetPickerViewController) {
-        targetPickerViewController.configureWithLights(feedbackLights)
-    }
 }
 
