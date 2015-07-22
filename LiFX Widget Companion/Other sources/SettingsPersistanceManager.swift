@@ -46,10 +46,10 @@ class SettingsPersistanceManager: NSObject {
         }
     }
     
-    var intensities: [LIFXTargetOperationUpdate] {
+    var intensities: [IntensityModelWrapper] {
         get {
             let rawIntensities = arrayForKey("intensities") as! [[String:AnyObject]]?
-            return rawIntensities?.map { LIFXTargetOperationUpdate(dictionary: $0) } ?? []
+            return rawIntensities?.map { IntensityModelWrapper(dictionary: $0)! } ?? []
         }
         set(newIntensities) {
             let rawIntensities = newIntensities.map { $0.toDictionary() }
@@ -89,10 +89,12 @@ extension SettingsPersistanceManager {
     }
     
     func setDefaultIntensities() {
-        let rawIntensities = [ 0.1, 0.5, 1 ]
-        var tmpIntensities: [LIFXTargetOperationUpdate] = []
+        let rawIntensities = [ ["Low", 0.1], ["Medium", 0.5], ["High", 1] ]
+        var tmpIntensities: [IntensityModelWrapper] = []
         for rawIntensity in rawIntensities {
-            tmpIntensities.append(LIFXTargetOperationUpdate(brightness: CGFloat(rawIntensity)))
+            let name = rawIntensity[0] as! String
+            let brightness = rawIntensity[1] as! Float
+            tmpIntensities.append(IntensityModelWrapper(name: name, brightness: brightness))
         }
         intensities = tmpIntensities
     }

@@ -43,6 +43,7 @@
 		9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
 		9CED93701B5FFC2900F18BFC /* HeaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */; };
+		9CED93751B5FFFFA00F18BFC /* IntensityModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED93741B5FFFFA00F18BFC /* IntensityModelWrapper.swift */; };
 		B28A294A2806C04773021A56 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
 		C6DC03D98999DBB3DEA72B72 /* libPods-companion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1855C7613C98F9358436270 /* libPods-companion.a */; };
 		CD749ACCC455CC5B14E52085 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
@@ -143,6 +144,7 @@
 		9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetModelWrapper.swift; sourceTree = "<group>"; };
 		9CEB138C1B402E1D003D5A9B /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = ViewControllers/Tutorial/TutorialView.swift; sourceTree = "<group>"; };
 		9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewController.swift; sourceTree = "<group>"; };
+		9CED93741B5FFFFA00F18BFC /* IntensityModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntensityModelWrapper.swift; sourceTree = "<group>"; };
 		F1855C7613C98F9358436270 /* libPods-companion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-companion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -730,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */,
+				9CED93751B5FFFFA00F18BFC /* IntensityModelWrapper.swift in Sources */,
 				9C31F99E1B5ED23F00445CF7 /* LIFXKelvin+Calculations.swift in Sources */,
 				9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */,
 				9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */,
