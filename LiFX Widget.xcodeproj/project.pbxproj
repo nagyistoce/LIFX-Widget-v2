@@ -43,7 +43,9 @@
 		9CDA27EC1B446AA000E8AEBA /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
 		9CED93701B5FFC2900F18BFC /* HeaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */; };
+		9CED93731B5FFF6D00F18BFC /* IntensitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED93721B5FFF6D00F18BFC /* IntensitiesListViewController.swift */; };
 		9CED93751B5FFFFA00F18BFC /* IntensityModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED93741B5FFFFA00F18BFC /* IntensityModelWrapper.swift */; };
+		9CED93771B60070800F18BFC /* IntensityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED93761B60070800F18BFC /* IntensityTableViewCell.swift */; };
 		B28A294A2806C04773021A56 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
 		C6DC03D98999DBB3DEA72B72 /* libPods-companion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1855C7613C98F9358436270 /* libPods-companion.a */; };
 		CD749ACCC455CC5B14E52085 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BECFF9261DD4A883082A9E /* libPods.a */; };
@@ -144,7 +146,9 @@
 		9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetModelWrapper.swift; sourceTree = "<group>"; };
 		9CEB138C1B402E1D003D5A9B /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = ViewControllers/Tutorial/TutorialView.swift; sourceTree = "<group>"; };
 		9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewController.swift; sourceTree = "<group>"; };
+		9CED93721B5FFF6D00F18BFC /* IntensitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntensitiesListViewController.swift; path = Intensities/IntensitiesListViewController.swift; sourceTree = "<group>"; };
 		9CED93741B5FFFFA00F18BFC /* IntensityModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntensityModelWrapper.swift; sourceTree = "<group>"; };
+		9CED93761B60070800F18BFC /* IntensityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntensityTableViewCell.swift; path = Intensities/IntensityTableViewCell.swift; sourceTree = "<group>"; };
 		F1855C7613C98F9358436270 /* libPods-companion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-companion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -315,6 +319,7 @@
 				9CEB138E1B402E21003D5A9B /* Tutorial */,
 				9C5BEA581B47B9C400F71519 /* Target picker */,
 				9C69BE7D1B5A346400EEFAE2 /* Colors */,
+				9CED93711B5FFF5A00F18BFC /* Intensities */,
 				9CADB1521B400CEE008EE854 /* HomeViewController.swift */,
 				9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */,
 			);
@@ -334,6 +339,7 @@
 			children = (
 				9C0A2DCC197F9ADE00D94B5F /* AppDelegate.swift */,
 				9CDA27EB1B446AA000E8AEBA /* TargetModelWrapper.swift */,
+				9CED93741B5FFFFA00F18BFC /* IntensityModelWrapper.swift */,
 				9C43D9891B41523A00AA7719 /* SettingsPersistanceManager.swift */,
 				9C96FC881B5A8A790066C50C /* Delay.swift */,
 				9C96FC861B5A5AB30066C50C /* UIColor+Simplify.swift */,
@@ -405,6 +411,15 @@
 			);
 			name = Tutorial;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		9CED93711B5FFF5A00F18BFC /* Intensities */ = {
+			isa = PBXGroup;
+			children = (
+				9CED93721B5FFF6D00F18BFC /* IntensitiesListViewController.swift */,
+				9CED93761B60070800F18BFC /* IntensityTableViewCell.swift */,
+			);
+			name = Intensities;
 			sourceTree = "<group>";
 		};
 		9D3BEE1C30B92E2453F38B13 /* Pods */ = {
@@ -731,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CED93731B5FFF6D00F18BFC /* IntensitiesListViewController.swift in Sources */,
 				9C43D98A1B41523A00AA7719 /* SettingsPersistanceManager.swift in Sources */,
 				9CED93751B5FFFFA00F18BFC /* IntensityModelWrapper.swift in Sources */,
 				9C31F99E1B5ED23F00445CF7 /* LIFXKelvin+Calculations.swift in Sources */,
@@ -739,6 +755,7 @@
 				9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
 				9C96FC811B5A4DA10066C50C /* ColorPickerViewController.swift in Sources */,
+				9CED93771B60070800F18BFC /* IntensityTableViewCell.swift in Sources */,
 				9C96FC871B5A5AB30066C50C /* UIColor+Simplify.swift in Sources */,
 				9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */,
 				9CED93701B5FFC2900F18BFC /* HeaderTableViewController.swift in Sources */,

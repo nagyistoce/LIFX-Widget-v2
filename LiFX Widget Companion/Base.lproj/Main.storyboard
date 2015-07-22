@@ -108,6 +108,9 @@
                                         <state key="normal" image="home_button_intensity">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="9bU-98-fxe" kind="show" id="x2x-60-B4o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -174,21 +177,21 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="wpq-A4-Fqw">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="123"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxC-fF-8SG">
-                                    <rect key="frame" x="20" y="20" width="560" height="83"/>
+                                    <rect key="frame" x="20" y="20" width="560" height="85"/>
                                     <animations/>
                                     <string key="text">This screen will let you pick wich targets should be displayed in the widget.
 
 Simply tap a light to add - or remove - it.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fim-6l-yOk">
-                                    <rect key="frame" x="0.0" y="122" width="600" height="1"/>
+                                    <rect key="frame" x="0.0" y="124" width="600" height="1"/>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -280,7 +283,7 @@ Simply tap a light to add - or remove - it.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Oh-Yi-hEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776" y="451"/>
+            <point key="canvasLocation" x="807" y="451"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="zqj-QZ-BS6">
@@ -741,21 +744,21 @@ You can customize which lights, colours and intensites are displayed by pressing
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="A7h-3D-4HD">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="178"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="125"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YW-GK-Lf7">
-                                    <rect key="frame" x="20" y="20" width="560" height="138"/>
+                                    <rect key="frame" x="20" y="20" width="560" height="85"/>
                                     <animations/>
                                     <string key="text">This screen will let you pick wich colors should be displayed in the widget.
 
 Press the '+' on the top right to add a color, swipe left a color in the list to remove it.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uY7-kt-N7O">
-                                    <rect key="frame" x="0.0" y="177" width="600" height="1"/>
+                                    <rect key="frame" x="0.0" y="124" width="600" height="1"/>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -807,6 +810,118 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ac-sJ-WNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="807" y="1211"/>
+        </scene>
+        <!--Intensities-->
+        <scene sceneID="hZb-iO-JjA">
+            <objects>
+                <tableViewController title="Intensities" id="9bU-98-fxe" customClass="IntensitiesListViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="4d6-AC-85o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Bqh-XA-LpM">
+                            <rect key="frame" x="0.0" y="64" width="600" height="180"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-JB-Rau">
+                                    <rect key="frame" x="20" y="20" width="560" height="158"/>
+                                    <animations/>
+                                    <string key="text">This screen will let you pick wich intensities should be displayed in the widget.
+
+An intensity will only change the brightness of the light, without modifying its colour.
+
+Press the '+' on the top right to add an intensity, swipe left a an intensity in the list to remove it.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-Po-fIN">
+                                    <rect key="frame" x="0.0" y="197" width="600" height="1"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="gaO-Mg-TIf"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="KWK-JB-Rau" secondAttribute="trailing" constant="20" id="FuG-HT-DY4"/>
+                                <constraint firstItem="KWK-JB-Rau" firstAttribute="top" secondItem="Bqh-XA-LpM" secondAttribute="top" constant="20" id="MsO-YP-4Xn"/>
+                                <constraint firstAttribute="trailing" secondItem="zyt-Po-fIN" secondAttribute="trailing" id="UAI-lu-jdD"/>
+                                <constraint firstAttribute="bottom" secondItem="zyt-Po-fIN" secondAttribute="bottom" id="UQh-uX-JYQ"/>
+                                <constraint firstItem="zyt-Po-fIN" firstAttribute="leading" secondItem="Bqh-XA-LpM" secondAttribute="leading" id="VLP-yW-ix1"/>
+                                <constraint firstAttribute="bottom" secondItem="KWK-JB-Rau" secondAttribute="bottom" constant="20" id="gDh-v8-1wk"/>
+                                <constraint firstItem="KWK-JB-Rau" firstAttribute="leading" secondItem="Bqh-XA-LpM" secondAttribute="leading" constant="20" id="lq0-x3-ECp"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IntensityTableViewCell" rowHeight="63" id="LWF-kg-t2J" customClass="IntensityTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LWF-kg-t2J" id="cww-o5-XVa">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMP-e9-1uq">
+                                            <rect key="frame" x="20" y="12" width="560" height="39"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV8-tX-6ju">
+                                                    <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-Fb-xZq">
+                                                    <rect key="frame" x="0.0" y="23" width="560" height="16"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="CV8-tX-6ju" firstAttribute="top" secondItem="fMP-e9-1uq" secondAttribute="top" id="FtM-7E-Fdz"/>
+                                                <constraint firstItem="PYQ-Fb-xZq" firstAttribute="leading" secondItem="fMP-e9-1uq" secondAttribute="leading" id="IeA-n5-HXf"/>
+                                                <constraint firstAttribute="bottom" secondItem="PYQ-Fb-xZq" secondAttribute="bottom" id="KI7-jU-v81"/>
+                                                <constraint firstItem="PYQ-Fb-xZq" firstAttribute="top" secondItem="CV8-tX-6ju" secondAttribute="bottom" constant="2" id="eBc-LR-glc"/>
+                                                <constraint firstItem="CV8-tX-6ju" firstAttribute="leading" secondItem="fMP-e9-1uq" secondAttribute="leading" id="iz8-Uh-GFl"/>
+                                                <constraint firstAttribute="trailing" secondItem="PYQ-Fb-xZq" secondAttribute="trailing" id="qfO-Oq-ScX"/>
+                                                <constraint firstAttribute="trailing" secondItem="CV8-tX-6ju" secondAttribute="trailing" id="wmy-CF-X6m"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="fMP-e9-1uq" secondAttribute="centerY" id="JdL-E2-CsZ"/>
+                                        <constraint firstItem="fMP-e9-1uq" firstAttribute="leading" secondItem="cww-o5-XVa" secondAttribute="leading" constant="20" id="me9-9e-9Wt"/>
+                                        <constraint firstAttribute="trailing" secondItem="fMP-e9-1uq" secondAttribute="trailing" constant="20" id="w8O-Yk-uIU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="brightnessLabel" destination="PYQ-Fb-xZq" id="2lF-rt-Hco"/>
+                                    <outlet property="titleLabel" destination="CV8-tX-6ju" id="eVV-PL-jv1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9bU-98-fxe" id="DhH-33-Hmb"/>
+                            <outlet property="delegate" destination="9bU-98-fxe" id="RRH-Jm-L8t"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Intensities" id="ixb-YR-Mqb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aOG-cM-psH"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7gZ-9L-EGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="1868"/>
         </scene>
         <!--Colour picker-->
         <scene sceneID="Y9K-Vz-JqC">
@@ -956,7 +1071,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEG-cm-R6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489" y="1211"/>
+            <point key="canvasLocation" x="1465" y="1211"/>
         </scene>
         <!--White Gradient View Controller-->
         <scene sceneID="Bzw-Xw-H4w">
@@ -1056,7 +1171,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2185" y="1563"/>
+            <point key="canvasLocation" x="2726" y="1246"/>
         </scene>
         <!--Color View Controller-->
         <scene sceneID="4cT-Dy-0h1">
@@ -1076,7 +1191,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuW-E5-jSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185" y="1054"/>
+            <point key="canvasLocation" x="2099" y="1246"/>
         </scene>
     </scenes>
     <resources>
@@ -1087,7 +1202,7 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
         <image name="tutorial_image_valid_token" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g8L-ro-x9O"/>
+        <segue reference="7D6-Ch-Hb6"/>
         <segue reference="vhl-KV-ydu"/>
     </inferredMetricsTieBreakers>
 </document>
