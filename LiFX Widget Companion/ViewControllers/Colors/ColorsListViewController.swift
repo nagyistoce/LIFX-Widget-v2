@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class ColorsListViewController: UITableViewController {
+class ColorsListViewController: HeaderTableViewController {
     
     private var feedbackLights: [LIFXLight] = []
     private lazy var colors: [UIColor] = {
@@ -83,50 +83,6 @@ extension ColorsListViewController {
         }
     }
     
-}
-
-// UIScrollViewDelegate
-extension ColorsListViewController {
-    
-    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView === tableView && decelerate == false {
-            pinTableViewToHeader()
-        }
-    }
-    
-    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        if scrollView === tableView {
-            pinTableViewToHeader()
-        }
-    }
-    
-    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView === tableView {
-            let currentYPosition = tableView.contentOffset.y + tableView.contentInset.top
-            let targetYPosition = targetContentOffset.memory.y + tableView.contentInset.top
-            let headerHeight = CGRectGetHeight(tableView.tableHeaderView!.bounds)
-            if currentYPosition > headerHeight && targetYPosition < headerHeight {
-                targetContentOffset.memory.y = headerHeight - tableView.contentInset.top
-            }
-        }
-    }
-    
-    private func pinTableViewToHeader() {
-        var contentOffset = tableView.contentOffset
-        let scrollPosition = contentOffset.y + tableView.contentInset.top
-        let headerHeight = CGRectGetHeight(tableView.tableHeaderView!.bounds)
-        if scrollPosition < headerHeight / 2 {
-            contentOffset.y = 0
-        }
-        else if scrollPosition < headerHeight {
-            contentOffset.y = headerHeight
-        }
-        else {
-            return ;
-        }
-        contentOffset.y -= tableView.contentInset.top
-        tableView.setContentOffset(contentOffset, animated: true)
-    }
 }
 
 // ColorPickerViewController
@@ -211,6 +167,7 @@ extension ColorsListViewController {
 
 // TargetPickerViewController
 extension ColorsListViewController {
+    
     private func configureTargetPickerViewController(targetPickerViewController: TargetPickerViewController) {
         targetPickerViewController.configureWithLights(feedbackLights)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TargetPickerViewController: UITableViewController {
+class TargetPickerViewController: HeaderTableViewController {
     
     // Of LIFXLocation, LIFXGroup and LIFXLight
     var orderedTargets: [LIFXModel] = []
@@ -137,48 +137,4 @@ extension TargetPickerViewController {
         }
     }
     
-}
-
-// UIScrollViewDelegate
-extension TargetPickerViewController {
-
-    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView === tableView  && tableView.tableHeaderView != nil && decelerate == false {
-            pinTableViewToHeader()
-        }
-    }
-
-    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        if scrollView === tableView && tableView.tableHeaderView != nil {
-            pinTableViewToHeader()
-        }
-    }
-
-    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView === tableView && tableView.tableHeaderView != nil {
-            let currentYPosition = tableView.contentOffset.y + tableView.contentInset.top
-            let targetYPosition = targetContentOffset.memory.y + tableView.contentInset.top
-            let headerHeight = CGRectGetHeight(tableView.tableHeaderView!.bounds)
-            if currentYPosition > headerHeight && targetYPosition < headerHeight {
-                targetContentOffset.memory.y = headerHeight - tableView.contentInset.top
-            }
-        }
-    }
-
-    private func pinTableViewToHeader() {
-        var contentOffset = tableView.contentOffset
-        let scrollPosition = contentOffset.y + tableView.contentInset.top
-        let headerHeight = CGRectGetHeight(tableView.tableHeaderView!.bounds)
-        if scrollPosition < headerHeight / 2 {
-            contentOffset.y = 0
-        }
-        else if scrollPosition < headerHeight {
-            contentOffset.y = headerHeight
-        }
-        else {
-            return ;
-        }
-        contentOffset.y -= tableView.contentInset.top
-        tableView.setContentOffset(contentOffset, animated: true)
-    }
 }
