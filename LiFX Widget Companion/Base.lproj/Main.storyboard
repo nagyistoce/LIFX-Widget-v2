@@ -825,8 +825,8 @@ Press the '+' on the top right to add a color, swipe left a color in the list to
                             <rect key="frame" x="0.0" y="64" width="600" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-JB-Rau">
-                                    <rect key="frame" x="20" y="20" width="560" height="158"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-JB-Rau">
+                                    <rect key="frame" x="20" y="20" width="560" height="140"/>
                                     <animations/>
                                     <string key="text">This screen will let you pick wich intensities should be displayed in the widget.
 
@@ -837,8 +837,8 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-Po-fIN">
-                                    <rect key="frame" x="0.0" y="197" width="600" height="1"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-Po-fIN">
+                                    <rect key="frame" x="0.0" y="179" width="600" height="1"/>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -1202,7 +1202,7 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
         <image name="tutorial_image_valid_token" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7D6-Ch-Hb6"/>
+        <segue reference="g8L-ro-x9O"/>
         <segue reference="vhl-KV-ydu"/>
     </inferredMetricsTieBreakers>
 </document>
