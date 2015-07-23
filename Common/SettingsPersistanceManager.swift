@@ -35,10 +35,10 @@ class SettingsPersistanceManager: NSObject {
         }
     }
     
-    var colors: [LIFXTargetOperationUpdate] {
+    var colors: [ColorModelWrapper] {
         get {
             let rawColors = arrayForKey("colors") as! [[String:AnyObject]]?
-            return rawColors?.map { LIFXTargetOperationUpdate(dictionary: $0) } ?? []
+            return rawColors?.map { ColorModelWrapper(dictionary: $0)! } ?? []
         }
         set(newColors) {
             let rawColors = newColors.map { $0.toDictionary() }
@@ -69,21 +69,21 @@ extension SettingsPersistanceManager {
     
     func setDefaultColors() {
         let rawColors = [
-            [0, 0.89, 0.89], [0, 0.0, 0.9, 9000], [288, 0.89, 0.89],
-            [236, 0.64, 0.98], [177, 0.82, 1.0],
+            [0.0, 0.89, 0.89], [0.0, 0.0, 0.9, 1], [0.8, 0.89, 0.89],
+            [0.65, 0.64, 0.98], [0.49, 0.82, 1.0],
         ]
-        var tmpColors: [LIFXTargetOperationUpdate] = []
+        var tmpColors: [ColorModelWrapper] = []
         for rawColor in rawColors {
-            var color = LIFXColor()
+            let (h, s, b) = (rawColor[0], rawColor[1], rawColor[2])
             if rawColor.count < 4 {
-                color.hue = UInt(rawColor[0])
-                color.saturation = CGFloat(rawColor[1])
+                let color = UIColor(hue: CGFloat(h), saturation: CGFloat(s), brightness: CGFloat(b), alpha: CGFloat(1))
+                tmpColors.append(ColorModelWrapper(color: color))
             }
             else {
-                color.kelvin = UInt(rawColor[3])
+                let color = UIColor(hue: CGFloat(h), saturation: CGFloat(s), brightness: CGFloat(1), alpha: CGFloat(1))
+                let white = (Float(rawColor[3]), Float(b))
+                tmpColors.append(ColorModelWrapper(color: color, white: white))
             }
-            let brightness = CGFloat(rawColor[2])
-            tmpColors.append(LIFXTargetOperationUpdate(color: color, brightness: brightness))
         }
         colors = tmpColors
     }
