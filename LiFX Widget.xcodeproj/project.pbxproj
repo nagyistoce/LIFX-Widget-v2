@@ -31,6 +31,7 @@
 		9C7D1F561A7BCB230091CDE5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F541A7BCB230091CDE5 /* Interface.storyboard */; };
 		9C7D1F581A7BCB230091CDE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F571A7BCB230091CDE5 /* Images.xcassets */; };
 		9C7D1F5B1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C834D8F1B616B0200D0D966 /* ColorModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D8E1B616B0200D0D966 /* ColorModelWrapper.swift */; };
 		9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8813261B417F2F0062DD86 /* OAuthTokenPickerViewController.swift */; };
 		9C8813291B41AC270062DD86 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8813281B41AC270062DD86 /* Icons.xcassets */; };
 		9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96FC7E1B5A40310066C50C /* ColorTableViewCell.swift */; };
@@ -331,6 +332,7 @@
 		9C780E11198ECCAD00FA4826 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9C834D8E1B616B0200D0D966 /* ColorModelWrapper.swift */,
 				9C7E72AF197FBB5F00BFC0E7 /* LiFXWidget-Bridging-Header.h */,
 			);
 			path = Common;
@@ -774,6 +776,7 @@
 				9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */,
 				9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */,
 				9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */,
+				9C834D8F1B616B0200D0D966 /* ColorModelWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

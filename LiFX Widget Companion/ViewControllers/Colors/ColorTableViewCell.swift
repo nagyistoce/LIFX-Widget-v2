@@ -24,8 +24,8 @@ extension ColorTableViewCell {
     }
     
     
-    func configureWithColor(color: UIColor) {
-        backgroundColor = color
+    func configureWithColor(colorModel: ColorModelWrapper) {
+        backgroundColor = colorModel.color
     }
     
 }

@@ -10,9 +10,8 @@ import UIKit
 
 class ColorPickerViewController: UIViewController {
 
-    private var currentColor: UIColor?
-    private var currentWhite: (Float, Float)?
-    private var onColorSelection: ((UIColor, (Float, Float)?)->())?
+    private var currentColor: ColorModelWrapper?
+    private var onColorSelection: ((ColorModelWrapper)->())?
     private var liveFeedbackTarget: LIFXTargetable?
     private var feedbackLights: [LIFXLight]?
     private var cancelableDelayedLiveFeedback: dispatch_cancelable_closure?
@@ -75,7 +74,7 @@ extension ColorPickerViewController: UIScrollViewDelegate {
     }
     
     private func configureHeaderView() {
-        if currentWhite == nil {
+        if currentColor?.white == nil {
             contentScrollView.contentOffset = CGPoint.zeroPoint
         }
         else {
@@ -108,21 +107,21 @@ extension ColorPickerViewController: UIScrollViewDelegate {
 extension ColorPickerViewController {
     
     private func configureColorViewController(colorViewController: ColorViewController) {
-        colorViewController.configureWithBaseColor(currentColor) {
-            self.currentColor = $0
-            self.updateLiveFeedbackTargetWithColor($0)
+        colorViewController.configureWithBaseColor(currentColor?.color) {
+            self.currentColor?.color = $0
+            self.currentColor?.white = nil
+            self.updateLiveFeedbackTargetWithCurrentColor()
         }
     }
     
-    private func updateLiveFeedbackTargetWithColor(color: UIColor) {
-        if let (hue, saturation, brightness, _) = color.HSBAComponents(), let liveFeedbackTarget = liveFeedbackTarget {
-            let update = LIFXTargetOperationUpdate(brightness: brightness)
-            update.hue = UInt(hue * 360)
-            update.saturation = saturation
-
-            cancel_delay(cancelableDelayedLiveFeedback)
-            cancelableDelayedLiveFeedback = delay(0.05) {
-                LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(update, toTarget: liveFeedbackTarget, onCompletion: nil, onFailure: nil)
+    private func updateLiveFeedbackTargetWithCurrentColor() {
+        if let liveFeedbackTarget = self.liveFeedbackTarget {
+            if let currentColor = currentColor {
+                cancel_delay(cancelableDelayedLiveFeedback)
+                cancelableDelayedLiveFeedback = delay(0.05) {
+                    LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(currentColor.toTargetUpdate(), toTarget: liveFeedbackTarget, onCompletion: nil,
+                        onFailure: { e in println("\(e) eeeee") })
+                }
             }
         }
     }
@@ -132,26 +131,14 @@ extension ColorPickerViewController {
 // WhiteGradientViewController
 extension ColorPickerViewController {
     
-    // TODO: Use the whiteRatio and brightness parameters
     private func configureWhiteViewController(whiteViewController: WhiteGradientViewController) {
-        whiteViewController.configureWithWhite(currentWhite) { color, white in
-            self.currentColor = color
-            self.currentWhite = white
-            self.updateLiveFeedbackTargetWithWhite(white)
+        whiteViewController.configureWithWhite(currentColor?.white) { color, white in
+            self.currentColor?.color = color
+            self.currentColor?.white = white
+            self.updateLiveFeedbackTargetWithCurrentColor()
         }
     }
-    
-    private func updateLiveFeedbackTargetWithWhite(white: (Float, Float)) {
-        if let liveFeedbackTarget = liveFeedbackTarget {
-            let update = LIFXTargetOperationUpdate(kelvin: ratioToRawKelvin(white.0))
-            update.brightness = CGFloat(white.1)
 
-            cancel_delay(cancelableDelayedLiveFeedback)
-            cancelableDelayedLiveFeedback = delay(0.05) {
-                LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(update, toTarget: liveFeedbackTarget, onCompletion: nil, onFailure: nil)
-            }
-        }
-    }
 }
 
 // TargetPickerViewController
@@ -169,14 +156,8 @@ extension ColorPickerViewController {
 // Configuration
 extension ColorPickerViewController {
     
-    func configureWithBaseColor(baseColor: UIColor?, feedbackLights: [LIFXLight], onColorSelection: ((UIColor, (Float, Float)?)->())) {
-        self.currentColor = baseColor
-        self.feedbackLights = feedbackLights
-        self.onColorSelection = onColorSelection
-    }
-
-    func configureWithBaseWhiteRatio(baseWhiteRatio: (Float, Float), feedbackLights: [LIFXLight], onColorSelection: ((UIColor, (Float, Float)?)->())) {
-        self.currentWhite = baseWhiteRatio
+    func configureWithBaseColor(baseColor: ColorModelWrapper?, feedbackLights: [LIFXLight], onColorSelection: (ColorModelWrapper)->()) {
+        self.currentColor = baseColor ?? ColorModelWrapper(color: UIColor.randomColor())
         self.feedbackLights = feedbackLights
         self.onColorSelection = onColorSelection
     }
@@ -188,12 +169,7 @@ extension ColorPickerViewController {
 
     private func validateSelectionAndDismiss() {
         if let currentColor = currentColor {
-            if displayedPage == 0 {
-                onColorSelection?(currentColor, nil)
-            }
-            else {
-                onColorSelection?(currentColor, currentWhite)
-            }
+            onColorSelection?(currentColor)
         }
         navigationController?.popViewControllerAnimated(true)
     }
