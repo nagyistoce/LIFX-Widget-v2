@@ -25,6 +25,10 @@ class ExtensionViewController: UIViewController {
     @IBOutlet private weak var colorsCollectionView: UICollectionView!
     @IBOutlet private weak var colorsCollectionViewHeight: NSLayoutConstraint!
     
+    private lazy var intensities = SettingsPersistanceManager.sharedPersistanceManager.intensities
+    @IBOutlet private weak var intensitiesCollectionView: UICollectionView!
+    @IBOutlet private weak var intensitiesCollectionViewHeight: NSLayoutConstraint!
+    
     @IBOutlet private weak var powerStatusSwitch: UISwitch!
     @IBAction func powerStatusSwitchDidChangeValue(sender: UISwitch) {
         updateSelectedTargetPowerStatusIfPossible()
@@ -65,6 +69,9 @@ extension ExtensionViewController: UICollectionViewDataSource, UICollectionViewD
         else if collectionView == colorsCollectionView {
             return numberOfItemsInColorsCollectionView()
         }
+        else if collectionView == intensitiesCollectionView {
+            return numberOfItemsInIntensitiesCollectionView()
+        }
         return 0
     }
     
@@ -74,6 +81,9 @@ extension ExtensionViewController: UICollectionViewDataSource, UICollectionViewD
         }
         else if collectionView == colorsCollectionView {
             return colorsCollectionViewCellForItemAtIndexPath(indexPath)
+        }
+        else if collectionView == intensitiesCollectionView {
+            return intensitiesCollectionViewCellForItemAtIndexPath(indexPath)
         }
         
         assertionFailure("collectionView isn't handeled")
@@ -102,6 +112,9 @@ extension ExtensionViewController: UICollectionViewDataSource, UICollectionViewD
         }
         else if collectionView == colorsCollectionView {
             colorsCollectionViewDidSelectItemAtIndexPath(indexPath)
+        }
+        else if collectionView == intensitiesCollectionView {
+            intensitiesCollectionViewDidSelectItemAtIndexPath(indexPath)
         }
     }
     
@@ -157,11 +170,33 @@ extension ExtensionViewController /* ColorsCollectionViewCell */ {
     
 }
 
+extension ExtensionViewController /* IntensitiesCollectionView */ {
+    
+    private func numberOfItemsInIntensitiesCollectionView() -> Int {
+        return intensities.count
+    }
+    
+    private func intensitiesCollectionViewCellForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = intensitiesCollectionView.dequeueReusableCellWithReuseIdentifier("IntensityCollectionViewCell", forIndexPath: indexPath) as! IntensityCollectionViewCell
+        cell.configureWithIntensity(intensities[indexPath.row])
+        return cell
+    }
+    
+    private func intensitiesCollectionViewDidSelectItemAtIndexPath(indexPath: NSIndexPath) {
+        if let selectedTarget = selectedTarget {
+            let selectedIntensity = intensities[indexPath.row]
+            LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(selectedIntensity.toTargetUpdate(), toTarget: selectedTarget, onCompletion: nil, onFailure: nil)
+        }
+    }
+    
+}
+
 extension ExtensionViewController /* Updating UI */ {
     
     private func updateCollectionViewsHeights() {
         targetsCollectionViewHeight.constant = targetsCollectionView.contentSize.height
         colorsCollectionViewHeight.constant = colorsCollectionView.contentSize.height
+        intensitiesCollectionViewHeight.constant = intensitiesCollectionView.contentSize.height
         view.layoutIfNeeded()
     }
     
@@ -177,18 +212,22 @@ extension ExtensionViewController /* Updating UI */ {
         if selectedTarget == nil {
             powerStatusSwitch.enabled = false
             powerStatusSwitch.on = false
-            colorsCollectionView.userInteractionEnabled = false
-            colorsCollectionView.alpha = 0.5
-            if let selectedIndexPaths = colorsCollectionView.indexPathsForSelectedItems() as? [NSIndexPath] {
-                for indexPath in selectedIndexPaths {
-                    colorsCollectionView.deselectItemAtIndexPath(indexPath, animated: false)
+            for collectionView in [colorsCollectionView, intensitiesCollectionView] {
+                collectionView.userInteractionEnabled = false
+                collectionView.alpha = 0.5
+                if let selectedIndexPaths = collectionView.indexPathsForSelectedItems() as? [NSIndexPath] {
+                    for indexPath in selectedIndexPaths {
+                        collectionView.deselectItemAtIndexPath(indexPath, animated: false)
+                    }
                 }
             }
         }
         else {
             powerStatusSwitch.enabled = true
-            colorsCollectionView.userInteractionEnabled = true
-            colorsCollectionView.alpha = 1
+            for collectionView in [colorsCollectionView, intensitiesCollectionView] {
+                collectionView.userInteractionEnabled = true
+                collectionView.alpha = 1
+            }
         }
     }
     

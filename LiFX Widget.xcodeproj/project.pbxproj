@@ -53,6 +53,7 @@
 		9CD03C071B61518400D013CB /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD03C061B61518400D013CB /* CircleCollectionViewCell.swift */; };
 		9CE9D6A81B61873F00E04EA1 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9D6A61B61873F00E04EA1 /* ColorCollectionViewCell.swift */; };
 		9CE9D6A91B61873F00E04EA1 /* TargetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9D6A71B61873F00E04EA1 /* TargetCollectionViewCell.swift */; };
+		9CE9D6AB1B62A53400E04EA1 /* IntensityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9D6AA1B62A53400E04EA1 /* IntensityCollectionViewCell.swift */; };
 		9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB138C1B402E1D003D5A9B /* TutorialView.swift */; };
 		9CED93701B5FFC2900F18BFC /* HeaderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */; };
 		9CED93731B5FFF6D00F18BFC /* IntensitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED93721B5FFF6D00F18BFC /* IntensitiesListViewController.swift */; };
@@ -161,6 +162,7 @@
 		9CD03C061B61518400D013CB /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleCollectionViewCell.swift; path = "LiFX Widget/Views/CircleCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		9CE9D6A61B61873F00E04EA1 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorCollectionViewCell.swift; path = "LiFX Widget/Views/ColorCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		9CE9D6A71B61873F00E04EA1 /* TargetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetCollectionViewCell.swift; path = "LiFX Widget/Views/TargetCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		9CE9D6AA1B62A53400E04EA1 /* IntensityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntensityCollectionViewCell.swift; path = ../Views/IntensityCollectionViewCell.swift; sourceTree = "<group>"; };
 		9CEB138C1B402E1D003D5A9B /* TutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialView.swift; path = ViewControllers/Tutorial/TutorialView.swift; sourceTree = "<group>"; };
 		9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewController.swift; sourceTree = "<group>"; };
 		9CED93721B5FFF6D00F18BFC /* IntensitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntensitiesListViewController.swift; path = Intensities/IntensitiesListViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				9CD03C061B61518400D013CB /* CircleCollectionViewCell.swift */,
 				9CE9D6A71B61873F00E04EA1 /* TargetCollectionViewCell.swift */,
 				9CE9D6A61B61873F00E04EA1 /* ColorCollectionViewCell.swift */,
+				9CE9D6AA1B62A53400E04EA1 /* IntensityCollectionViewCell.swift */,
 			);
 			name = Views;
 			path = ViewControllers;
@@ -810,6 +813,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C834D841B61539900D0D966 /* TargetModelWrapper.swift in Sources */,
+				9CE9D6AB1B62A53400E04EA1 /* IntensityCollectionViewCell.swift in Sources */,
 				9C834D961B61719E00D0D966 /* LIFXKelvin+Calculations.swift in Sources */,
 				9C834D8A1B61540B00D0D966 /* IntensityModelWrapper.swift in Sources */,
 				9CE9D6A91B61873F00E04EA1 /* TargetCollectionViewCell.swift in Sources */,
