@@ -55,6 +55,7 @@ class ExtensionViewController: UIViewController {
         super.viewDidLoad()
         
         setupLIFXAPIWrapper()
+        setupEmptyViewIfNeeded()
         selectFirstTargetIfNeeded()
         updateTargetActionsViewsAvailability()
     }
@@ -219,6 +220,15 @@ extension ExtensionViewController /* Updating UI */ {
         colorsCollectionViewHeight.constant = colorsCollectionView.contentSize.height
         intensitiesCollectionViewHeight.constant = intensitiesCollectionView.contentSize.height
         view.layoutIfNeeded()
+    }
+    
+    private func setupEmptyViewIfNeeded() {
+        if targets.isEmpty {
+            updateViewWithErrorTitle("Please add at least a target in the companion app")
+        }
+        else if colors.isEmpty && intensities.isEmpty {
+            updateViewWithErrorTitle("Please add at least a colour or an intensity")
+        }
     }
     
     private func selectFirstTargetIfNeeded() {

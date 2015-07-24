@@ -173,7 +173,7 @@
                                     <constraint firstAttribute="bottom" secondItem="syQ-Sb-XkF" secondAttribute="bottom" id="rHB-g5-asv"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="037-Uz-yBu" userLabel="OAuth view">
+                            <view hidden="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="999" translatesAutoresizingMaskIntoConstraints="NO" id="037-Uz-yBu" userLabel="OAuth view">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="211"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7T-yA-c70">
@@ -223,6 +223,8 @@
                                     <constraint firstAttribute="centerY" secondItem="q7T-yA-c70" secondAttribute="centerY" id="01d-4i-8du"/>
                                     <constraint firstAttribute="trailing" secondItem="q7T-yA-c70" secondAttribute="trailing" id="Dba-j8-3vt"/>
                                     <constraint firstItem="q7T-yA-c70" firstAttribute="leading" secondItem="037-Uz-yBu" secondAttribute="leading" id="Pl7-u0-RwT"/>
+                                    <constraint firstItem="q7T-yA-c70" firstAttribute="top" relation="greaterThanOrEqual" secondItem="037-Uz-yBu" secondAttribute="top" constant="10" id="lbB-pf-yMx"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q7T-yA-c70" secondAttribute="bottom" constant="10" id="oHL-Fj-ao7"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="39c-dp-zeY" appends="YES" id="sfM-lB-HvW"/>
@@ -239,7 +241,7 @@
                             <constraint firstItem="037-Uz-yBu" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="dmu-HB-bHU"/>
                             <constraint firstAttribute="trailing" secondItem="I7l-TL-hie" secondAttribute="trailing" id="f5v-M3-5Qg"/>
                             <constraint firstItem="I7l-TL-hie" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="kjM-rb-fxo"/>
-                            <constraint firstAttribute="bottom" secondItem="I7l-TL-hie" secondAttribute="bottom" priority="999" id="w5l-S8-cNa"/>
+                            <constraint firstAttribute="bottom" secondItem="I7l-TL-hie" secondAttribute="bottom" priority="750" id="w5l-S8-cNa"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
