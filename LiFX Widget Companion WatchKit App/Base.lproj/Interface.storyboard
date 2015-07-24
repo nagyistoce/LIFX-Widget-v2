@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mku-85-O5o">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
+        <!--AlertInterfaceController-->
+        <scene sceneID="fU3-A9-LGE">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="LiFX_Widget_Companion_WatchKit_Extension"/>
+                <controller identifier="AlertInterfaceController" id="OJI-na-xGm" customClass="AlertInterfaceController" customModule="LiFX_Widget_Companion_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="0.75" alignment="left" text="Content" textAlignment="center" numberOfLines="0" id="Fsl-lo-DUB">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Dismiss" id="5J4-YX-e99">
+                            <connections>
+                                <action selector="tappedCancelButton" destination="OJI-na-xGm" id="un9-pg-LuY"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="cancelButton" destination="5J4-YX-e99" id="dIk-7O-64P"/>
+                        <outlet property="contentLabel" destination="Fsl-lo-DUB" id="FXS-hc-Vh8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="284" y="478"/>
+        </scene>
+        <!--TargetActionInterfaceController-->
+        <scene sceneID="Zn0-6U-wbh">
+            <objects>
+                <controller identifier="TargetActionInterfaceController" id="JZJ-TM-dlB" customClass="TargetActionInterfaceController" customModule="LiFX_Widget_Companion_WatchKit_Extension">
+                    <items>
+                        <switch width="1" alignment="center" value="YES" title="On / Off" id="cdJ-u5-y1r">
+                            <connections>
+                                <action selector="powerStatusSwitchChangedValue:" destination="JZJ-TM-dlB" id="qVf-i2-aKa"/>
+                            </connections>
+                        </switch>
+                        <separator alignment="left" id="bnW-0Z-0bi"/>
+                        <table alignment="left" id="jAZ-Dg-REe">
+                            <items>
+                                <tableRow identifier="ColorRowController" id="Kub-zI-IIU" customClass="ColorRowController" customModule="LiFX_Widget_Companion_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="WWS-le-LQG">
+                                        <color key="backgroundColor" red="0.79834487759999995" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="mainGroup" destination="WWS-le-LQG" id="EHV-s2-UY0"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <separator alignment="left" id="GDN-Ox-j1E"/>
+                        <table alignment="left" id="GoB-dI-VVl">
+                            <items>
+                                <tableRow identifier="IntensityRowController" id="24O-Nl-12a" customClass="IntensityRowController" customModule="LiFX_Widget_Companion_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="m44-mD-CHt">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="MDw-wE-Imc"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="MDw-wE-Imc" id="HAE-o5-Vhf"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="colorsTable" destination="jAZ-Dg-REe" id="r9Z-wd-GhL"/>
+                        <outlet property="intensitiesTable" destination="GoB-dI-VVl" id="5in-HY-NWn"/>
+                        <outlet property="powerStatusSwitch" destination="cdJ-u5-y1r" id="upF-X3-OCe"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="463" y="259"/>
+        </scene>
+        <!--TargetsInterfaceController-->
+        <scene sceneID="VDh-JB-Lux">
+            <objects>
+                <controller identifier="TargetsInterfaceController" id="mku-85-O5o" customClass="TargetsInterfaceController" customModule="LiFX_Widget_Companion_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="jJh-T5-9Lj">
+                            <items>
+                                <tableRow identifier="TargetRowController" id="F1f-MY-LZM" customClass="TargetRowController" customModule="LiFX_Widget_Companion_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="o47-OR-vRM">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Light name" textAlignment="center" id="WyM-YY-ene"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="WyM-YY-ene" id="Qej-u8-lhk"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="targetsTable" destination="jJh-T5-9Lj" id="xa5-c2-3D5"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="284" y="259"/>
         </scene>

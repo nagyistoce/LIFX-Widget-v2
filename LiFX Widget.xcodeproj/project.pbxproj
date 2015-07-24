@@ -15,7 +15,6 @@
 		9C0A2DF5197F9BA200D94B5F /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF4197F9BA200D94B5F /* ExtensionViewController.swift */; };
 		9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */; };
 		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
-		9C295F761B56C4CA00115F6D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F751B56C4CA00115F6D /* InterfaceController.swift */; };
 		9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F771B56C7CF00115F6D /* SeparatorView.swift */; };
 		9C295F7C1B56CE4D00115F6D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
@@ -24,6 +23,18 @@
 		9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */; };
 		9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */; };
 		9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */; };
+		9C6FC36A1B62DAF100B21CB5 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D861B6153EF00D0D966 /* SettingsPersistanceManager.swift */; };
+		9C6FC36B1B62DAF100B21CB5 /* TargetModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D831B61539900D0D966 /* TargetModelWrapper.swift */; };
+		9C6FC36C1B62DAF100B21CB5 /* ColorModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D8E1B616B0200D0D966 /* ColorModelWrapper.swift */; };
+		9C6FC36D1B62DAF100B21CB5 /* IntensityModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D891B61540B00D0D966 /* IntensityModelWrapper.swift */; };
+		9C6FC36E1B62DAF100B21CB5 /* LIFXKelvin+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D941B61719E00D0D966 /* LIFXKelvin+Calculations.swift */; };
+		9C6FC36F1B62DAF100B21CB5 /* UIColor+Simplify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D911B61717C00D0D966 /* UIColor+Simplify.swift */; };
+		9C6FC37B1B62E82A00B21CB5 /* AlertInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FC3731B62E82A00B21CB5 /* AlertInterfaceController.swift */; };
+		9C6FC37C1B62E82A00B21CB5 /* ColorRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FC3751B62E82A00B21CB5 /* ColorRowController.swift */; };
+		9C6FC37D1B62E82A00B21CB5 /* IntensityRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FC3761B62E82A00B21CB5 /* IntensityRowController.swift */; };
+		9C6FC37E1B62E82A00B21CB5 /* TargetActionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FC3771B62E82A00B21CB5 /* TargetActionInterfaceController.swift */; };
+		9C6FC37F1B62E82A00B21CB5 /* TargetRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FC3791B62E82A00B21CB5 /* TargetRowController.swift */; };
+		9C6FC3801B62E82A00B21CB5 /* TargetsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6FC37A1B62E82A00B21CB5 /* TargetsInterfaceController.swift */; };
 		9C77A4CE19D16FEC000ADD99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C77A4CD19D16FEC000ADD99 /* Images.xcassets */; };
 		9C7D1F4E1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F4D1A7BCB230091CDE5 /* LiFX Widget Companion WatchKit App.app */; };
 		9C7D1F561A7BCB230091CDE5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7D1F541A7BCB230091CDE5 /* Interface.storyboard */; };
@@ -123,7 +134,6 @@
 		9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		9C1309911ABA049F0022E23B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C1309921ABA049F0022E23B /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9C295F751B56C4CA00115F6D /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		9C295F771B56C7CF00115F6D /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = "Reusable Views/SeparatorView.swift"; sourceTree = "<group>"; };
 		9C295F7B1B56CE4D00115F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
@@ -135,6 +145,12 @@
 		9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetPickerViewController.swift; path = "Target picker/TargetPickerViewController.swift"; sourceTree = "<group>"; };
 		9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsListViewController.swift; path = Colors/ColorsListViewController.swift; sourceTree = "<group>"; };
+		9C6FC3731B62E82A00B21CB5 /* AlertInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertInterfaceController.swift; sourceTree = "<group>"; };
+		9C6FC3751B62E82A00B21CB5 /* ColorRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorRowController.swift; sourceTree = "<group>"; };
+		9C6FC3761B62E82A00B21CB5 /* IntensityRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntensityRowController.swift; sourceTree = "<group>"; };
+		9C6FC3771B62E82A00B21CB5 /* TargetActionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetActionInterfaceController.swift; sourceTree = "<group>"; };
+		9C6FC3791B62E82A00B21CB5 /* TargetRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetRowController.swift; sourceTree = "<group>"; };
+		9C6FC37A1B62E82A00B21CB5 /* TargetsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetsInterfaceController.swift; sourceTree = "<group>"; };
 		9C77A4CD19D16FEC000ADD99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C7D1F431A7BCB230091CDE5 /* LiFX Widget Companion WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LiFX Widget Companion WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7D1F461A7BCB230091CDE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -335,6 +351,33 @@
 			name = Colors;
 			sourceTree = "<group>";
 		};
+		9C6FC3721B62E82A00B21CB5 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				9C6FC3731B62E82A00B21CB5 /* AlertInterfaceController.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		9C6FC3741B62E82A00B21CB5 /* Target actions */ = {
+			isa = PBXGroup;
+			children = (
+				9C6FC3771B62E82A00B21CB5 /* TargetActionInterfaceController.swift */,
+				9C6FC3751B62E82A00B21CB5 /* ColorRowController.swift */,
+				9C6FC3761B62E82A00B21CB5 /* IntensityRowController.swift */,
+			);
+			path = "Target actions";
+			sourceTree = "<group>";
+		};
+		9C6FC3781B62E82A00B21CB5 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				9C6FC37A1B62E82A00B21CB5 /* TargetsInterfaceController.swift */,
+				9C6FC3791B62E82A00B21CB5 /* TargetRowController.swift */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
 		9C780E0E198ECC8F00FA4826 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,7 +427,9 @@
 			isa = PBXGroup;
 			children = (
 				9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */,
-				9C295F751B56C4CA00115F6D /* InterfaceController.swift */,
+				9C6FC3721B62E82A00B21CB5 /* Alerts */,
+				9C6FC3781B62E82A00B21CB5 /* Targets */,
+				9C6FC3741B62E82A00B21CB5 /* Target actions */,
 				9C7D1F451A7BCB230091CDE5 /* Supporting Files */,
 			);
 			path = "LiFX Widget Companion WatchKit Extension";
@@ -834,7 +879,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C295F761B56C4CA00115F6D /* InterfaceController.swift in Sources */,
+				9C6FC3801B62E82A00B21CB5 /* TargetsInterfaceController.swift in Sources */,
+				9C6FC36F1B62DAF100B21CB5 /* UIColor+Simplify.swift in Sources */,
+				9C6FC37B1B62E82A00B21CB5 /* AlertInterfaceController.swift in Sources */,
+				9C6FC36E1B62DAF100B21CB5 /* LIFXKelvin+Calculations.swift in Sources */,
+				9C6FC36D1B62DAF100B21CB5 /* IntensityModelWrapper.swift in Sources */,
+				9C6FC36C1B62DAF100B21CB5 /* ColorModelWrapper.swift in Sources */,
+				9C6FC36A1B62DAF100B21CB5 /* SettingsPersistanceManager.swift in Sources */,
+				9C6FC37C1B62E82A00B21CB5 /* ColorRowController.swift in Sources */,
+				9C6FC36B1B62DAF100B21CB5 /* TargetModelWrapper.swift in Sources */,
+				9C6FC37F1B62E82A00B21CB5 /* TargetRowController.swift in Sources */,
+				9C6FC37E1B62E82A00B21CB5 /* TargetActionInterfaceController.swift in Sources */,
+				9C6FC37D1B62E82A00B21CB5 /* IntensityRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
