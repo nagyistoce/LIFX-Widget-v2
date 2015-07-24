@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircleCollectionViewCell : UICollectionViewCell {
+class CircleCollectionViewCell: UICollectionViewCell {
 
     var onSelectionColour: UIColor? {
         didSet {
