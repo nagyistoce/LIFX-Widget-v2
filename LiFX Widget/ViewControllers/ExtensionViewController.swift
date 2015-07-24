@@ -34,6 +34,15 @@ class ExtensionViewController: UIViewController {
         updateSelectedTargetPowerStatusIfPossible()
     }
     
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBAction func tappedErrorView(sender: UITapGestureRecognizer) {
+        if let companionURL = NSURL(string: "LIFXWidgetCompanion://") {
+            extensionContext?.openURL(companionURL, completionHandler: nil)
+        }
+    }
+
     private var lights: [LIFXLight] = []
     
     override func viewDidLayoutSubviews() {
@@ -48,6 +57,14 @@ class ExtensionViewController: UIViewController {
         setupLIFXAPIWrapper()
         selectFirstTargetIfNeeded()
         updateTargetActionsViewsAvailability()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        for collectionView in [targetsCollectionView, colorsCollectionView, intensitiesCollectionView] {
+            collectionView.reloadData()
+        }
     }
     
 }
@@ -164,7 +181,9 @@ extension ExtensionViewController /* ColorsCollectionViewCell */ {
     private func colorsCollectionViewDidSelectItemAtIndexPath(indexPath: NSIndexPath) {
         if let selectedTarget = selectedTarget {
             let selectedColor = colors[indexPath.row]
-            LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(selectedColor.toTargetUpdate(), toTarget: selectedTarget, onCompletion: nil, onFailure: nil)
+            LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(selectedColor.toTargetUpdate(), toTarget: selectedTarget, onCompletion: nil, onFailure: {
+                self.updateViewForError($0)
+            })
         }
     }
     
@@ -185,7 +204,9 @@ extension ExtensionViewController /* IntensitiesCollectionView */ {
     private func intensitiesCollectionViewDidSelectItemAtIndexPath(indexPath: NSIndexPath) {
         if let selectedTarget = selectedTarget {
             let selectedIntensity = intensities[indexPath.row]
-            LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(selectedIntensity.toTargetUpdate(), toTarget: selectedTarget, onCompletion: nil, onFailure: nil)
+            LIFXAPIWrapper.sharedAPIWrapper().applyUpdate(selectedIntensity.toTargetUpdate(), toTarget: selectedTarget, onCompletion: nil, onFailure: {
+                self.updateViewForError($0)
+            })
         }
     }
     
@@ -234,14 +255,29 @@ extension ExtensionViewController /* Updating UI */ {
     private func updateSelectedTargetPowerStatusIfPossible() {
         if let selectedTarget = selectedTarget {
             let powerStatus = powerStatusSwitch.on
-            LIFXAPIWrapper.sharedAPIWrapper().changeLightPowerStatus(powerStatus, ofTarget: selectedTarget, onCompletion: { _ in
-                self.setPowerStatus(powerStatus, forLightIdentifier: selectedTarget.identifier)
-            }, onFailure: nil)
+            LIFXAPIWrapper.sharedAPIWrapper().changeLightPowerStatus(powerStatus, ofTarget: selectedTarget,
+                onCompletion: { _ in
+                    self.setPowerStatus(powerStatus, forLightIdentifier: selectedTarget.identifier)
+                }, onFailure: {
+                    self.updateViewForError($0)
+            })
+        }
+    }
+    
+    private func updateViewForError(error: NSError) {
+        if  LIFXAPIErrorCode.BadToken.rawValue == UInt(error.code) {
+            self.updateViewForUnconfiguredOAuthToken()
         }
     }
     
     private func updateViewForUnconfiguredOAuthToken() {
-        // TODO
+        updateViewWithErrorTitle("Please configure LIFX Cloud in the companion app")
+    }
+    
+    private func updateViewWithErrorTitle(error: String) {
+        mainView.hidden = true
+        errorLabel.text = error.uppercaseString
+        errorView.hidden = false
     }
 }
 
@@ -253,10 +289,8 @@ extension ExtensionViewController /* LIFX API Wrapper */ {
             LIFXAPIWrapper.sharedAPIWrapper().getAllLightsWithCompletion({
                     self.lights = $0 as! [LIFXLight]
                 },
-                onFailure: { error in
-                    if  LIFXAPIErrorCode.BadToken.rawValue == UInt(error.code) {
-                        self.updateViewForUnconfiguredOAuthToken()
-                    }
+                onFailure: {
+                    self.updateViewForError($0)
                 }
             )
         }
