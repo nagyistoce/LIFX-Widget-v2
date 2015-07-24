@@ -9,7 +9,7 @@
 import UIKit
 import NotificationCenter
 
-class ExtensionViewController: UIViewController {
+class LIFXWidgetViewController: UIViewController {
     
     private lazy var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
     private var selectedTarget: TargetModelWrapper? {
@@ -70,7 +70,7 @@ class ExtensionViewController: UIViewController {
     
 }
 
-extension ExtensionViewController: NCWidgetProviding {
+extension LIFXWidgetViewController: NCWidgetProviding {
 
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsetsMake(10, 10, 10, 10)
@@ -78,7 +78,7 @@ extension ExtensionViewController: NCWidgetProviding {
     
 }
 
-extension ExtensionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension LIFXWidgetViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == targetsCollectionView {
@@ -144,7 +144,7 @@ extension ExtensionViewController: UICollectionViewDataSource, UICollectionViewD
     
 }
 
-extension ExtensionViewController /* TargetsCollectionViewDataSource */ {
+extension LIFXWidgetViewController /* TargetsCollectionViewDataSource */ {
     
     private func numberOfItemsInTargetCollectionView() -> Int {
         return targets.count
@@ -167,7 +167,7 @@ extension ExtensionViewController /* TargetsCollectionViewDataSource */ {
     
 }
 
-extension ExtensionViewController /* ColorsCollectionViewCell */ {
+extension LIFXWidgetViewController /* ColorsCollectionViewCell */ {
     
     private func numberOfItemsInColorsCollectionView() -> Int {
         return colors.count
@@ -190,7 +190,7 @@ extension ExtensionViewController /* ColorsCollectionViewCell */ {
     
 }
 
-extension ExtensionViewController /* IntensitiesCollectionView */ {
+extension LIFXWidgetViewController /* IntensitiesCollectionView */ {
     
     private func numberOfItemsInIntensitiesCollectionView() -> Int {
         return intensities.count
@@ -213,7 +213,7 @@ extension ExtensionViewController /* IntensitiesCollectionView */ {
     
 }
 
-extension ExtensionViewController /* Updating UI */ {
+extension LIFXWidgetViewController /* Updating UI */ {
     
     private func updateCollectionViewsHeights() {
         targetsCollectionViewHeight.constant = targetsCollectionView.contentSize.height
@@ -291,7 +291,7 @@ extension ExtensionViewController /* Updating UI */ {
     }
 }
 
-extension ExtensionViewController /* LIFX API Wrapper */ {
+extension LIFXWidgetViewController /* LIFX API Wrapper */ {
     
     private func setupLIFXAPIWrapper() {
         if let OAuthToken = SettingsPersistanceManager.sharedPersistanceManager.OAuthToken {
@@ -322,7 +322,7 @@ extension ExtensionViewController /* LIFX API Wrapper */ {
     
 }
 
-extension ExtensionViewController /* Apple SDK's Fixes */ {
+extension LIFXWidgetViewController /* Apple SDK's Fixes */ {
     
     // FIXME: Apple's SDK Bug
     /*
