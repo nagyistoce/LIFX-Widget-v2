@@ -12,7 +12,7 @@ import NotificationCenter
 class ExtensionViewController: UIViewController {
     
     private lazy var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
-    private var selectedTarget: LIFXTargetable? {
+    private var selectedTarget: TargetModelWrapper? {
         if let selectedIndexPath = targetsCollectionView.indexPathsForSelectedItems().first as? NSIndexPath {
             return targets[selectedIndexPath.row]
         }
@@ -194,7 +194,10 @@ extension ExtensionViewController /* Updating UI */ {
     
     private func updateSelectedTargetPowerStatusIfPossible() {
         if let selectedTarget = selectedTarget {
-            LIFXAPIWrapper.sharedAPIWrapper().changeLightPowerStatus(powerStatusSwitch.on, ofTarget: selectedTarget, onCompletion: nil, onFailure: nil)
+            let powerStatus = powerStatusSwitch.on
+            LIFXAPIWrapper.sharedAPIWrapper().changeLightPowerStatus(powerStatus, ofTarget: selectedTarget, onCompletion: { _ in
+                self.setPowerStatus(powerStatus, forLightIdentifier: selectedTarget.identifier)
+            }, onFailure: nil)
         }
     }
     
@@ -225,7 +228,13 @@ extension ExtensionViewController /* LIFX API Wrapper */ {
     
     private func getPowerStatusForLightIdentifier(identifier: String) -> Bool {
         let light = self.lights.filter { $0.identifier == identifier }.first
-        return light?.connected == true
+        return light?.connected == true && light?.on == true
+    }
+    
+    private func setPowerStatus(powerStatus: Bool, forLightIdentifier identifier: String) {
+        if let light = (self.lights.filter { $0.identifier == identifier }.first) {
+            light.on = powerStatus
+        }
     }
     
 }
