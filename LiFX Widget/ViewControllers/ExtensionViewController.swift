@@ -18,14 +18,14 @@ class ExtensionViewController: UIViewController {
         }
         return nil
     }
-    @IBOutlet weak var targetsCollectionView: UICollectionView!
-    @IBOutlet weak var targetsCollectionViewHeight: NSLayoutConstraint!
+    @IBOutlet private weak var targetsCollectionView: UICollectionView!
+    @IBOutlet private weak var targetsCollectionViewHeight: NSLayoutConstraint!
     
     private lazy var colors = SettingsPersistanceManager.sharedPersistanceManager.colors
-    @IBOutlet weak var colorsCollectionView: UICollectionView!
-    @IBOutlet weak var colorsCollectionViewHeight: NSLayoutConstraint!
+    @IBOutlet private weak var colorsCollectionView: UICollectionView!
+    @IBOutlet private weak var colorsCollectionViewHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var powerStatusSwitch: UISwitch!
+    @IBOutlet private weak var powerStatusSwitch: UISwitch!
     @IBAction func powerStatusSwitchDidChangeValue(sender: UISwitch) {
         updateSelectedTargetPowerStatusIfPossible()
     }
