@@ -130,7 +130,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bxX-RI-gzT" secondAttribute="height" multiplier="1:1" id="EvO-Ls-Rf1"/>
                                         </constraints>
-                                        <state key="normal" image="home_button_intensity">
+                                        <state key="normal" image="home_button_scenes">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -146,17 +146,6 @@
                                     <constraint firstItem="bxX-RI-gzT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qcf-89-NcC" secondAttribute="top" constant="20" id="nRQ-vj-V7h"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-I1-h1m">
-                                <rect key="frame" x="530" y="530" width="50" height="50"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="3Ky-zC-g8q"/>
-                                    <constraint firstAttribute="height" constant="50" id="MIy-48-UnF"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="eDB-aU-Xdo" kind="presentation" identifier="TutorialViewController" modalPresentationStyle="overFullScreen" id="Aqe-ON-aeg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,7 +155,6 @@
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="At7-TS-9wm"/>
                             <constraint firstAttribute="bottom" secondItem="hhD-TW-B9e" secondAttribute="bottom" id="Duz-gS-CKw"/>
                             <constraint firstItem="hhD-TW-B9e" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="HpL-PA-Ief"/>
-                            <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="Go9-I1-h1m" secondAttribute="bottom" constant="20" id="JVQ-fS-pza"/>
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="height" secondItem="FTO-BU-uPC" secondAttribute="height" id="JcT-WP-W2E"/>
                             <constraint firstItem="hhD-TW-B9e" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="top" id="Kf5-cB-Ruu"/>
                             <constraint firstAttribute="trailing" secondItem="hhD-TW-B9e" secondAttribute="trailing" id="LSb-BM-WgL"/>
@@ -178,7 +166,6 @@
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="top" secondItem="FTO-BU-uPC" secondAttribute="bottom" id="Rar-L0-R03"/>
                             <constraint firstItem="ODe-wb-1TK" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="X01-pB-hbn"/>
                             <constraint firstAttribute="trailing" secondItem="qcf-89-NcC" secondAttribute="trailing" id="X2o-gu-I8d"/>
-                            <constraint firstAttribute="trailing" secondItem="Go9-I1-h1m" secondAttribute="trailing" constant="20" id="b5V-9S-MJa"/>
                             <constraint firstItem="ODe-wb-1TK" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="topMargin" id="cPh-EJ-HcN"/>
                             <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="ODe-wb-1TK" secondAttribute="bottom" id="frz-Zp-8md"/>
                             <constraint firstAttribute="trailing" secondItem="ODe-wb-1TK" secondAttribute="trailing" id="gmO-s6-dEe"/>
@@ -318,7 +305,7 @@ Simply tap a light to add - or remove - it.</string>
         <!--Tutorial View Controller-->
         <scene sceneID="zqj-QZ-BS6">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eDB-aU-Xdo" customClass="TutorialViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewController" automaticallyAdjustsScrollViewInsets="NO" id="eDB-aU-Xdo" customClass="TutorialViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xxX-aX-FZm"/>
                         <viewControllerLayoutGuide type="bottom" id="eC0-4V-mwU"/>
@@ -579,7 +566,7 @@ Simply tap a light to add - or remove - it.</string>
                                                                     <fragment>
                                                                         <string key="content">You're now running the default setup.
 
-You can customize which lights, colours and intensites are displayed by pressing the corresponding icon on the home screen</string>
+You can customize which lights, colours, intensites and scenes are displayed by pressing the corresponding icon on the home screen</string>
                                                                         <attributes>
                                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -1488,6 +1475,7 @@ Simply tap a light to add - or remove - it.</string>
         <image name="home_button_color" width="119" height="119"/>
         <image name="home_button_intensity" width="119" height="119"/>
         <image name="home_button_lights" width="119" height="119"/>
+        <image name="home_button_scenes" width="119" height="119"/>
         <image name="home_image_background" width="320" height="480"/>
         <image name="tutorial_image_valid_token" width="85" height="85"/>
     </resources>

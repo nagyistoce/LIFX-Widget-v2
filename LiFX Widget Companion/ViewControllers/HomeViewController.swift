@@ -44,10 +44,7 @@ class HomeViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "TutorialViewController" {
-            configureTutorialViewController(segue.destinationViewController as! TutorialViewController)
-        }
-        else if segue.identifier == "TargetPickerViewController" {
+        if segue.identifier == "TargetPickerViewController" {
             configureTargetPickerViewController(segue.destinationViewController as! TargetPickerViewController)
         }
         else if segue.identifier == "ColorsListViewController" {
@@ -68,7 +65,10 @@ extension HomeViewController {
 
     private func presentTutorialViewControllerIfNeeded() -> Bool {
         if !SettingsPersistanceManager.sharedPersistanceManager.hasOAuthToken {
-            performSegueWithIdentifier("TutorialViewController", sender: nil)
+            if let tutorialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TutorialViewController") as? TutorialViewController {
+                configureTutorialViewController(tutorialViewController)
+                self.presentViewController(tutorialViewController, animated: true, completion: nil)
+            }
             return true
         }
         return false
