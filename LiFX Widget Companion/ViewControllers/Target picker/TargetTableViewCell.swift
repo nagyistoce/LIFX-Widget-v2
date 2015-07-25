@@ -12,7 +12,7 @@ class TargetTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var typeLabel: UILabel!
-    @IBOutlet private weak var selectedView: TargetSelectedView!
+    @IBOutlet private weak var selectedView: TableViewCellSelectedView!
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

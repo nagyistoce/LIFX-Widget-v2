@@ -18,12 +18,18 @@
 		9C28CC4F1B63D89800113785 /* SceneModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */; };
 		9C28CC501B63D89800113785 /* SceneModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */; };
 		9C28CC511B63D89800113785 /* SceneModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */; };
+		9C28CC541B63DFCE00113785 /* ScenesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC531B63DFCE00113785 /* ScenesTableViewController.swift */; };
+		9C28CC581B63E00E00113785 /* SceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC571B63E00E00113785 /* SceneTableViewCell.swift */; };
+		9C28CC591B63E00E00113785 /* SceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC571B63E00E00113785 /* SceneTableViewCell.swift */; };
+		9C28CC5A1B63E00E00113785 /* SceneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC571B63E00E00113785 /* SceneTableViewCell.swift */; };
+		9C28CC5C1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */; };
+		9C28CC5D1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */; };
+		9C28CC5E1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */; };
 		9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F771B56C7CF00115F6D /* SeparatorView.swift */; };
 		9C295F7C1B56CE4D00115F6D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
 		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
 		9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */; };
-		9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */; };
 		9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */; };
 		9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */; };
 		9C6FC36A1B62DAF100B21CB5 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D861B6153EF00D0D966 /* SettingsPersistanceManager.swift */; };
@@ -138,6 +144,9 @@
 		9C1309911ABA049F0022E23B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C1309921ABA049F0022E23B /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneModelWrapper.swift; sourceTree = "<group>"; };
+		9C28CC531B63DFCE00113785 /* ScenesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesTableViewController.swift; path = Scenes/ScenesTableViewController.swift; sourceTree = "<group>"; };
+		9C28CC571B63E00E00113785 /* SceneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneTableViewCell.swift; path = Scenes/SceneTableViewCell.swift; sourceTree = "<group>"; };
+		9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellSelectedView.swift; path = "Reusable Views/TableViewCellSelectedView.swift"; sourceTree = "<group>"; };
 		9C295F771B56C7CF00115F6D /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = "Reusable Views/SeparatorView.swift"; sourceTree = "<group>"; };
 		9C295F7B1B56CE4D00115F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
@@ -145,7 +154,6 @@
 		9C43D9831B4130D000AA7719 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewControllers/Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
 		9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialAnimatedTransitioning.swift; path = ViewControllers/Tutorial/TutorialAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetTableViewCell.swift; path = "Target picker/TargetTableViewCell.swift"; sourceTree = "<group>"; };
-		9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetSelectedView.swift; path = "Target picker/TargetSelectedView.swift"; sourceTree = "<group>"; };
 		9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetPickerViewController.swift; path = "Target picker/TargetPickerViewController.swift"; sourceTree = "<group>"; };
 		9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsListViewController.swift; path = Colors/ColorsListViewController.swift; sourceTree = "<group>"; };
@@ -309,9 +317,19 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9C28CC521B63DF9E00113785 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9C28CC531B63DFCE00113785 /* ScenesTableViewController.swift */,
+				9C28CC571B63E00E00113785 /* SceneTableViewCell.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		9C295F791B56C7D300115F6D /* Reusable Views */ = {
 			isa = PBXGroup;
 			children = (
+				9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */,
 				9C295F771B56C7CF00115F6D /* SeparatorView.swift */,
 			);
 			name = "Reusable Views";
@@ -338,7 +356,6 @@
 			children = (
 				9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */,
 				9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */,
-				9C4F06181B4D98CD004980CB /* TargetSelectedView.swift */,
 			);
 			name = "Target picker";
 			sourceTree = "<group>";
@@ -389,6 +406,7 @@
 				9C5BEA581B47B9C400F71519 /* Target picker */,
 				9C69BE7D1B5A346400EEFAE2 /* Colors */,
 				9CED93711B5FFF5A00F18BFC /* Intensities */,
+				9C28CC521B63DF9E00113785 /* Scenes */,
 				9CADB1521B400CEE008EE854 /* HomeViewController.swift */,
 				9CED936F1B5FFC2900F18BFC /* HeaderTableViewController.swift */,
 			);
@@ -836,9 +854,9 @@
 				9CED93731B5FFF6D00F18BFC /* IntensitiesListViewController.swift in Sources */,
 				9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */,
 				9C28CC4F1B63D89800113785 /* SceneModelWrapper.swift in Sources */,
-				9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */,
 				9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
+				9C28CC5C1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */,
 				9C834D921B61717C00D0D966 /* UIColor+Simplify.swift in Sources */,
 				9C834D881B6153F300D0D966 /* SettingsPersistanceManager.swift in Sources */,
 				9C96FC811B5A4DA10066C50C /* ColorPickerViewController.swift in Sources */,
@@ -855,8 +873,10 @@
 				9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */,
 				9C834D851B61539C00D0D966 /* TargetModelWrapper.swift in Sources */,
 				9C96FC891B5A8A790066C50C /* Delay.swift in Sources */,
+				9C28CC541B63DFCE00113785 /* ScenesTableViewController.swift in Sources */,
 				9CEB138D1B402E1D003D5A9B /* TutorialView.swift in Sources */,
 				9C8813271B417F2F0062DD86 /* OAuthTokenPickerViewController.swift in Sources */,
+				9C28CC581B63E00E00113785 /* SceneTableViewCell.swift in Sources */,
 				9C834D8B1B61540F00D0D966 /* IntensityModelWrapper.swift in Sources */,
 				9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */,
 				9C834D8F1B616B0200D0D966 /* ColorModelWrapper.swift in Sources */,
@@ -867,7 +887,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C28CC591B63E00E00113785 /* SceneTableViewCell.swift in Sources */,
 				9C834D841B61539900D0D966 /* TargetModelWrapper.swift in Sources */,
+				9C28CC5D1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */,
 				9CE9D6AB1B62A53400E04EA1 /* IntensityCollectionViewCell.swift in Sources */,
 				9C28CC501B63D89800113785 /* SceneModelWrapper.swift in Sources */,
 				9C834D961B61719E00D0D966 /* LIFXKelvin+Calculations.swift in Sources */,
@@ -887,8 +909,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C6FC3801B62E82A00B21CB5 /* TargetsInterfaceController.swift in Sources */,
+				9C28CC5E1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */,
 				9C6FC36F1B62DAF100B21CB5 /* UIColor+Simplify.swift in Sources */,
 				9C6FC37B1B62E82A00B21CB5 /* AlertInterfaceController.swift in Sources */,
+				9C28CC5A1B63E00E00113785 /* SceneTableViewCell.swift in Sources */,
 				9C6FC36E1B62DAF100B21CB5 /* LIFXKelvin+Calculations.swift in Sources */,
 				9C6FC36D1B62DAF100B21CB5 /* IntensityModelWrapper.swift in Sources */,
 				9C6FC36C1B62DAF100B21CB5 /* ColorModelWrapper.swift in Sources */,

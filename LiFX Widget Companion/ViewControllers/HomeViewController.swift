@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     var lights: [LIFXLight] = []
+    var scenes: [LIFXScene] = []
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,13 +23,22 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
 
         if !presentTutorialViewControllerIfNeeded() {
-            fetchLights()
+            if lights.isEmpty && scenes.isEmpty {
+                fetchLightsAndScenes() { lights, scenes in
+                    self.updateSettingsWithLights(lights)
+                    self.updateSettingsWithScenes(scenes)
+                }
+            }
+            configureDefaultColorsAndIntensities()
         }
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if identifier == "TargetPickerViewController" || identifier == "ColorsListViewController" {
-            return !lights.isEmpty
+        if identifier == "ScenesTableViewController" {
+            if scenes.isEmpty {
+                UIAlertView(title: "Scenes", message: "Please configure scenes in the official LIFX application", delegate: nil, cancelButtonTitle: "Cancel").show()
+                return false
+            }
         }
         return true
     }
@@ -45,6 +55,9 @@ class HomeViewController: UIViewController {
         }
         else if segue.identifier == "IntensityPickerViewController" {
             configureIntensitiesListViewController(segue.destinationViewController as! IntensitiesListViewController)
+        }
+        else if segue.identifier == "ScenesTableViewController" {
+            configureScenesListViewController(segue.destinationViewController as! ScenesTableViewController)
         }
     }
 
@@ -64,10 +77,16 @@ extension HomeViewController {
     private func configureTutorialViewController(tutorialViewController: TutorialViewController) {
         tutorialViewController.onValidation = { lights in
             if lights.isEmpty {
-                self.fetchLights { self.updateSettingsWithLights($0) }
+                self.fetchLightsAndScenes { lights, scenes in
+                    self.updateSettingsWithLights(lights)
+                    self.updateSettingsWithScenes(scenes)
+                }
             }
             else {
                 self.updateSettingsWithLights(lights)
+                self.fetchScenes {
+                    self.updateSettingsWithScenes($0)
+                }
             }
         }
     }
@@ -99,6 +118,14 @@ extension HomeViewController {
     
 }
 
+// ScenesTableViewController
+extension HomeViewController {
+    
+    private func configureScenesListViewController(scenesViewController: ScenesTableViewController) {
+        scenesViewController.configureWithScenes(scenes)
+    }
+}
+
 // Setup default values
 extension HomeViewController {
     
@@ -106,11 +133,6 @@ extension HomeViewController {
         self.lights = lights
         
         let persistanceManager = SettingsPersistanceManager.sharedPersistanceManager
-        // We want to have at leat 1 color or 1 intensity.
-        if persistanceManager.colors.isEmpty && persistanceManager.intensities.isEmpty {
-            persistanceManager.setDefaultColors()
-            persistanceManager.setDefaultIntensities()
-        }
 
         let targets = persistanceManager.targets
         if targets.isEmpty {
@@ -118,6 +140,14 @@ extension HomeViewController {
         } else {
             persistanceManager.targets = filterTargets(targets, withAvailableLights: lights)
         }
+    }
+    
+    private func updateSettingsWithScenes(scenes: [LIFXScene]) {
+        self.scenes = scenes
+        
+        var savedScenes = SettingsPersistanceManager.sharedPersistanceManager.scenes
+        savedScenes.filter { contains(scenes, $0.scene) }
+        SettingsPersistanceManager.sharedPersistanceManager.scenes = savedScenes
     }
     
     private func filterTargets(targets: [TargetModelWrapper], withAvailableLights lights: [LIFXLight]) -> [TargetModelWrapper] {
@@ -135,23 +165,67 @@ extension HomeViewController {
         }
         return targets.filter { contains(availableIdentifiers, $0.identifier) }
     }
+    
+    private func configureDefaultColorsAndIntensities() {
+        // We want to have at leat 1 color or 1 intensity.
+        let persistanceManager = SettingsPersistanceManager.sharedPersistanceManager
+        if persistanceManager.colors.isEmpty && persistanceManager.intensities.isEmpty {
+            persistanceManager.setDefaultColors()
+            persistanceManager.setDefaultIntensities()
+        }
+    }
+    
 }
 
 // LIFX API Handling
 extension HomeViewController {
-
-    private func fetchLights(completion: (([LIFXLight])->())?=nil) {
+    
+    private func fetchLightsAndScenes(completion: (([LIFXLight], [LIFXScene])->())?=nil) {
         let APIWrapper = LIFXAPIWrapper.sharedAPIWrapper()
         APIWrapper.setOAuthToken(SettingsPersistanceManager.sharedPersistanceManager.OAuthToken)
 
-        APIWrapper.getAllLightsWithCompletion({ self.updateSettingsWithLights($0 as! [LIFXLight]) },
-            onFailure: { error in
+        self.fetchLights { lights in
+            self.fetchScenes { scenes in
+                SVProgressHUD.dismiss()
+                completion?(lights, scenes)
+            }
+        }
+        
+    }
+
+    private func fetchLights(completion: (([LIFXLight])->())?=nil) {
+        SVProgressHUD.showWithStatus("Fetching lights...")
+        LIFXAPIWrapper.sharedAPIWrapper().getAllLightsWithCompletion(
+            { result in
+                SVProgressHUD.dismiss()
+                let lights = result as! [LIFXLight]
+                completion?(lights)
+            },
+            onFailure:
+            { error in
                 self.displayAPIError(error)
             }
         )
     }
+    
+    private func fetchScenes(completion: (([LIFXScene])->())?=nil) {
+        SVProgressHUD.showWithStatus("Fetching scenes...")
+        LIFXAPIWrapper.sharedAPIWrapper().getScenesWithCompletion(
+            { result in
+                SVProgressHUD.dismiss()
+                let scenes = result as! [LIFXScene]
+                completion?(scenes)
+            },
+            onFailure:
+            { error in
+                self.displayAPIError(error)
+            }
+        )
+        
+    }
 
     private func displayAPIError(error: NSError) {
+        SVProgressHUD.dismiss()
         if  LIFXAPIErrorCode.BadToken.rawValue == UInt(error.code) {
             UIAlertView(title: "Error", message: "LIFX API invalidated your token. Please generate a new one (\(error.localizedDescription))",
                 delegate: nil, cancelButtonTitle: "Cancel").show()

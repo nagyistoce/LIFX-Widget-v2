@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TargetSelectedView: UIView {
+class TableViewCellSelectedView: UIView {
     
     var circleLayer: CAShapeLayer!
     var tickImageView: UIImageView!
@@ -20,7 +20,7 @@ class TargetSelectedView: UIView {
 }
 
 // Setting up the view
-extension TargetSelectedView {
+extension TableViewCellSelectedView {
     
     private func setupViewIfNeeded() {
         if circleLayer == nil && tickImageView == nil {
@@ -52,7 +52,7 @@ extension TargetSelectedView {
 }
 
 // Public animation methods
-extension TargetSelectedView {
+extension TableViewCellSelectedView {
 
     func setVisibleAnimated(#visible: Bool) {
         setupViewIfNeeded()

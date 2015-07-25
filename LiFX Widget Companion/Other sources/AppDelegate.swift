@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UISlider.appearance().tintColor = mainColor
         UIButton.appearance().tintColor = mainColor
-        TargetSelectedView.appearance().tintColor = mainColor
+        TableViewCellSelectedView.appearance().tintColor = mainColor
         
         application.statusBarStyle = .LightContent
     }

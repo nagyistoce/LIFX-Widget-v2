@@ -47,10 +47,10 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8H-Mf-vLV" userLabel="Top view">
-                                <rect key="frame" x="0.0" y="20" width="600" height="187"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV4-f3-PXH" userLabel="LIFX Button">
-                                        <rect key="frame" x="241" y="34" width="119" height="119"/>
+                                        <rect key="frame" x="250" y="20" width="100" height="100"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oV4-f3-PXH" secondAttribute="height" multiplier="1:1" id="DCo-cf-Gfm"/>
@@ -72,10 +72,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTO-BU-uPC" userLabel="Center view">
-                                <rect key="frame" x="0.0" y="207" width="600" height="186"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="140"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apq-4J-bTR" userLabel="Colours button">
-                                        <rect key="frame" x="240" y="34" width="119" height="119"/>
+                                        <rect key="frame" x="250" y="20" width="100" height="100"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Apq-4J-bTR" secondAttribute="height" multiplier="1:1" id="dvT-j0-9UD"/>
@@ -97,10 +97,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efE-CK-ZxE" userLabel="Bottom view">
-                                <rect key="frame" x="0.0" y="393" width="600" height="187"/>
+                                <rect key="frame" x="0.0" y="300" width="600" height="140"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUp-V9-kzM" userLabel="Intensities button">
-                                        <rect key="frame" x="241" y="34" width="119" height="119"/>
+                                        <rect key="frame" x="250" y="20" width="100" height="100"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xUp-V9-kzM" secondAttribute="height" multiplier="1:1" id="BOK-4f-H2k"/>
@@ -121,6 +121,31 @@
                                     <constraint firstAttribute="centerY" secondItem="xUp-V9-kzM" secondAttribute="centerY" id="Z8w-kB-0RD"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcf-89-NcC" userLabel="Bottom view2">
+                                <rect key="frame" x="0.0" y="440" width="600" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxX-RI-gzT" userLabel="Intensities button">
+                                        <rect key="frame" x="250" y="20" width="100" height="100"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bxX-RI-gzT" secondAttribute="height" multiplier="1:1" id="EvO-Ls-Rf1"/>
+                                        </constraints>
+                                        <state key="normal" image="home_button_intensity">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="b5L-Li-hAY" kind="show" identifier="ScenesTableViewController" id="t22-q6-uOX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="bxX-RI-gzT" secondAttribute="centerY" id="bqj-xr-Xi3"/>
+                                    <constraint firstAttribute="centerX" secondItem="bxX-RI-gzT" secondAttribute="centerX" id="caH-KB-jx9"/>
+                                    <constraint firstItem="bxX-RI-gzT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qcf-89-NcC" secondAttribute="top" constant="20" id="nRQ-vj-V7h"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-I1-h1m">
                                 <rect key="frame" x="530" y="530" width="50" height="50"/>
                                 <animations/>
@@ -136,26 +161,31 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="efE-CK-ZxE" firstAttribute="top" secondItem="FTO-BU-uPC" secondAttribute="bottom" id="2C6-Bo-Yqg"/>
                             <constraint firstAttribute="trailing" secondItem="FTO-BU-uPC" secondAttribute="trailing" id="80A-ob-F4U"/>
                             <constraint firstAttribute="trailing" secondItem="efE-CK-ZxE" secondAttribute="trailing" id="9VP-MN-QTs"/>
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="At7-TS-9wm"/>
                             <constraint firstAttribute="bottom" secondItem="hhD-TW-B9e" secondAttribute="bottom" id="Duz-gS-CKw"/>
-                            <constraint firstAttribute="bottom" secondItem="efE-CK-ZxE" secondAttribute="bottom" constant="20" id="FsA-xI-U2D"/>
                             <constraint firstItem="hhD-TW-B9e" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="HpL-PA-Ief"/>
                             <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="Go9-I1-h1m" secondAttribute="bottom" constant="20" id="JVQ-fS-pza"/>
                             <constraint firstItem="efE-CK-ZxE" firstAttribute="height" secondItem="FTO-BU-uPC" secondAttribute="height" id="JcT-WP-W2E"/>
                             <constraint firstItem="hhD-TW-B9e" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="top" id="Kf5-cB-Ruu"/>
                             <constraint firstAttribute="trailing" secondItem="hhD-TW-B9e" secondAttribute="trailing" id="LSb-BM-WgL"/>
+                            <constraint firstItem="qcf-89-NcC" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="Mkk-5z-ZuG"/>
+                            <constraint firstAttribute="bottom" secondItem="qcf-89-NcC" secondAttribute="bottom" constant="20" id="NxW-vU-fL5"/>
                             <constraint firstItem="FTO-BU-uPC" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="Ooj-Fc-TfQ"/>
                             <constraint firstItem="e8H-Mf-vLV" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="top" constant="20" id="PLX-w7-Bhf"/>
                             <constraint firstItem="e8H-Mf-vLV" firstAttribute="height" secondItem="FTO-BU-uPC" secondAttribute="height" id="QLb-uO-zGo"/>
+                            <constraint firstItem="efE-CK-ZxE" firstAttribute="top" secondItem="FTO-BU-uPC" secondAttribute="bottom" id="Rar-L0-R03"/>
                             <constraint firstItem="ODe-wb-1TK" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="X01-pB-hbn"/>
+                            <constraint firstAttribute="trailing" secondItem="qcf-89-NcC" secondAttribute="trailing" id="X2o-gu-I8d"/>
                             <constraint firstAttribute="trailing" secondItem="Go9-I1-h1m" secondAttribute="trailing" constant="20" id="b5V-9S-MJa"/>
                             <constraint firstItem="ODe-wb-1TK" firstAttribute="top" secondItem="PQ2-9h-xBt" secondAttribute="topMargin" id="cPh-EJ-HcN"/>
                             <constraint firstItem="dI4-wB-uqh" firstAttribute="top" secondItem="ODe-wb-1TK" secondAttribute="bottom" id="frz-Zp-8md"/>
                             <constraint firstAttribute="trailing" secondItem="ODe-wb-1TK" secondAttribute="trailing" id="gmO-s6-dEe"/>
+                            <constraint firstItem="qcf-89-NcC" firstAttribute="height" secondItem="efE-CK-ZxE" secondAttribute="height" id="m0j-M9-rfg"/>
                             <constraint firstAttribute="trailing" secondItem="e8H-Mf-vLV" secondAttribute="trailing" id="nfV-p0-Cax"/>
+                            <constraint firstItem="qcf-89-NcC" firstAttribute="height" secondItem="efE-CK-ZxE" secondAttribute="height" id="rHe-er-Tlk"/>
+                            <constraint firstItem="efE-CK-ZxE" firstAttribute="bottom" secondItem="qcf-89-NcC" secondAttribute="top" id="v0h-x3-Nfz"/>
                             <constraint firstItem="e8H-Mf-vLV" firstAttribute="leading" secondItem="PQ2-9h-xBt" secondAttribute="leading" id="wR5-gc-x7o"/>
                             <constraint firstItem="FTO-BU-uPC" firstAttribute="top" secondItem="e8H-Mf-vLV" secondAttribute="bottom" id="wjc-5Z-dvX"/>
                         </constraints>
@@ -217,7 +247,7 @@ Simply tap a light to add - or remove - it.</string>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Sc-Tt-FEh" id="yuR-aV-OZl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-hw-FMz" customClass="TargetSelectedView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-hw-FMz" customClass="TableViewCellSelectedView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
                                             <rect key="frame" x="549" y="16" width="31" height="31"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -928,6 +958,100 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
             </objects>
             <point key="canvasLocation" x="807" y="1868"/>
         </scene>
+        <!--Scenes-->
+        <scene sceneID="7wN-ob-fhT">
+            <objects>
+                <tableViewController title="Scenes" id="b5L-Li-hAY" customClass="ScenesTableViewController" customModule="LiFX_Widget_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="d0D-3P-2Pe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="izf-Lc-5rP">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE2-yZ-cS1">
+                                    <rect key="frame" x="20" y="20" width="560" height="100"/>
+                                    <animations/>
+                                    <string key="text">This screen will let you pick wich scenes should be displayed in the widget.
+Scenes can be configured in the LIFX official app.
+
+Simply tap a light to add - or remove - it.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-r5-WkC">
+                                    <rect key="frame" x="0.0" y="139" width="600" height="1"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="K4A-kB-suL"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="SE2-yZ-cS1" firstAttribute="top" secondItem="izf-Lc-5rP" secondAttribute="top" constant="20" id="5l1-sa-G2p"/>
+                                <constraint firstAttribute="bottom" secondItem="SE2-yZ-cS1" secondAttribute="bottom" constant="20" id="8bu-Jm-dRW"/>
+                                <constraint firstAttribute="bottom" secondItem="GbW-r5-WkC" secondAttribute="bottom" id="NEq-Py-3Wy"/>
+                                <constraint firstAttribute="trailing" secondItem="GbW-r5-WkC" secondAttribute="trailing" id="ORr-cs-Zvm"/>
+                                <constraint firstItem="GbW-r5-WkC" firstAttribute="leading" secondItem="izf-Lc-5rP" secondAttribute="leading" id="WZJ-1j-C9e"/>
+                                <constraint firstAttribute="trailing" secondItem="SE2-yZ-cS1" secondAttribute="trailing" constant="20" id="aOO-2s-Gpv"/>
+                                <constraint firstItem="SE2-yZ-cS1" firstAttribute="leading" secondItem="izf-Lc-5rP" secondAttribute="leading" constant="20" id="s93-nM-k43"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="20" reuseIdentifier="SceneTableViewCell" rowHeight="63" id="0Vo-oC-AP9" customClass="SceneTableViewCell" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Vo-oC-AP9" id="ULn-gf-rQg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBO-Is-IXS">
+                                            <rect key="frame" x="20" y="21" width="560" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAH-fT-WJX" customClass="TableViewCellSelectedView" customModule="LiFX_Widget_Companion" customModuleProvider="target">
+                                            <rect key="frame" x="550" y="16" width="30" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ZAH-fT-WJX" secondAttribute="height" id="ZFG-Ie-xzI"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ZAH-fT-WJX" secondAttribute="bottom" constant="16" id="EQD-tA-Sa7"/>
+                                        <constraint firstAttribute="centerY" secondItem="hBO-Is-IXS" secondAttribute="centerY" constant="-0.5" id="ERX-Ck-DB5"/>
+                                        <constraint firstItem="hBO-Is-IXS" firstAttribute="leading" secondItem="ULn-gf-rQg" secondAttribute="leading" constant="20" id="KFw-Bv-yrM"/>
+                                        <constraint firstItem="ZAH-fT-WJX" firstAttribute="top" secondItem="ULn-gf-rQg" secondAttribute="top" constant="16" id="ZeU-Jk-EAG"/>
+                                        <constraint firstAttribute="trailing" secondItem="hBO-Is-IXS" secondAttribute="trailing" constant="20" id="fPF-jI-5En"/>
+                                        <constraint firstItem="ZAH-fT-WJX" firstAttribute="trailing" secondItem="ULn-gf-rQg" secondAttribute="trailing" constant="-20" id="ql8-0R-Oop"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="hBO-Is-IXS" id="fDg-7S-D4Z"/>
+                                    <outlet property="selectedView" destination="ZAH-fT-WJX" id="ybx-qZ-K4u"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b5L-Li-hAY" id="etd-aV-ZPZ"/>
+                            <outlet property="delegate" destination="b5L-Li-hAY" id="OiT-5o-fCR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRd-VY-0in" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="2588"/>
+        </scene>
         <!--Colour picker-->
         <scene sceneID="Y9K-Vz-JqC">
             <objects>
@@ -1367,8 +1491,8 @@ Press the '+' on the top right to add an intensity, swipe left a an intensity in
         <image name="tutorial_image_valid_token" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="I5n-j5-tXr"/>
         <segue reference="g8L-ro-x9O"/>
         <segue reference="nQ5-kM-aZl"/>
-        <segue reference="1aJ-yi-MWm"/>
     </inferredMetricsTieBreakers>
 </document>
