@@ -56,6 +56,17 @@ class SettingsPersistanceManager: NSObject {
             saveValue(rawIntensities, forKey: "intensities")
         }
     }
+    
+    var scenes: [SceneModelWrapper] {
+        get {
+            let rawScenes = arrayForKey("scenes") as! [[String:AnyObject]]?
+            return rawScenes?.map { SceneModelWrapper(dictionary: $0) } ?? []
+        }
+        set(newScenes) {
+            let rawScenes = newScenes.map { $0.toDictionary() }
+            saveValue(rawScenes, forKey: "scenes")
+        }
+    }
 
 }
 

@@ -15,6 +15,9 @@
 		9C0A2DF5197F9BA200D94B5F /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF4197F9BA200D94B5F /* ExtensionViewController.swift */; };
 		9C0A2DF7197F9BA200D94B5F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */; };
 		9C0A2DFA197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C0A2DED197F9BA200D94B5F /* com.maxime-dechalendar.LiFXWidget.LiFX-Widget.appex */; };
+		9C28CC4F1B63D89800113785 /* SceneModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */; };
+		9C28CC501B63D89800113785 /* SceneModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */; };
+		9C28CC511B63D89800113785 /* SceneModelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */; };
 		9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F771B56C7CF00115F6D /* SeparatorView.swift */; };
 		9C295F7C1B56CE4D00115F6D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
@@ -134,6 +137,7 @@
 		9C0A2DF6197F9BA200D94B5F /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		9C1309911ABA049F0022E23B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9C1309921ABA049F0022E23B /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneModelWrapper.swift; sourceTree = "<group>"; };
 		9C295F771B56C7CF00115F6D /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = "Reusable Views/SeparatorView.swift"; sourceTree = "<group>"; };
 		9C295F7B1B56CE4D00115F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
@@ -398,6 +402,7 @@
 				9C834D831B61539900D0D966 /* TargetModelWrapper.swift */,
 				9C834D8E1B616B0200D0D966 /* ColorModelWrapper.swift */,
 				9C834D891B61540B00D0D966 /* IntensityModelWrapper.swift */,
+				9C28CC4E1B63D89800113785 /* SceneModelWrapper.swift */,
 				9C834D941B61719E00D0D966 /* LIFXKelvin+Calculations.swift */,
 				9C834D911B61717C00D0D966 /* UIColor+Simplify.swift */,
 				9C7E72AF197FBB5F00BFC0E7 /* LiFXWidget-Bridging-Header.h */,
@@ -830,6 +835,7 @@
 			files = (
 				9CED93731B5FFF6D00F18BFC /* IntensitiesListViewController.swift in Sources */,
 				9C96FC7F1B5A40310066C50C /* ColorTableViewCell.swift in Sources */,
+				9C28CC4F1B63D89800113785 /* SceneModelWrapper.swift in Sources */,
 				9C4F06191B4D98CD004980CB /* TargetSelectedView.swift in Sources */,
 				9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */,
 				9C0A2DCD197F9ADE00D94B5F /* AppDelegate.swift in Sources */,
@@ -863,6 +869,7 @@
 			files = (
 				9C834D841B61539900D0D966 /* TargetModelWrapper.swift in Sources */,
 				9CE9D6AB1B62A53400E04EA1 /* IntensityCollectionViewCell.swift in Sources */,
+				9C28CC501B63D89800113785 /* SceneModelWrapper.swift in Sources */,
 				9C834D961B61719E00D0D966 /* LIFXKelvin+Calculations.swift in Sources */,
 				9C834D8A1B61540B00D0D966 /* IntensityModelWrapper.swift in Sources */,
 				9CE9D6A91B61873F00E04EA1 /* TargetCollectionViewCell.swift in Sources */,
@@ -890,6 +897,7 @@
 				9C6FC36B1B62DAF100B21CB5 /* TargetModelWrapper.swift in Sources */,
 				9C6FC37F1B62E82A00B21CB5 /* TargetRowController.swift in Sources */,
 				9C6FC37E1B62E82A00B21CB5 /* TargetActionInterfaceController.swift in Sources */,
+				9C28CC511B63D89800113785 /* SceneModelWrapper.swift in Sources */,
 				9C6FC37D1B62E82A00B21CB5 /* IntensityRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
