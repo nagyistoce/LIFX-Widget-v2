@@ -25,6 +25,7 @@
 		9C28CC5C1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */; };
 		9C28CC5D1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */; };
 		9C28CC5E1B63E04C00113785 /* TableViewCellSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */; };
+		9C28CC601B63FD7000113785 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C28CC5F1B63FD7000113785 /* SceneCollectionViewCell.swift */; };
 		9C295F781B56C7CF00115F6D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C295F771B56C7CF00115F6D /* SeparatorView.swift */; };
 		9C295F7C1B56CE4D00115F6D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C295F7A1B56CE4D00115F6D /* Launch Screen.xib */; };
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
@@ -147,6 +148,7 @@
 		9C28CC531B63DFCE00113785 /* ScenesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesTableViewController.swift; path = Scenes/ScenesTableViewController.swift; sourceTree = "<group>"; };
 		9C28CC571B63E00E00113785 /* SceneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneTableViewCell.swift; path = Scenes/SceneTableViewCell.swift; sourceTree = "<group>"; };
 		9C28CC5B1B63E04C00113785 /* TableViewCellSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellSelectedView.swift; path = "Reusable Views/TableViewCellSelectedView.swift"; sourceTree = "<group>"; };
+		9C28CC5F1B63FD7000113785 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCollectionViewCell.swift; path = "LiFX Widget/Views/SceneCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		9C295F771B56C7CF00115F6D /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = "Reusable Views/SeparatorView.swift"; sourceTree = "<group>"; };
 		9C295F7B1B56CE4D00115F6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		9C2F54BF1995788A0027A6A1 /* LiFX Widget Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion.entitlements"; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 				9CE9D6A71B61873F00E04EA1 /* TargetCollectionViewCell.swift */,
 				9CE9D6A61B61873F00E04EA1 /* ColorCollectionViewCell.swift */,
 				9CE9D6AA1B62A53400E04EA1 /* IntensityCollectionViewCell.swift */,
+				9C28CC5F1B63FD7000113785 /* SceneCollectionViewCell.swift */,
 			);
 			name = Views;
 			path = ViewControllers;
@@ -896,6 +899,7 @@
 				9C834D8A1B61540B00D0D966 /* IntensityModelWrapper.swift in Sources */,
 				9CE9D6A91B61873F00E04EA1 /* TargetCollectionViewCell.swift in Sources */,
 				9C834D901B616B0200D0D966 /* ColorModelWrapper.swift in Sources */,
+				9C28CC601B63FD7000113785 /* SceneCollectionViewCell.swift in Sources */,
 				9CD03C071B61518400D013CB /* CircleCollectionViewCell.swift in Sources */,
 				9C834D871B6153EF00D0D966 /* SettingsPersistanceManager.swift in Sources */,
 				9CE9D6A81B61873F00E04EA1 /* ColorCollectionViewCell.swift in Sources */,

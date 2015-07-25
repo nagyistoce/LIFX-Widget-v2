@@ -29,6 +29,10 @@ class LIFXWidgetViewController: UIViewController {
     @IBOutlet private weak var intensitiesCollectionView: UICollectionView!
     @IBOutlet private weak var intensitiesCollectionViewHeight: NSLayoutConstraint!
     
+    private lazy var scenes = SettingsPersistanceManager.sharedPersistanceManager.scenes
+    @IBOutlet private weak var scenesCollectionView: UICollectionView!
+    @IBOutlet private weak var scenesCollectionViewHeight: NSLayoutConstraint!
+    
     @IBOutlet private weak var powerStatusSwitch: UISwitch!
     @IBAction func powerStatusSwitchDidChangeValue(sender: UISwitch) {
         updateSelectedTargetPowerStatusIfPossible()
@@ -63,7 +67,7 @@ class LIFXWidgetViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        for collectionView in [targetsCollectionView, colorsCollectionView, intensitiesCollectionView] {
+        for collectionView in [targetsCollectionView, colorsCollectionView, intensitiesCollectionView, scenesCollectionView] {
             collectionView.reloadData()
         }
     }
@@ -90,6 +94,9 @@ extension LIFXWidgetViewController: UICollectionViewDataSource, UICollectionView
         else if collectionView == intensitiesCollectionView {
             return numberOfItemsInIntensitiesCollectionView()
         }
+        else if collectionView == scenesCollectionView {
+            return numberOfItemsInScenesCollectionView()
+        }
         return 0
     }
     
@@ -102,6 +109,9 @@ extension LIFXWidgetViewController: UICollectionViewDataSource, UICollectionView
         }
         else if collectionView == intensitiesCollectionView {
             return intensitiesCollectionViewCellForItemAtIndexPath(indexPath)
+        }
+        else if collectionView == scenesCollectionView {
+            return scenesCollectionViewCellForItemAtIndexPath(indexPath)
         }
         
         assertionFailure("collectionView isn't handeled")
@@ -133,6 +143,9 @@ extension LIFXWidgetViewController: UICollectionViewDataSource, UICollectionView
         }
         else if collectionView == intensitiesCollectionView {
             intensitiesCollectionViewDidSelectItemAtIndexPath(indexPath)
+        }
+        else if collectionView == scenesCollectionView {
+            scenesCollectionViewDidSelectItemAtIndexPath(indexPath)
         }
     }
     
@@ -213,12 +226,39 @@ extension LIFXWidgetViewController /* IntensitiesCollectionView */ {
     
 }
 
+extension LIFXWidgetViewController /* ScenesCollectionView */ {
+    
+    private func numberOfItemsInScenesCollectionView() -> Int {
+        return scenes.count
+    }
+    
+    private func scenesCollectionViewCellForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = scenesCollectionView.dequeueReusableCellWithReuseIdentifier("SceneCollectionViewCell", forIndexPath: indexPath) as! SceneCollectionViewCell
+        cell.configureWithScene(scenes[indexPath.row])
+        return cell
+    }
+    
+    private func scenesCollectionViewDidSelectItemAtIndexPath(indexPath: NSIndexPath) {
+        if let selectedTargetIndexPath = targetsCollectionView.indexPathsForSelectedItems().first as? NSIndexPath {
+            targetsCollectionView.deselectItemAtIndexPath(selectedTargetIndexPath, animated: true)
+            targetsCollectionViewDidDeselectItemAtIndexPath(selectedTargetIndexPath)
+        }
+        
+        let selectedScene = scenes[indexPath.row]
+        LIFXAPIWrapper.sharedAPIWrapper().applyScene(selectedScene.scene, onCompletion: nil, onFailure: {
+            self.updateViewForError($0)
+        })
+    }
+    
+}
+
 extension LIFXWidgetViewController /* Updating UI */ {
     
     private func updateCollectionViewsHeights() {
         targetsCollectionViewHeight.constant = targetsCollectionView.contentSize.height
         colorsCollectionViewHeight.constant = colorsCollectionView.contentSize.height
         intensitiesCollectionViewHeight.constant = intensitiesCollectionView.contentSize.height
+        scenesCollectionViewHeight.constant = scenesCollectionView.contentSize.height
         view.layoutIfNeeded()
     }
     
