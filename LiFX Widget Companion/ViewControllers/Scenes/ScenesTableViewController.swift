@@ -67,4 +67,8 @@ extension ScenesTableViewController {
             SettingsPersistanceManager.sharedPersistanceManager.scenes = savedScenes
         }
     }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
 }

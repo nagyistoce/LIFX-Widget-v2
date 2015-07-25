@@ -61,6 +61,10 @@ extension ColorsListViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
 }
 
 // ColorPickerViewController

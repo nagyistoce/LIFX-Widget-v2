@@ -29,8 +29,8 @@ class HomeViewController: UIViewController {
                     self.updateSettingsWithScenes(scenes)
                 }
             }
-            configureDefaultColorsAndIntensities()
         }
+        configureDefaultColorsAndIntensities()
     }
 
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {

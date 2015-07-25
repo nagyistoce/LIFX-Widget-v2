@@ -58,10 +58,11 @@ class LIFXWidgetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupLIFXAPIWrapper()
-        setupEmptyViewIfNeeded()
-        selectFirstTargetIfNeeded()
-        updateTargetActionsViewsAvailability()
+        if setupLIFXAPIWrapper() {
+            setupEmptyViewIfNeeded()
+            selectFirstTargetIfNeeded()
+            updateTargetActionsViewsAvailability()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,7 +78,7 @@ class LIFXWidgetViewController: UIViewController {
 extension LIFXWidgetViewController: NCWidgetProviding {
 
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(10, 10, 10, 10)
+        return UIEdgeInsetsMake(5, 5, 5, 5)
     }
     
 }
@@ -172,6 +173,10 @@ extension LIFXWidgetViewController /* TargetsCollectionViewDataSource */ {
     private func targetsCollectionViewDidSelectItemAtIndexPath(indexPath: NSIndexPath) {
         powerStatusSwitch.setOn(getPowerStatusForLightIdentifier(targets[indexPath.row].identifier), animated: true)
         updateTargetActionsViewsAvailability()
+        
+        if let selectedSceneIndexPath = scenesCollectionView.indexPathsForSelectedItems().first as? NSIndexPath {
+            scenesCollectionView.deselectItemAtIndexPath(selectedSceneIndexPath, animated: true)
+        }
     }
     
     private func targetsCollectionViewDidDeselectItemAtIndexPath(indexPath: NSIndexPath) {
@@ -321,7 +326,7 @@ extension LIFXWidgetViewController /* Updating UI */ {
     }
     
     private func updateViewForUnconfiguredOAuthToken() {
-        updateViewWithErrorTitle("Please configure LIFX Cloud in the companion app")
+        updateViewWithErrorTitle("Please configure LIFX Cloud")
     }
     
     private func updateViewWithErrorTitle(error: String) {
@@ -333,7 +338,7 @@ extension LIFXWidgetViewController /* Updating UI */ {
 
 extension LIFXWidgetViewController /* LIFX API Wrapper */ {
     
-    private func setupLIFXAPIWrapper() {
+    private func setupLIFXAPIWrapper() -> Bool {
         if let OAuthToken = SettingsPersistanceManager.sharedPersistanceManager.OAuthToken {
             LIFXAPIWrapper.sharedAPIWrapper().setOAuthToken(OAuthToken)
             LIFXAPIWrapper.sharedAPIWrapper().getAllLightsWithCompletion({
@@ -343,9 +348,11 @@ extension LIFXWidgetViewController /* LIFX API Wrapper */ {
                     self.updateViewForError($0)
                 }
             )
+            return true
         }
         else {
             updateViewForUnconfiguredOAuthToken()
+            return false
         }
     }
     
