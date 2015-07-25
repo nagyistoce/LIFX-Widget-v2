@@ -13,24 +13,30 @@ import Foundation
 class TargetsInterfaceController: WKInterfaceController {
     
     private var lights: [LIFXLight] = []
+    
     private lazy var targets = SettingsPersistanceManager.sharedPersistanceManager.targets
     @IBOutlet private weak var targetsTable: WKInterfaceTable!
     
+    private lazy var scenes = SettingsPersistanceManager.sharedPersistanceManager.scenes
+    @IBOutlet weak var scenesTable: WKInterfaceTable!
+
     override func willActivate() {
         super.willActivate()
         
         if !presentConfigurationAlertIfNeeded() {
             setupLIFXAPI()
             setupTargetsTable()
+            setupScenesTable()
         }
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        let selectedTarget = targets[rowIndex]
-        pushControllerWithName("TargetActionInterfaceController", context: [
-            "target": selectedTarget,
-            "powerStatus": getPowerStatusForTargetWithIdentifier(selectedTarget.identifier)
-        ])
+        if table == targetsTable {
+            targetsTableDidSelectRowAtIndex(rowIndex)
+        }
+        else if table == scenesTable {
+            sceneTableDidSelectRowAtIndex(rowIndex)
+        }
     }
     
 }
@@ -45,6 +51,30 @@ extension TargetsInterfaceController /* Targets Table */ {
         }
     }
     
+    private func targetsTableDidSelectRowAtIndex(rowIndex: Int) {
+        let selectedTarget = targets[rowIndex]
+        pushControllerWithName("TargetActionInterfaceController", context: [
+            "target": selectedTarget,
+            "powerStatus": getPowerStatusForTargetWithIdentifier(selectedTarget.identifier)
+        ])
+    }
+    
+}
+
+extension TargetsInterfaceController /* Scenes Table */ {
+    
+    private func setupScenesTable() {
+        scenesTable.setNumberOfRows(scenes.count, withRowType: "SceneRowController")
+        for (index, scene) in enumerate(scenes) {
+            let rowController = scenesTable.rowControllerAtIndex(index) as! SceneRowController
+            rowController.configureWithScene(scene)
+        }
+    }
+    
+    private func sceneTableDidSelectRowAtIndex(rowIndex: Int) {
+        let scene = scenes[rowIndex]
+        LIFXAPIWrapper.sharedAPIWrapper().applyScene(scene.scene, onCompletion: nil, onFailure: nil)
+    }
 }
 
 extension TargetsInterfaceController /* Configuration Alert */ {

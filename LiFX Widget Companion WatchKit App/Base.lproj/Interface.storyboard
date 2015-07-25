@@ -94,8 +94,24 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <separator alignment="left" id="rcj-T1-8FA"/>
+                        <table alignment="left" id="kvz-rT-7CW">
+                            <items>
+                                <tableRow identifier="SceneRowController" id="PlE-WK-eOg" customClass="SceneRowController" customModule="LiFX_Widget_Companion_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="49H-hh-iPX">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Scene name" textAlignment="center" id="927-nc-Mcx"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="927-nc-Mcx" id="YY6-G3-cjh"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
+                        <outlet property="scenesTable" destination="kvz-rT-7CW" id="D1E-vJ-NZP"/>
                         <outlet property="targetsTable" destination="jJh-T5-9Lj" id="xa5-c2-3D5"/>
                     </connections>
                 </controller>

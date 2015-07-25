@@ -31,6 +31,7 @@
 		9C43D9841B4130D000AA7719 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9831B4130D000AA7719 /* TutorialViewController.swift */; };
 		9C43D9861B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */; };
 		9C4F06171B4C3CC5004980CB /* TargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */; };
+		9C5AD3711B64054A000ADB58 /* SceneRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AD3701B64054A000ADB58 /* SceneRowController.swift */; };
 		9C5BEA5A1B47BA0000F71519 /* TargetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */; };
 		9C69BE7F1B5A350C00EEFAE2 /* ColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */; };
 		9C6FC36A1B62DAF100B21CB5 /* SettingsPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C834D861B6153EF00D0D966 /* SettingsPersistanceManager.swift */; };
@@ -156,6 +157,7 @@
 		9C43D9831B4130D000AA7719 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewControllers/Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
 		9C43D9851B4132DE00AA7719 /* TutorialAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialAnimatedTransitioning.swift; path = ViewControllers/Tutorial/TutorialAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		9C4F06161B4C3CC5004980CB /* TargetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetTableViewCell.swift; path = "Target picker/TargetTableViewCell.swift"; sourceTree = "<group>"; };
+		9C5AD3701B64054A000ADB58 /* SceneRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneRowController.swift; sourceTree = "<group>"; };
 		9C5BEA591B47BA0000F71519 /* TargetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetPickerViewController.swift; path = "Target picker/TargetPickerViewController.swift"; sourceTree = "<group>"; };
 		9C6784311A7BCE1100A3E82E /* LiFX Widget Companion WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "LiFX Widget Companion WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9C69BE7E1B5A350C00EEFAE2 /* ColorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsListViewController.swift; path = Colors/ColorsListViewController.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 			children = (
 				9C6FC37A1B62E82A00B21CB5 /* TargetsInterfaceController.swift */,
 				9C6FC3791B62E82A00B21CB5 /* TargetRowController.swift */,
+				9C5AD3701B64054A000ADB58 /* SceneRowController.swift */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				9C6FC36B1B62DAF100B21CB5 /* TargetModelWrapper.swift in Sources */,
 				9C6FC37F1B62E82A00B21CB5 /* TargetRowController.swift in Sources */,
 				9C6FC37E1B62E82A00B21CB5 /* TargetActionInterfaceController.swift in Sources */,
+				9C5AD3711B64054A000ADB58 /* SceneRowController.swift in Sources */,
 				9C28CC511B63D89800113785 /* SceneModelWrapper.swift in Sources */,
 				9C6FC37D1B62E82A00B21CB5 /* IntensityRowController.swift in Sources */,
 			);
