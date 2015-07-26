@@ -123,7 +123,7 @@ extension LIFXWidgetViewController: UICollectionViewDataSource, UICollectionView
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         let defaultInsets = flowLayout.sectionInset
         
-        let width = realCollectionViewWidth
+        let width = CGRectGetWidth(view.bounds)
         let cellWidth = flowLayout.itemSize.width
         let spacingWidth = flowLayout.minimumInteritemSpacing
         
@@ -260,10 +260,14 @@ extension LIFXWidgetViewController /* ScenesCollectionView */ {
 extension LIFXWidgetViewController /* Updating UI */ {
     
     private func updateCollectionViewsHeights() {
-        targetsCollectionViewHeight.constant = targetsCollectionView.contentSize.height
-        colorsCollectionViewHeight.constant = colorsCollectionView.contentSize.height
-        intensitiesCollectionViewHeight.constant = intensitiesCollectionView.contentSize.height
-        scenesCollectionViewHeight.constant = scenesCollectionView.contentSize.height
+        let heightsBindings = [ (targetsCollectionViewHeight, targetsCollectionView),
+            (colorsCollectionViewHeight, colorsCollectionView),
+            (intensitiesCollectionViewHeight, intensitiesCollectionView),
+            (scenesCollectionViewHeight, scenesCollectionView)
+        ]
+        for (constraint, collectionView) in heightsBindings {
+            constraint.constant = collectionView.contentSize.height
+        }
         view.layoutIfNeeded()
     }
     
@@ -368,28 +372,3 @@ extension LIFXWidgetViewController /* LIFX API Wrapper */ {
     }
     
 }
-
-extension LIFXWidgetViewController /* Apple SDK's Fixes */ {
-    
-    // FIXME: Apple's SDK Bug
-    /*
-    ** On regular horizontal size classes, the notification center
-    ** has a constant width with left and right margins. For some
-    ** reason, the width of the collectionView is the same as the
-    ** screen's width, as if there were no margins.
-    */
-    private var realCollectionViewWidth: CGFloat {
-        get {
-            switch (traitCollection.horizontalSizeClass, traitCollection.userInterfaceIdiom) {
-            case (.Regular, .Pad):
-                return 592
-            case (.Regular, .Phone):
-                return 399
-            default:
-                return CGRectGetWidth(view.bounds)
-            }
-        }
-    }
-    
-}
-
